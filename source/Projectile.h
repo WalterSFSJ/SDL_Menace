@@ -6,13 +6,13 @@ class Projectile : public ImageObject
 {
 public:
 	Projectile(Vector2 playerPos)
-		: ImageObject("resources/xd.png", Vector2(0.f, 0.f), Vector2(306.f, 562.f))
+		: ImageObject("resources/images/projectile.png", Vector2(0.f, 0.f), Vector2(900.f, 900.f))
 	{
 		// Posició random en tota la finestra
 		Vector2 randomPosition = playerPos;
 		//Vector2 randomPosition = Vector2(rand() % RM->WINDOW_WIDTH, rand() % RM->WINDOW_HEIGHT);
 		_transform->position = randomPosition;
-		_transform->scale = Vector2(1.5f, 1.5f);
+		_transform->scale = Vector2(0.5f, 0.5f);
 		_transform->rotation = 30.f;
 
 		physics->SetLinearDrag(0.1f);
