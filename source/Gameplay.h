@@ -5,7 +5,7 @@
 #include "TextObject.h"
 #include "Spawner.h"
 #include "BackGround.h"
-#include "Enemy.h"
+#include "HorizontalMedusa.h"
 class Gameplay : public Scene
 {
 public:
@@ -19,7 +19,7 @@ public:
 		SPAWNER.SpawnObject(new BackGround(Vector2(RM->WINDOW_WIDTH + RM->WINDOW_WIDTH/2, RM->WINDOW_HEIGHT / 2)));
 		
 		_ui.push_back(new Ship());		
-		_ui.push_back(new Enemy());
+		_ui.push_back(new HorizontalMedusa());
 		TextObject* text = new TextObject("Hola");
 		text->GetTransform()->position.x = 200;
 		text->GetTransform()->position.y = 200;

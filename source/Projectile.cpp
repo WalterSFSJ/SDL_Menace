@@ -6,7 +6,7 @@ void Projectile::Update()
 
 	if (_transform->position.x > RM->WINDOW_WIDTH)
 	{
-		GetDestroyed();
+		Destroy();
 	}
 
 	Object::Update();
