@@ -12,7 +12,8 @@ public:
 	Gameplay() = default;
 
 	void OnEnter() override {
-	
+		srand(time(NULL));
+
 		//BackGround* B_one = new BackGround(Vector2(RM->WINDOW_WIDTH / 2, RM->WINDOW_HEIGHT / 2));
 
 		SPAWNER.SpawnObject(new BackGround(Vector2(RM->WINDOW_WIDTH / 2, RM->WINDOW_HEIGHT / 2)));

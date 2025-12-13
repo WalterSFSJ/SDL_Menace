@@ -8,9 +8,8 @@ public:
 	float absoluteX;
 
 	HorizontalMedusa()
-		: Enemy()
+		: Enemy(Vector2(RM->WINDOW_WIDTH + 100, (rand() % (RM->WINDOW_HEIGHT - 200)) + 100))
 	{
-		srand(time(NULL));
 
 		absoluteX = (float)(rand() % 41) + 10;
 		//GetRigidBody()->SetVelocity(	Vector2(		((float)(rand() % 41) + 10), (float)0		)	);

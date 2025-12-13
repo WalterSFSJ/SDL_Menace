@@ -11,10 +11,10 @@ public:
 
 	Vector2 targetPosition;
 
-	Enemy()
+	Enemy(Vector2 spawnPos)
 		: ImageObject("resources/xd.png", Vector2(0.f, 0.f), Vector2(306.f, 562.f))
 	{
-		_transform->position = Vector2(500.f, 200.f);
+		_transform->position = spawnPos;
 		_transform->scale = Vector2(1.5f, 1.5f);
 		
 
