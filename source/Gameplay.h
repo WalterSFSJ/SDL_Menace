@@ -6,6 +6,7 @@
 #include "Spawner.h"
 #include "BackGround.h"
 #include "HorizontalMedusa.h"
+#include "VerticalMedusa.h"
 class Gameplay : public Scene
 {
 public:
@@ -21,6 +22,7 @@ public:
 		
 		_ui.push_back(new Ship());		
 		_ui.push_back(new HorizontalMedusa());
+		_ui.push_back(new VerticalMedusa());
 		TextObject* text = new TextObject("Hola");
 		text->GetTransform()->position.x = 200;
 		text->GetTransform()->position.y = 200;
