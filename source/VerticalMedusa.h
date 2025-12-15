@@ -7,13 +7,13 @@ class VerticalMedusa : public Enemy
 public:
 
 	float moveY = 0.01;
-	float timeMove = 3.0f; 
+	int timeMove = 3; 
 	float timePause = 3.0f; 
-	float moveTimer = 0.0f; 
+	int moveTimer = 0; 
     bool isMoving = true;
-
+	
 	VerticalMedusa()
-		: Enemy(Vector2(rand()% 1000 + 100, 100 ))
+		: Enemy(Vector2(rand()% 1000 + 100, RM->WINDOW_HEIGHT + 100), "resources/images/up.png", Vector2(1000.f, 1054.f))
 	{
 
 		//GetRigidBody()->SetVelocity(	Vector2(		((float)(rand() % 41) + 10), (float)0		)	);
@@ -22,24 +22,22 @@ public:
 	void MoveVertical() {
 
         
-        
+		moveTimer = TIME.GetDeltaTime();
+
 
         if (isMoving) {
 
-			_transform->position.y += moveY;
+			_transform->position.y -= moveY;
 
-            if (moveTimer >= timeMove) {
+            if (moveTimer % timeMove < 0.2f) {
                 isMoving = false;
                 moveTimer = 0.0f; 
             }
         }
-        else {
-
-            if (moveTimer >= timePause) {
-                isMoving = true;
-                moveTimer = 0.0f; 
-            }
-        }
+        else if (moveTimer % timeMove >= 0.2f) {
+			isMoving = true;
+			moveTimer = 0.0f;
+		}
 	}
 
 	void Update() {

@@ -7,6 +7,7 @@
 #include "BackGround.h"
 #include "HorizontalMedusa.h"
 #include "VerticalMedusa.h"
+#include "TimeManager.h"
 class Gameplay : public Scene
 {
 public:
@@ -31,7 +32,7 @@ public:
 
 	void OnExit() override { Scene::OnExit(); }
 
-	void Update() override { Scene::Update(); }
+	void Update() override { Scene::Update(); TIME.Update(); }
 
 	void Render() override { Scene::Render(); }
 

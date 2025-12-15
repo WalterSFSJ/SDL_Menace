@@ -26,6 +26,12 @@ void Game::Init()
 	RM->LoadTexture("resources/images/daniel.png");
 	RM->LoadFont("resources/fonts/hyperspace.ttf");
 
+
+
+	RM->LoadTexture("resources/images/up.png");
+	RM->LoadTexture("resources/images/horizontal.png");
+
+
 	//Carga de escenas
 	assert(SM.AddScene("MainMenu", new MainMenu()));
 	assert(SM.AddScene("Gameplay", new Gameplay()));

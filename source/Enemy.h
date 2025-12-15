@@ -11,8 +11,8 @@ public:
 
 	Vector2 targetPosition;
 
-	Enemy(Vector2 spawnPos)
-		: ImageObject("resources/xd.png", Vector2(0.f, 0.f), Vector2(306.f, 562.f))
+	Enemy(Vector2 spawnPos, std::string pngPath, Vector2 imageSize)
+		: ImageObject(pngPath, Vector2(0.f, 0.f), imageSize)
 	{
 		_transform->position = spawnPos;
 		_transform->scale = Vector2(1.5f, 1.5f);

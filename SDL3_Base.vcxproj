@@ -36,6 +36,7 @@
     <ClInclude Include="source\AABB.h" />
     <ClInclude Include="source\BackGround.h" />
     <ClInclude Include="source\Button.h" />
+    <ClInclude Include="source\Daniel.h" />
     <ClInclude Include="source\Enemy.h" />
     <ClInclude Include="source\Game.h" />
     <ClInclude Include="source\GameObject.h" />
