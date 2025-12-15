@@ -1,11 +1,16 @@
 #pragma once
 #include "Enemy.h"
+#include "TimeManager.h"
 
 class VerticalMedusa : public Enemy
 {
 public:
 
-	float moveY = 0.5;
+	float moveY = 0.01;
+	float timeMove = 3.0f; 
+	float timePause = 3.0f; 
+	float moveTimer = 0.0f; 
+    bool isMoving = true;
 
 	VerticalMedusa()
 		: Enemy(Vector2(rand()% 1000 + 100, 100 ))
@@ -16,8 +21,25 @@ public:
 
 	void MoveVertical() {
 
-			_transform->position.y -= moveY;
-		
+        
+        
+
+        if (isMoving) {
+
+			_transform->position.y += moveY;
+
+            if (moveTimer >= timeMove) {
+                isMoving = false;
+                moveTimer = 0.0f; 
+            }
+        }
+        else {
+
+            if (moveTimer >= timePause) {
+                isMoving = true;
+                moveTimer = 0.0f; 
+            }
+        }
 	}
 
 	void Update() {
