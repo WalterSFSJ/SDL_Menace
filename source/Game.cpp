@@ -30,6 +30,7 @@ void Game::Init()
 
 	RM->LoadTexture("resources/images/up.png");
 	RM->LoadTexture("resources/images/horizontal.png");
+	RM->LoadTexture("resources/images/beholder.png");
 
 
 	//Carga de escenas

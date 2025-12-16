@@ -31,12 +31,12 @@ public:
 
             if (moveTimer % timeMove < 0.2f) {
                 isMoving = false;
-                moveTimer = 0.0f; 
+
             }
         }
         else if (moveTimer % timeMove >= 0.2f) {
 			isMoving = true;
-			moveTimer = 0.0f;
+
 		}
 	}
 

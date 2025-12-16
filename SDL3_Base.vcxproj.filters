@@ -137,5 +137,11 @@
     <ClInclude Include="source\Daniel.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="source\TimeManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Beholder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

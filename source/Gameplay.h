@@ -8,6 +8,7 @@
 #include "HorizontalMedusa.h"
 #include "VerticalMedusa.h"
 #include "TimeManager.h"
+#include "Beholder.h"
 class Gameplay : public Scene
 {
 public:
@@ -22,8 +23,7 @@ public:
 		SPAWNER.SpawnObject(new BackGround(Vector2(RM->WINDOW_WIDTH + RM->WINDOW_WIDTH/2, RM->WINDOW_HEIGHT / 2)));
 		
 		_ui.push_back(new Ship());		
-		_ui.push_back(new HorizontalMedusa());
-		_ui.push_back(new VerticalMedusa());
+		_ui.push_back(new Beholder());
 		TextObject* text = new TextObject("Hola");
 		text->GetTransform()->position.x = 200;
 		text->GetTransform()->position.y = 200;
