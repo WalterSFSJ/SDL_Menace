@@ -12,6 +12,7 @@
 #include "Bubble.h"
 #include "KillerWhale.h"
 #include "AudioManager.h"
+#include "TestAnimation.h"
 class Gameplay : public Scene
 {
 public:
@@ -37,7 +38,7 @@ public:
 		text->GetTransform()->position.x = 200;
 		text->GetTransform()->position.y = 200;
 		_ui.push_back(text);
-
+		SPAWNER.SpawnObject(new TestAnimation());
 		AM->PlaySound("resources/audio/music/froggerSong.wav");
 		AM->PlaySoundLooping("resources/audio/sfx/defeat.wav");
 	}

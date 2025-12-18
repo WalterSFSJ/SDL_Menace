@@ -34,6 +34,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\AABB.h" />
+    <ClInclude Include="source\AnimatedImageObject.h" />
+    <ClInclude Include="source\AnimatedImageRenderer.h" />
     <ClInclude Include="source\AtomicWrapper.h" />
     <ClInclude Include="source\AudioManager.h" />
     <ClInclude Include="source\BackGround.h" />
@@ -61,6 +63,7 @@
     <ClInclude Include="source\Ship.h" />
     <ClInclude Include="source\Spawner.h" />
     <ClInclude Include="source\Stream.h" />
+    <ClInclude Include="source\TestAnimation.h" />
     <ClInclude Include="source\TestObject.h" />
     <ClInclude Include="source\TextObject.h" />
     <ClInclude Include="source\TextRenderer.h" />
