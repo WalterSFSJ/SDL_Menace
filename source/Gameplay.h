@@ -7,7 +7,6 @@
 #include "BackGround.h"
 #include "HorizontalMedusa.h"
 #include "VerticalMedusa.h"
-#include "TimeManager.h"
 #include "Beholder.h"
 #include "Bubble.h"
 #include "KillerWhale.h"
@@ -27,7 +26,7 @@ public:
 		SPAWNER.SpawnObject(new BackGround(Vector2(RM->WINDOW_WIDTH + RM->WINDOW_WIDTH/2, RM->WINDOW_HEIGHT / 2)));
 		
 		_ui.push_back(new Ship());		
-		_ui.push_back(new KillerWhale(Vector2(RM->WINDOW_WIDTH / 2, 10)));
+		_ui.push_back(new KillerWhale(Vector2(0, 10)));
 
 		/*
 		_ui.push_back(new Bubble(Vector2(RM->WINDOW_WIDTH / 2, 500)));
@@ -40,12 +39,12 @@ public:
 		_ui.push_back(text);
 		SPAWNER.SpawnObject(new TestAnimation());
 		AM->PlaySound("resources/audio/music/froggerSong.wav");
-		AM->PlaySoundLooping("resources/audio/sfx/defeat.wav");
+		//AM->PlaySoundLooping("resources/audio/sfx/defeat.wav");
 	}
 
 	void OnExit() override { Scene::OnExit(); }
 
-	void Update() override { Scene::Update(); TIME.Update(); }
+	void Update() override { Scene::Update(); }
 
 	void Render() override { Scene::Render(); }
 

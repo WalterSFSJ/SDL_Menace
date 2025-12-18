@@ -2,6 +2,7 @@
 #include "Game.h"
 #include <exception>
 #include <iostream>
+#include "TimeManager.h"
 int main(int argc, char* argv[])
 {
 	Game game;
@@ -19,9 +20,16 @@ int main(int argc, char* argv[])
 
 	while (game.IsRunning())
 	{
-		game.HandleEvents();
-		game.Update();
-		game.Render();
+		TIME.Update();
+		std::cout << TIME.GetDeltaTime() << std::endl;
+		if (TIME.ShouldUpdateGame())
+		{
+			//playing = ! Input.Listen();
+			game.Update();
+			game.Render();
+			TIME.ResetDeltaTime();
+			game.HandleEvents();
+		}
 	}
 
 	game.Release();

@@ -31,12 +31,12 @@ public:
 			upDown = 1;
 		}
 	
-		_transform->rotation += 0.01f * upDown;
+		_transform->rotation += upDown;
 
 		float rad = _transform->rotation * (3.14f / 180.0f);
 
-		_transform->position.x += cos(rad) / 40;
-		_transform->position.y += sin(rad) / 10;
+		_transform->position.x += cos(rad) / 4 * 10;
+		_transform->position.y += sin(rad) * 10;
 	}
 
 	

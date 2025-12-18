@@ -6,6 +6,9 @@
 #include "Projectile.h"
 class Ship : public ImageObject
 {
+private:
+	float speed;
+
 public:
 	Ship()
 		: ImageObject("resources/images/ship.png", Vector2(0.f, 0.f), Vector2(433.f, 409.f))
@@ -18,6 +21,8 @@ public:
 
 		physics->SetLinearDrag(0.1f);
 		physics->SetAngularDrag(2.f);
+
+		speed = 5.0f;
 	 }
 
 	void Update();
