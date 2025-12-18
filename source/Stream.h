@@ -98,4 +98,44 @@ public:
 
 
 	}
+
+	void CheckPlaybackLooping(SoundData* soundData, std::atomic<bool>& haltRequest) {
+
+		while (_state != STOPPED) {
+
+			//Si hay que parar el proceso / la reproducción
+			if (haltRequest)
+			{
+				StopStream();
+			}
+
+			//Si el stream todavía no se ha reproducido y está preparado para hacerlo
+			if (_state == READY)
+			{
+				Uint32 bytesQueued = SDL_GetAudioStreamQueued(_stream);
+				int bytesRemaining = ((int)soundData->wavDataLength) - bytesQueued;
+
+				//Paso para conseguir array con tamaño variable
+				std::vector<Uint8> wavDataRemainingVec = std::vector<Uint8>(bytesRemaining, '\0');
+				Uint8* wavDataRemaining = &wavDataRemainingVec[0];
+
+				//dst, src, len
+				SDL_memcpy(wavDataRemaining, (const Uint32*)&soundData->wavData[bytesQueued], bytesRemaining);
+				SDL_PutAudioStreamData(_stream, wavDataRemaining, bytesRemaining);
+
+				//Indicar que no se desea añadir nada más al stream hasta que no acabe
+				SDL_FlushAudioStream(_stream);
+
+				//Evitar que en la siguiente iteración se repita la copia de memoria
+				_state = PLAYING;
+			}
+
+			//Si ha acabado el sonido y hay que empezar un nuevo ciclo de reproducción
+			if (_state == PLAYING && SDL_GetAudioStreamQueued(_stream) == 0)
+			{
+				SDL_ClearAudioStream(_stream);
+				_state = READY;
+			}
+		}
+	}
 };

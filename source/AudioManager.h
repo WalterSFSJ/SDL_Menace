@@ -104,7 +104,20 @@ public:
 
 		//Creamos el thread
 		threadsDone.push_back(std::atomic<bool>(false));
-		std::thread thread(&AudioManager::PlaySoundCallback, this, path, (threadsDone.size() -1));
+		std::thread thread(&AudioManager::PlaySoundCallback, this, path, (threadsDone.size() -1), false);
+		thread.detach();
+	}
+
+	void PlaySoundLooping(std::string path)
+	{
+		if (_soundsData.find(path) == _soundsData.end())
+		{
+			return;
+		}
+
+		//Creamos el thread
+		threadsDone.push_back(std::atomic<bool>(false));
+		std::thread thread(&AudioManager::PlaySoundCallback, this, path, (threadsDone.size() - 1), true);
 		thread.detach();
 	}
 
@@ -148,10 +161,14 @@ private:
 		_soundsData.clear();
 	}
 
-	void PlaySoundCallback(std::string path, int pos) {
+	void PlaySoundCallback(std::string path, int pos, bool looping) {
 	
 		Stream stream = Stream(_soundsData[path]->spec, _audioDevice);
-		stream.CheckPlayback(_soundsData[path], shouldHaltAudio);
+		if(looping)
+			stream.CheckPlaybackLooping(_soundsData[path], shouldHaltAudio);
+		else
+			stream.CheckPlayback(_soundsData[path], shouldHaltAudio);
+		
 		threadsDone[pos] = AtomicWrapper<bool>(std::atomic<bool>(true));
 	}
 

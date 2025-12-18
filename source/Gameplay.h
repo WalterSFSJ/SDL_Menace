@@ -39,6 +39,7 @@ public:
 		_ui.push_back(text);
 
 		AM->PlaySound("resources/audio/music/froggerSong.wav");
+		AM->PlaySoundLooping("resources/audio/sfx/defeat.wav");
 	}
 
 	void OnExit() override { Scene::OnExit(); }

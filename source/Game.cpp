@@ -36,6 +36,7 @@ void Game::Init()
 
 
 	AM->LoadSoundData("resources/audio/music/froggerSong.wav");
+	AM->LoadSoundData("resources/audio/sfx/defeat.wav");
 
 	//Carga de escenas
 	assert(SM.AddScene("MainMenu", new MainMenu()));
