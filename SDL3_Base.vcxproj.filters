@@ -143,6 +143,15 @@
     <ClInclude Include="source\Beholder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="source\Stream.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\AudioManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\AtomicWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="source\Bubble.h">
       <Filter>Header Files</Filter>
     </ClInclude>
