@@ -4,6 +4,7 @@
 #include "Gameplay.h"
 #include "MainMenu.h"
 #include "SceneManager.h"
+#include "AudioManager.h"
 
 Game::Game() {
 	for (Object* go : _gameObjects)
@@ -16,6 +17,7 @@ void Game::Init()
 {
 
 	RM->Init();
+	AM->Init();
 
 	RM->LoadTexture("resources/images/fist_0.png");
 	RM->LoadTexture("resources/images/fist_1.png");
@@ -32,6 +34,8 @@ void Game::Init()
 	RM->LoadTexture("resources/images/horizontal.png");
 	RM->LoadTexture("resources/images/beholder.png");
 
+
+	AM->LoadSoundData("resources/audio/music/froggerSong.wav");
 
 	//Carga de escenas
 	assert(SM.AddScene("MainMenu", new MainMenu()));
@@ -74,8 +78,10 @@ void Game::Render()
 
 void Game::Release()
 {
-	SDL_DestroyRenderer(_renderer);
-	SDL_DestroyWindow(_window);
+
+	RM->Release();
+	AM->HaltAudio();
+
 	SDL_Quit();
 }
 

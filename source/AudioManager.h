@@ -32,6 +32,9 @@ public:
 	
 		try
 		{
+			if (!SDL_Init(SDL_INIT_AUDIO))
+				throw SDL_GetError();
+
 			_audioDevice = SDL_OpenAudioDevice(SDL_AUDIO_DEVICE_DEFAULT_PLAYBACK, NULL);
 
 			if (_audioDevice == 0)

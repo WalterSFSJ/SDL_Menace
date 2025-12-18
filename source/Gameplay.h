@@ -11,6 +11,7 @@
 #include "Beholder.h"
 #include "Bubble.h"
 #include "KillerWhale.h"
+#include "AudioManager.h"
 class Gameplay : public Scene
 {
 public:
@@ -36,6 +37,8 @@ public:
 		text->GetTransform()->position.x = 200;
 		text->GetTransform()->position.y = 200;
 		_ui.push_back(text);
+
+		AM->PlaySound("resources/audio/music/froggerSong.wav");
 	}
 
 	void OnExit() override { Scene::OnExit(); }
