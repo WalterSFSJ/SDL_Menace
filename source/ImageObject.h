@@ -9,5 +9,7 @@ class ImageObject : public Object
 			: Object()
 		{
 			_renderer = new ImageRenderer(_transform, texturePath, sourceOffset, sourceSize);
+			physics->AddCollider(new AABB(_transform->position, _transform->size));
+
 		}			
 };

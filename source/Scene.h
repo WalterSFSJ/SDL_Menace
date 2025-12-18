@@ -76,7 +76,8 @@ public:
 		for (int i = 0; i < size; i++) {
 			for (int j = i + 1; j < _ui.size(); j++) {
 				if (_ui[i]->GetRigidBody()->CheckCollision(_ui[j]->GetRigidBody())) {
-					//...
+					printf("touch!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+
 				}
 			}
 		}

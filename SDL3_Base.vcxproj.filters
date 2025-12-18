@@ -143,5 +143,8 @@
     <ClInclude Include="source\Beholder.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="source\Bubble.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
