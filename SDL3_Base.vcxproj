@@ -49,6 +49,7 @@
     <ClInclude Include="source\ImageObject.h" />
     <ClInclude Include="source\ImageRenderer.h" />
     <ClInclude Include="source\InputManager.h" />
+    <ClInclude Include="source\KillerWhale.h" />
     <ClInclude Include="source\MainMenu.h" />
     <ClInclude Include="source\Object.h" />
     <ClInclude Include="source\Projectile.h" />

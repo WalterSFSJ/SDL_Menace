@@ -10,6 +10,7 @@
 #include "TimeManager.h"
 #include "Beholder.h"
 #include "Bubble.h"
+#include "KillerWhale.h"
 class Gameplay : public Scene
 {
 public:
@@ -24,7 +25,13 @@ public:
 		SPAWNER.SpawnObject(new BackGround(Vector2(RM->WINDOW_WIDTH + RM->WINDOW_WIDTH/2, RM->WINDOW_HEIGHT / 2)));
 		
 		_ui.push_back(new Ship());		
+		_ui.push_back(new KillerWhale(Vector2(RM->WINDOW_WIDTH / 2, 10)));
+
+		/*
 		_ui.push_back(new Bubble(Vector2(RM->WINDOW_WIDTH / 2, 500)));
+		_ui.push_back(new Bubble(Vector2(RM->WINDOW_WIDTH / 2 + 200, 500)));
+		_ui.push_back(new Bubble(Vector2(RM->WINDOW_WIDTH / 2 + 400, 500)));
+		*/
 		TextObject* text = new TextObject("Hola");
 		text->GetTransform()->position.x = 200;
 		text->GetTransform()->position.y = 200;

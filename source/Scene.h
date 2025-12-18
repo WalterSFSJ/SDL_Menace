@@ -1,6 +1,8 @@
 #pragma once
 #include "Object.h"
 #include "Spawner.h"
+#include "Enemy.h"
+#include "Ship.h"
 #include <vector>
 class Scene
 {
@@ -76,7 +78,11 @@ public:
 		for (int i = 0; i < size; i++) {
 			for (int j = i + 1; j < _ui.size(); j++) {
 				if (_ui[i]->GetRigidBody()->CheckCollision(_ui[j]->GetRigidBody())) {
-					printf("touch!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+					
+					if (dynamic_cast<Enemy*>(_ui[i]) && dynamic_cast<Ship*>(_ui[j]))  //no funciona y posiblemente hay que quitarlo de ui i ponerlo a objects
+					{
+						printf("touch!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+					}
 
 				}
 			}
