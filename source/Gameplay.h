@@ -12,6 +12,8 @@
 #include "KillerWhale.h"
 #include "AudioManager.h"
 #include "TestAnimation.h"
+#include "Circle.h"
+
 class Gameplay : public Scene
 {
 public:
@@ -26,7 +28,7 @@ public:
 		SPAWNER.SpawnObject(new BackGround(Vector2(RM->WINDOW_WIDTH + RM->WINDOW_WIDTH/2, RM->WINDOW_HEIGHT / 2)));
 		
 		_ui.push_back(new Ship());		
-		_ui.push_back(new KillerWhale(Vector2(0, 10)));
+		_ui.push_back(new Circle(Vector2(0, 10)));
 
 		/*
 		_ui.push_back(new Bubble(Vector2(RM->WINDOW_WIDTH / 2, 500)));
