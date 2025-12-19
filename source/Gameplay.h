@@ -29,7 +29,7 @@ public:
 		
 		_ui.push_back(new Ship());		
 		//_ui.push_back(new Bubble(Vector2(RM->WINDOW_WIDTH, 20)));
-		SPAWNER.SpawnWhales();
+		SPAWNER.SpawnVerticalMedusa();
 
 		/*
 		_ui.push_back(new Bubble(Vector2(RM->WINDOW_WIDTH / 2, 500)));

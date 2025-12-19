@@ -20,7 +20,7 @@ public:
 	//es demasiado rápido
 	void MoveHorizontally() {
 
-		_transform->position.x -= absoluteX / 2000;
+		_transform->position.x -= absoluteX / 4;
 	}
 
 	void Update() {

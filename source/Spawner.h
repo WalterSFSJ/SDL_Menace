@@ -3,6 +3,8 @@
 #include "Object.h"
 #include "Bubble.h"
 #include "KillerWhale.h"
+#include "HorizontalMedusa.h"
+#include "VerticalMedusa.h"
 
 #define SPAWNER Spawner::Instance()
 
@@ -36,10 +38,10 @@ public:
 
 	void SpawnBubbles() {
 		
-		SpawnObject(new Bubble(Vector2(RM->WINDOW_WIDTH, 30)));
-		SpawnObject(new Bubble(Vector2(RM->WINDOW_WIDTH + 100, 30)));
-		SpawnObject(new Bubble(Vector2(RM->WINDOW_WIDTH + 200, 30)));
-		SpawnObject(new Bubble(Vector2(RM->WINDOW_WIDTH + 300, 30)));
+		SpawnObject(new Bubble(Vector2(RM->WINDOW_WIDTH, 100)));
+		SpawnObject(new Bubble(Vector2(RM->WINDOW_WIDTH + 100, 100)));
+		SpawnObject(new Bubble(Vector2(RM->WINDOW_WIDTH + 200, 100)));
+		SpawnObject(new Bubble(Vector2(RM->WINDOW_WIDTH + 300, 100)));
 	}
 	void SpawnWhales() {
 		
@@ -48,6 +50,23 @@ public:
 		SpawnObject(new KillerWhale(Vector2(RM->WINDOW_WIDTH + 1200, 30), 1));
 		SpawnObject(new KillerWhale(Vector2(RM->WINDOW_WIDTH + 1800, RM->WINDOW_HEIGHT - 30), -1));
 	}
+	
+	void SpawnHorizontalMedusa() {
+		
+		SpawnObject(new HorizontalMedusa());
+		SpawnObject(new HorizontalMedusa());
+		SpawnObject(new HorizontalMedusa());
+		SpawnObject(new HorizontalMedusa());
+	}
+	
+	void SpawnVerticalMedusa() {
+		
+		SpawnObject(new VerticalMedusa());
+		SpawnObject(new VerticalMedusa());
+		SpawnObject(new VerticalMedusa());
+		SpawnObject(new VerticalMedusa());
+	}
+
 
 private:
 	Spawner() = default;
