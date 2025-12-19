@@ -5,31 +5,31 @@ class Bubble : public Enemy
 {
 public:
 
-	float speed = 20.0f;
+	
 	bool rotate = false;
 	bool leave = false;
 	Bubble(Vector2 pos)
-		: Enemy(pos, "resources/images/daniel.png", Vector2(1000.f, 1054.f))		
+		: Enemy(pos, "resources/images/bubble.png", Vector2(1000.f, 1054.f))		
 	{
-
+		speed = 6.0f;
 	}
 
 	void GoForward() {
 	
 		float rad = _transform->rotation * (3.14f / 180.0f);
 
-		_transform->position.x += cos(rad) / 100;
-		_transform->position.y += sin(rad) / 100;
+		_transform->position.x += cos(rad) * speed;
+		_transform->position.y += sin(rad) * speed;
 	}
 
 	void Rotate() {
 	
-		_transform->rotation += 0.01f;
+		_transform->rotation += 1.0f;
 
 		float rad = _transform->rotation * (3.14f / 180.0f);
 
-		_transform->position.x += cos(rad) / 40;
-		_transform->position.y += sin(rad) / 40;
+		_transform->position.x += cos(rad) * speed;
+		_transform->position.y += sin(rad) * speed;
 
 		if (_transform->rotation > 300)
 		{
@@ -40,7 +40,7 @@ public:
 	
 	void BubbleMoveLeft() {
 
-		_transform->position.x -= 0.01f;
+		_transform->position.x -= speed;
 	}
 
 	void Update() {

@@ -22,7 +22,7 @@ public:
 		physics->SetLinearDrag(0.1f);
 		physics->SetAngularDrag(2.f);
 
-		speed = 5.0f;
+		speed = 10.0f;
 	 }
 
 	void Update();

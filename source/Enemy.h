@@ -8,7 +8,7 @@
 class Enemy : public ImageObject
 {
 public:
-
+	float speed = 20.0f;
 	Vector2 targetPosition;
 
 	Enemy(Vector2 spawnPos, std::string pngPath, Vector2 imageSize)
@@ -36,7 +36,7 @@ public:
 		_transform->position.x += cos(rad) / 10;
 		_transform->position.y += sin(rad) / 10;*/
 
-		if (_transform->position.x < -OUTOFBOUNDS || _transform->position.x > RM->WINDOW_WIDTH + OUTOFBOUNDS)
+		if (_transform->position.x < -OUTOFBOUNDS)
 		{
 			Destroy();
 		}
