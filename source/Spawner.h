@@ -5,6 +5,7 @@
 #include "KillerWhale.h"
 #include "HorizontalMedusa.h"
 #include "VerticalMedusa.h"
+#include "Beholder.h"
 
 #define SPAWNER Spawner::Instance()
 
@@ -51,7 +52,7 @@ public:
 		SpawnObject(new KillerWhale(Vector2(RM->WINDOW_WIDTH + 1800, RM->WINDOW_HEIGHT - 30), -1));
 	}
 	
-	void SpawnHorizontalMedusa() {
+	void SpawnHorizontalMedusas() {
 		
 		SpawnObject(new HorizontalMedusa());
 		SpawnObject(new HorizontalMedusa());
@@ -59,12 +60,20 @@ public:
 		SpawnObject(new HorizontalMedusa());
 	}
 	
-	void SpawnVerticalMedusa() {
+	void SpawnVerticalMedusas() {
 		
 		SpawnObject(new VerticalMedusa());
 		SpawnObject(new VerticalMedusa());
 		SpawnObject(new VerticalMedusa());
 		SpawnObject(new VerticalMedusa());
+	}
+	
+	void SpawnBeholders() {
+		
+		SpawnObject(new Beholder(100));
+		SpawnObject(new Beholder(200));
+		SpawnObject(new Beholder(300));
+		SpawnObject(new Beholder(400));
 	}
 
 
