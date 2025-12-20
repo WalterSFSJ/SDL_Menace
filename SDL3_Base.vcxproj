@@ -59,6 +59,7 @@
     <ClInclude Include="source\Renderer.h" />
     <ClInclude Include="source\RenderManager.h" />
     <ClInclude Include="source\RigidBody.h" />
+    <ClInclude Include="source\Rounds.h" />
     <ClInclude Include="source\Scene.h" />
     <ClInclude Include="source\SceneManager.h" />
     <ClInclude Include="source\Ship.h" />
