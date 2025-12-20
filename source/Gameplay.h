@@ -27,7 +27,7 @@ public:
 		SPAWNER.SpawnObject(new BackGround(Vector2(RM->WINDOW_WIDTH / 2, RM->WINDOW_HEIGHT / 2)));
 		SPAWNER.SpawnObject(new BackGround(Vector2(RM->WINDOW_WIDTH + RM->WINDOW_WIDTH/2, RM->WINDOW_HEIGHT / 2)));
 		
-		_ui.push_back(new Ship());		
+		SPAWNER.SpawnObject(new Ship());
 		//_ui.push_back(new Bubble(Vector2(RM->WINDOW_WIDTH, 20)));
 		SPAWNER.SpawnBeholders();
 
