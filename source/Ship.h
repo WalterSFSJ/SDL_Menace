@@ -6,18 +6,23 @@
 #include "Projectile.h"
 class Ship : public ImageObject
 {
+private:
+	float speed;
+
 public:
 	Ship()
 		: ImageObject("resources/images/ship.png", Vector2(0.f, 0.f), Vector2(433.f, 409.f))
 	{
 		// Posició random en tota la finestra
-		Vector2 randomPosition = Vector2(500.f, 500.f);
+		Vector2 randomPosition = Vector2(500.f, 100.f);
 		//Vector2 randomPosition = Vector2(rand() % RM->WINDOW_WIDTH, rand() % RM->WINDOW_HEIGHT);
 		_transform->position = randomPosition;
 		_transform->scale = Vector2(1.f, 1.f);
 
 		physics->SetLinearDrag(0.1f);
 		physics->SetAngularDrag(2.f);
+
+		speed = 10.0f;
 	 }
 
 	void Update();

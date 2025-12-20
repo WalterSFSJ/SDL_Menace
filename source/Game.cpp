@@ -4,6 +4,7 @@
 #include "Gameplay.h"
 #include "MainMenu.h"
 #include "SceneManager.h"
+#include "AudioManager.h"
 
 Game::Game() {
 	for (Object* go : _gameObjects)
@@ -16,6 +17,7 @@ void Game::Init()
 {
 
 	RM->Init();
+	AM->Init();
 
 	RM->LoadTexture("resources/images/fist_0.png");
 	RM->LoadTexture("resources/images/fist_1.png");
@@ -23,7 +25,21 @@ void Game::Init()
 	RM->LoadTexture("resources/images/ship.png");
 	RM->LoadTexture("resources/images/background.png");
 	RM->LoadTexture("resources/images/projectile.png");
+	RM->LoadTexture("resources/images/daniel.png");
+	RM->LoadTexture("resources/images/sample_spritesheet.png");
 	RM->LoadFont("resources/fonts/hyperspace.ttf");
+
+
+
+	RM->LoadTexture("resources/images/up.png");
+	RM->LoadTexture("resources/images/horizontal.png");
+	RM->LoadTexture("resources/images/beholder.png");
+	RM->LoadTexture("resources/images/bubble.png");
+	RM->LoadTexture("resources/images/whale.png");
+
+
+	AM->LoadSoundData("resources/audio/music/froggerSong.wav");
+	AM->LoadSoundData("resources/audio/sfx/defeat.wav");
 
 	//Carga de escenas
 	assert(SM.AddScene("MainMenu", new MainMenu()));
@@ -66,8 +82,10 @@ void Game::Render()
 
 void Game::Release()
 {
-	SDL_DestroyRenderer(_renderer);
-	SDL_DestroyWindow(_window);
+
+	RM->Release();
+	AM->HaltAudio();
+
 	SDL_Quit();
 }
 

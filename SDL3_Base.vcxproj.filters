@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <Filter Include="Source Files">
@@ -129,6 +129,45 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="source\HorizontalMedusa.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\VerticalMedusa.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Daniel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\TimeManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Beholder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Stream.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\AudioManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\AtomicWrapper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Bubble.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\KillerWhale.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\AnimatedImageRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\AnimatedImageObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\TestAnimation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Circle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
