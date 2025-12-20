@@ -72,8 +72,9 @@ public:
 				if (_objects[i]->GetRigidBody()->CheckCollision(_objects[j]->GetRigidBody())) {					
 					if ( dynamic_cast<Ship*>(_objects[i])  && dynamic_cast<Enemy*>(_objects[j]))
 					{
-						std::cout << "ship collides" << std::endl;
-					}					
+						dynamic_cast<Ship*>(_objects[i])->GetHurt();						
+						_objects[j]->Destroy();
+					}
 					else if ( dynamic_cast<Enemy*>(_objects[i])  && dynamic_cast<Projectile*>(_objects[j]))
 					{
 						_objects[i]->Destroy();
