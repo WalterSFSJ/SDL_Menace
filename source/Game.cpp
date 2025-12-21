@@ -37,6 +37,7 @@ void Game::Init()
 	RM->LoadTexture("resources/images/bubble.png");
 	RM->LoadTexture("resources/images/whale.png");
 	RM->LoadTexture("resources/images/chomper.png");
+	RM->LoadTexture("resources/images/amoeba.png");
 
 
 	AM->LoadSoundData("resources/audio/music/froggerSong.wav");

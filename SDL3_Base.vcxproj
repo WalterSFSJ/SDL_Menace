@@ -35,6 +35,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\AABB.h" />
+    <ClInclude Include="source\Amoeba.h" />
     <ClInclude Include="source\AnimatedImageObject.h" />
     <ClInclude Include="source\AnimatedImageRenderer.h" />
     <ClInclude Include="source\AtomicWrapper.h" />
