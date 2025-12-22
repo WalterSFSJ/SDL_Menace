@@ -55,6 +55,7 @@
     <ClInclude Include="source\KillerWhale.h" />
     <ClInclude Include="source\MainMenu.h" />
     <ClInclude Include="source\Object.h" />
+    <ClInclude Include="source\PowerUp.h" />
     <ClInclude Include="source\Projectile.h" />
     <ClInclude Include="source\Renderer.h" />
     <ClInclude Include="source\RenderManager.h" />
