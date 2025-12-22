@@ -16,6 +16,7 @@ public:
 	bool returning = false;
 	bool looping = false;
 	bool gettingAway = false;
+	bool regrouping = false;
 
 	float time;
 	float maxTime;
@@ -56,15 +57,32 @@ public:
 
 		if (_transform->rotation > maxRotation)
 		{
-			returning = true;
+			_transform->rotation += 90.0f;
+			regrouping = true;
+			time = 0.0f;
 		}
 
 	}
 
-	void GetAway() {
+	void Regroup() {
 
 		if (time > maxTime) {
+			returning = true;
+			return;
+		}
 
+		time += TIME.GetDeltaTime();
+
+		float rad = _transform->rotation * (3.14f / 180.0f);
+
+		_transform->position.x += cos(rad) * CUSHIONSPEED;
+		_transform->position.y += sin(rad) * CUSHIONSPEED;
+	}
+
+	void Split() {
+
+		if (time > maxTime) {
+			_transform->rotation += 90;
 			looping = true;
 			return;
 		}
@@ -86,10 +104,12 @@ public:
 
 		if (returning)
 			Return();
+		else if (regrouping)
+			Regroup();
 		else if (looping)
 			Loop();
 		else if (gettingAway)
-			GetAway();
+			Split();
 		else
 			GoRight();
 
