@@ -28,8 +28,8 @@ public:
 		SPAWNER.SpawnObject(new BackGround(Vector2(RM->WINDOW_WIDTH + RM->WINDOW_WIDTH/2, RM->WINDOW_HEIGHT / 2)));
 		
 		_ui.push_back(new Ship());		
-		//_ui.push_back(new Bubble(Vector2(RM->WINDOW_WIDTH, 20)));
-		SPAWNER.SpawnBeholders();
+		_ui.push_back(new Circle(Vector2(RM->WINDOW_WIDTH / 2,50 )));
+		//SPAWNER.SpawnBeholders();
 
 		/*
 		_ui.push_back(new Bubble(Vector2(RM->WINDOW_WIDTH / 2, 500)));
