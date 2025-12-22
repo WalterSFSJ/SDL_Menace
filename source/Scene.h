@@ -16,6 +16,8 @@ public:
 	Scene() = default;
 	virtual void OnEnter() = 0;
 
+	int score = 0;
+
 	virtual void OnExit() {
 
 		SPAWNER.ClearSpawner();
@@ -77,6 +79,7 @@ public:
 					}
 					else if ( dynamic_cast<Enemy*>(_objects[i])  && dynamic_cast<Projectile*>(_objects[j]))
 					{
+						score += dynamic_cast<Enemy*>(_objects[i])->GiveScore();
 						_objects[i]->Destroy();
 						_objects[j]->Destroy();
 					}
