@@ -13,6 +13,7 @@ public:
 		: Enemy(pos, "resources/images/whale.png", Vector2(1000.f, 1054.f))
 	{
 		upDown = i;
+		score = 150;
 	}
 
 	void WaitForShip() {

@@ -6,15 +6,22 @@
 #include "HorizontalMedusa.h"
 #include "VerticalMedusa.h"
 #include "Beholder.h"
-
+#include "../dependencies/xml/rapidxml_iterators.hpp"
+#include "../dependencies/xml/rapidxml_utils.hpp"
+#include "../dependencies/xml/rapidxml.hpp"
+#include "../dependencies/xml/rapidxml_print.hpp"
+#include <sstream>
 #define SPAWNER Spawner::Instance()
 
 class Spawner
 {
 public:
+
+	
+
 	static Spawner& Instance() {
 		static Spawner spawner;
-		return spawner;
+		return spawner;		
 	}
 
 	void SpawnObject(Object* obj) { _spawnedObjects.push(obj); }
@@ -74,6 +81,21 @@ public:
 		SpawnObject(new Beholder(200));
 		SpawnObject(new Beholder(300));
 		SpawnObject(new Beholder(400));
+
+		rapidxml::xml_document<> doc;
+		std::ifstream file("resources/files/wavesFile.xml");
+
+		std::stringstream buffer;
+
+		buffer << file.rdbuf();
+
+		file.close();
+
+		std::string content(buffer.str());
+
+		doc.parse<0>(&content[0]);
+
+		std::cout << "Name: " << doc.first_node()->name() << std::endl;
 	}
 
 
