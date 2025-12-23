@@ -32,7 +32,7 @@ public:
 		
 		SPAWNER.SpawnObject(new Ship());
 		//_ui.push_back(new Bubble(Vector2(RM->WINDOW_WIDTH, 20)));
-		SPAWNER.SpawnBeholders();
+		SPAWNER.ReadWave();
 
 		/*
 		_ui.push_back(new Bubble(Vector2(RM->WINDOW_WIDTH / 2, 500)));
