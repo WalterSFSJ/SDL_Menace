@@ -95,7 +95,11 @@ public:
 
 		doc.parse<0>(&content[0]);
 
-		std::cout << "Name: " << doc.first_node()->name() << std::endl;
+		std::cout << "Wave: " << doc.first_node()->first_node()->name() << std::endl; //wave 1
+		std::cout << doc.first_node()->first_node()->first_node()->name(); //id name
+		std::cout << doc.first_node()->first_node()->first_node()->value() << std::endl; //id value
+		std::cout << doc.first_node()->first_node()->first_node()->next_sibling()->name(); //amount name
+		std::cout << doc.first_node()->first_node()->first_node()->next_sibling()->value() << std::endl; //amount value
 	}
 
 
