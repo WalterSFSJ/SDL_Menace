@@ -6,6 +6,8 @@
 #include "HorizontalMedusa.h"
 #include "VerticalMedusa.h"
 #include "Beholder.h"
+#include "Amoeba.h"
+#include "KillerWhale.h"
 #include "../dependencies/xml/rapidxml_iterators.hpp"
 #include "../dependencies/xml/rapidxml_utils.hpp"
 #include "../dependencies/xml/rapidxml.hpp"
@@ -53,16 +55,22 @@ public:
 	}
 	void SpawnWhales(int maxEnemies) {
 
-		for (int i = 0; i < maxEnemies; i++)
+		for (int i = 0; i < maxEnemies; i += 2)
 		{
 			SpawnObject(new KillerWhale(Vector2(RM->WINDOW_WIDTH + 600 * i, 30), 1));
 			SpawnObject(new KillerWhale(Vector2(RM->WINDOW_WIDTH + 600 * (i+1), RM->WINDOW_HEIGHT - 30), -1));
 		}
 
-		/*SpawnObject(new KillerWhale(Vector2(RM->WINDOW_WIDTH, 30), 1));
-		SpawnObject(new KillerWhale(Vector2(RM->WINDOW_WIDTH + 600, RM->WINDOW_HEIGHT - 30), -1));
-		SpawnObject(new KillerWhale(Vector2(RM->WINDOW_WIDTH + 1200, 30), 1));
-		SpawnObject(new KillerWhale(Vector2(RM->WINDOW_WIDTH + 1800, RM->WINDOW_HEIGHT - 30), -1));*/
+		
+	}
+	
+	void SpawnAmoeba() {
+
+		for (int i = 0; i < 8; i++)
+		{
+			SpawnObject(new Amoeba(i));
+
+		}
 	}
 	
 	void SpawnHorizontalMedusas(int maxEnemies) {
@@ -117,6 +125,26 @@ public:
 		if (std::stoi(doc.first_node()->first_node()->first_node()->value()) == 1)
 		{
 			SpawnBubbles(std::stoi(doc.first_node()->first_node()->first_node()->next_sibling()->value()));
+		}
+		else if (std::stoi(doc.first_node()->first_node()->first_node()->value()) == 2)
+		{
+			SpawnHorizontalMedusas(std::stoi(doc.first_node()->first_node()->first_node()->next_sibling()->value()));
+		}
+		else if (std::stoi(doc.first_node()->first_node()->first_node()->value()) == 3)
+		{
+			SpawnVerticalMedusas(std::stoi(doc.first_node()->first_node()->first_node()->next_sibling()->value()));
+		}
+		else if (std::stoi(doc.first_node()->first_node()->first_node()->value()) == 4)
+		{
+			SpawnBeholders(std::stoi(doc.first_node()->first_node()->first_node()->next_sibling()->value()));
+		}
+		else if (std::stoi(doc.first_node()->first_node()->first_node()->value()) == 5)
+		{
+			SpawnAmoeba();
+		}
+		else if (std::stoi(doc.first_node()->first_node()->first_node()->value()) == 6)
+		{
+			SpawnWhales(std::stoi(doc.first_node()->first_node()->first_node()->next_sibling()->value()));
 		}
 	
 	}
