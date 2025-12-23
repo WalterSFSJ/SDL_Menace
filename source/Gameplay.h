@@ -50,7 +50,11 @@ public:
 
 	void OnExit() override { Scene::OnExit(); }
 
-	void Update() override { Scene::Update(); scoreText->SetText(std::to_string(score)); }
+	void Update() override { 
+		Scene::Update(); 
+		CheckForEnemies();
+		scoreText->SetText(std::to_string(score)); 
+	}
 
 	void Render() override { Scene::Render(); }
 

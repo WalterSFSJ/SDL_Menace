@@ -34,6 +34,18 @@ public:
 		_ui.clear();
 	}
 
+	void CheckForEnemies() {
+	
+		int size = _objects.size();
+		for (int i = 0; i < size; i++) {
+
+			if (dynamic_cast<Enemy*>(_objects[i])) 
+				return;
+		}
+
+		SPAWNER.Instance().ReadWave();
+	}
+
 	virtual void Update() {
 
 		// 1) Destruir

@@ -19,7 +19,10 @@ class Spawner
 {
 public:
 
-	
+	rapidxml::xml_node<>* inside_node;
+	rapidxml::xml_node<>* wave_node;
+
+	int timesRead = 0;
 
 	static Spawner& Instance() {
 		static Spawner spawner;
@@ -115,39 +118,42 @@ public:
 
 		doc.parse<0>(&content[0]);
 
-		std::cout << "Wave: " << doc.first_node()->first_node()->name() << std::endl; //wave 1
-		std::cout << doc.first_node()->first_node()->first_node()->name(); //id name
-		std::cout << doc.first_node()->first_node()->first_node()->value() << std::endl; //id value
-		std::cout << doc.first_node()->first_node()->first_node()->next_sibling()->name(); //amount name
-		std::cout << doc.first_node()->first_node()->first_node()->next_sibling()->value() << std::endl; //amount value
+		wave_node = doc.first_node()->first_node();
+		for (int i = 0; i < timesRead; i++)
+		{
+			if (wave_node->next_sibling() != NULL)
+				wave_node = wave_node->next_sibling();
+		}
 
 
-		if (std::stoi(doc.first_node()->first_node()->first_node()->value()) == 1)
+		inside_node = wave_node->first_node();
+
+		if (std::stoi(inside_node->value()) == 1)
 		{
-			SpawnBubbles(std::stoi(doc.first_node()->first_node()->first_node()->next_sibling()->value()));
+			SpawnBubbles(std::stoi(inside_node->next_sibling()->value()));
 		}
-		else if (std::stoi(doc.first_node()->first_node()->first_node()->value()) == 2)
+		else if (std::stoi(inside_node->value()) == 2)
 		{
-			SpawnHorizontalMedusas(std::stoi(doc.first_node()->first_node()->first_node()->next_sibling()->value()));
+			SpawnHorizontalMedusas(std::stoi(inside_node->next_sibling()->value()));
 		}
-		else if (std::stoi(doc.first_node()->first_node()->first_node()->value()) == 3)
+		else if (std::stoi(inside_node->value()) == 3)
 		{
-			SpawnVerticalMedusas(std::stoi(doc.first_node()->first_node()->first_node()->next_sibling()->value()));
+			SpawnVerticalMedusas(std::stoi(inside_node->next_sibling()->value()));
 		}
-		else if (std::stoi(doc.first_node()->first_node()->first_node()->value()) == 4)
+		else if (std::stoi(inside_node->value()) == 4)
 		{
-			SpawnBeholders(std::stoi(doc.first_node()->first_node()->first_node()->next_sibling()->value()));
+			SpawnBeholders(std::stoi(inside_node->next_sibling()->value()));
 		}
-		else if (std::stoi(doc.first_node()->first_node()->first_node()->value()) == 5)
+		else if (std::stoi(inside_node->value()) == 5)
 		{
 			SpawnAmoeba();
 		}
-		else if (std::stoi(doc.first_node()->first_node()->first_node()->value()) == 6)
+		else if (std::stoi(inside_node->value()) == 6)
 		{
-			SpawnWhales(std::stoi(doc.first_node()->first_node()->first_node()->next_sibling()->value()));
+			SpawnWhales(std::stoi(inside_node->next_sibling()->value()));
 		}
-	
-		//rapidxml::xml_node<>* inside_node;
+
+		timesRead++;
 	}
 
 private:
