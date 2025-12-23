@@ -20,13 +20,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\AABB.cpp" />
-<<<<<<< HEAD
+
     <ClCompile Include="source\Canons.cpp" />
     <ClCompile Include="source\IncrementScore.cpp" />
     <ClCompile Include="source\Laser.cpp" />
-=======
+
     <ClCompile Include="source\Chomper.cpp" />
->>>>>>> origin/develop
+
     <ClCompile Include="source\Projectile.cpp" />
     <ClCompile Include="source\Button.cpp" />
     <ClCompile Include="source\Game.cpp" />
