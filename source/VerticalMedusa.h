@@ -15,7 +15,7 @@ public:
 	VerticalMedusa()
 		: Enemy(Vector2(rand()% 1000 + 100, RM->WINDOW_HEIGHT), "resources/images/up.png", Vector2(1000.f, 1054.f))
 	{
-
+		score = 50;
 		//GetRigidBody()->SetVelocity(	Vector2(		((float)(rand() % 41) + 10), (float)0		)	);
 	}
 

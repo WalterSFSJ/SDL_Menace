@@ -3,6 +3,7 @@
 #include "Spawner.h"
 #include "Enemy.h"
 #include "Ship.h"
+#include "Projectile.h"
 #include <vector>
 class Scene
 {
@@ -14,6 +15,8 @@ protected:
 public:
 	Scene() = default;
 	virtual void OnEnter() = 0;
+
+	int score = 0;
 
 	virtual void OnExit() {
 
@@ -68,8 +71,19 @@ public:
 		int size = _objects.size();
 		for (int i = 0; i < size; i++) {
 			for (int j = i + 1; j < _objects.size(); j++) {
-				if (_objects[i]->GetRigidBody()->CheckCollision(_objects[j]->GetRigidBody())) {
-					//...
+				if (_objects[i]->GetRigidBody()->CheckCollision(_objects[j]->GetRigidBody())) {					
+					if ( dynamic_cast<Ship*>(_objects[i])  && dynamic_cast<Enemy*>(_objects[j]))
+					{
+						dynamic_cast<Ship*>(_objects[i])->GetHurt();						
+						_objects[j]->Destroy();
+					}
+					else if ( dynamic_cast<Enemy*>(_objects[i])  && dynamic_cast<Projectile*>(_objects[j]))
+					{
+						score += dynamic_cast<Enemy*>(_objects[i])->GiveScore();
+						_objects[i]->Destroy();
+						_objects[j]->Destroy();
+					}
+					
 				}
 			}
 		}
@@ -79,9 +93,13 @@ public:
 			for (int j = i + 1; j < _ui.size(); j++) {
 				if (_ui[i]->GetRigidBody()->CheckCollision(_ui[j]->GetRigidBody())) {
 					
-					if (dynamic_cast<Enemy*>(_ui[i]) && dynamic_cast<Ship*>(_ui[j]))  //no funciona y posiblemente hay que quitarlo de ui i ponerlo a objects
+					if (dynamic_cast<Ship*>(_objects[i]) && dynamic_cast<Enemy*>(_objects[j]))
 					{
-						printf("touch!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+						std::cout << "ship collides" << std::endl;
+					}
+					else if (dynamic_cast<Projectile*>(_objects[i]) && dynamic_cast<Enemy*>(_objects[j]))
+					{
+						std::cout << "projectile collides" << std::endl;
 					}
 
 				}

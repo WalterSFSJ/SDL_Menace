@@ -12,7 +12,7 @@ public:
 	{
 
 		absoluteX = (float)(rand() % 41) + 10;
-		//GetRigidBody()->SetVelocity(	Vector2(		((float)(rand() % 41) + 10), (float)0		)	);
+		score = 50;		
 	}
 
 	//absolute value between 10 and 50 and can be positive or negative 	

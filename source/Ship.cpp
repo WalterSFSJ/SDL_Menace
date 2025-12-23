@@ -23,3 +23,11 @@ void Ship::Shoot() {
 	if (IM->GetEvent(SDLK_SPACE, UP))
 		SPAWNER.SpawnObject(new Projectile(_transform->position));
 }
+
+void Ship::GetHurt() {
+	if (health > 0)
+		health--;
+	else
+		Destroy();
+}
+

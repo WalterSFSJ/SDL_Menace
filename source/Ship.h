@@ -8,7 +8,7 @@ class Ship : public ImageObject
 {
 private:
 	float speed;
-
+	int health;
 public:
 	Ship()
 		: ImageObject("resources/images/ship.png", Vector2(0.f, 0.f), Vector2(433.f, 409.f))
@@ -23,8 +23,9 @@ public:
 		physics->SetAngularDrag(2.f);
 
 		speed = 10.0f;
+		health = 3;
 	 }
-
+	void GetHurt();
 	void Update();
 	void Shoot();
 };

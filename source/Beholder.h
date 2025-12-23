@@ -21,6 +21,7 @@ public:
 	{
 		_transform->scale = Vector2(0.7f, 0.7f);
 		//GetRigidBody()->SetVelocity(	Vector2(		((float)(rand() % 41) + 10), (float)0		)	);
+		score = 200;
 	}
 
 	void MoveAnywhere() {
