@@ -51,6 +51,7 @@
     <ClCompile Include="source\BackGround.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="source\IncrementScore.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -64,6 +65,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="source\RecoverEnergy.cpp">
+=======
+    <ClCompile Include="source\Chomper.cpp">
+>>>>>>> origin/develop
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -188,6 +192,7 @@
     <ClInclude Include="source\Rounds.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="source\PowerUp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -204,6 +209,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="source\RecoverEnergy.h">
+=======
+    <ClInclude Include="source\Chomper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Amoeba.h">
+>>>>>>> origin/develop
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -2,7 +2,7 @@
 
 void Projectile::Update()
 {
-	_transform->position.x += 0.05;
+	_transform->position.x += 18.0f;
 
 	if (_transform->position.x > RM->WINDOW_WIDTH)
 	{

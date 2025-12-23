@@ -10,6 +10,7 @@ class Enemy : public ImageObject
 public:
 	float speed = 20.0f;
 	Vector2 targetPosition;
+	int score;
 
 	Enemy(Vector2 spawnPos, std::string pngPath, Vector2 imageSize)
 		: ImageObject(pngPath, Vector2(0.f, 0.f), imageSize)
@@ -20,7 +21,14 @@ public:
 
 		physics->SetLinearDrag(0.1f);
 		physics->SetAngularDrag(2.f);
+
+		score = 100;
 	 }
+
+	int GiveScore() {
+
+		return score;
+	}
 
 	void MoveHorizontallyTo(Vector2 targetPos) {
 		

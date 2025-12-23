@@ -12,6 +12,7 @@ public:
 		: Enemy(pos, "resources/images/bubble.png", Vector2(1000.f, 1054.f))		
 	{
 		speed = 6.0f;
+		score = 100;
 	}
 
 	void GoForward() {

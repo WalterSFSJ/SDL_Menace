@@ -19,6 +19,9 @@ class Gameplay : public Scene
 public:
 	Gameplay() = default;
 
+	TextObject* scoreText;
+
+
 	void OnEnter() override {
 		srand(time(NULL));
 
@@ -27,9 +30,9 @@ public:
 		SPAWNER.SpawnObject(new BackGround(Vector2(RM->WINDOW_WIDTH / 2, RM->WINDOW_HEIGHT / 2)));
 		SPAWNER.SpawnObject(new BackGround(Vector2(RM->WINDOW_WIDTH + RM->WINDOW_WIDTH/2, RM->WINDOW_HEIGHT / 2)));
 		
-		_ui.push_back(new Ship());		
-		_ui.push_back(new Circle(Vector2(RM->WINDOW_WIDTH / 2,50 )));
-		//SPAWNER.SpawnBeholders();
+		SPAWNER.SpawnObject(new Ship());
+		//_ui.push_back(new Bubble(Vector2(RM->WINDOW_WIDTH, 20)));
+		SPAWNER.ReadWave();
 
 		/*
 		_ui.push_back(new Bubble(Vector2(RM->WINDOW_WIDTH / 2, 500)));
@@ -37,8 +40,12 @@ public:
 		_ui.push_back(new Bubble(Vector2(RM->WINDOW_WIDTH / 2 + 400, 500)));
 		*/
 		TextObject* text = new TextObject("Hola");
+		scoreText = new TextObject("000");
 		text->GetTransform()->position.x = 200;
 		text->GetTransform()->position.y = 200;
+		scoreText->GetTransform()->position.x = 300;
+		scoreText->GetTransform()->position.y = 300;
+		_ui.push_back(scoreText);
 		_ui.push_back(text);
 		SPAWNER.SpawnObject(new TestAnimation());
 		AM->PlaySound("resources/audio/music/froggerSong.wav");
@@ -47,7 +54,7 @@ public:
 
 	void OnExit() override { Scene::OnExit(); }
 
-	void Update() override { Scene::Update(); }
+	void Update() override { Scene::Update(); scoreText->SetText(std::to_string(score)); }
 
 	void Render() override { Scene::Render(); }
 
