@@ -39,15 +39,11 @@ public:
 		_ui.push_back(new Bubble(Vector2(RM->WINDOW_WIDTH / 2 + 200, 500)));
 		_ui.push_back(new Bubble(Vector2(RM->WINDOW_WIDTH / 2 + 400, 500)));
 		*/
-		TextObject* text = new TextObject("Hola");
 		scoreText = new TextObject("000");
-		text->GetTransform()->position.x = 200;
-		text->GetTransform()->position.y = 200;
 		scoreText->GetTransform()->position.x = 300;
 		scoreText->GetTransform()->position.y = 300;
 		_ui.push_back(scoreText);
-		_ui.push_back(text);
-		SPAWNER.SpawnObject(new TestAnimation());
+		//SPAWNER.SpawnObject(new TestAnimation());
 		AM->PlaySound("resources/audio/music/froggerSong.wav");
 		//AM->PlaySoundLooping("resources/audio/sfx/defeat.wav");
 	}

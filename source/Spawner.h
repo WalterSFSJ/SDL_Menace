@@ -147,6 +147,7 @@ public:
 			SpawnWhales(std::stoi(doc.first_node()->first_node()->first_node()->next_sibling()->value()));
 		}
 	
+		//rapidxml::xml_node<>* inside_node;
 	}
 
 private:

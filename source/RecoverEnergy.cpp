@@ -4,7 +4,7 @@
 void RecoverEnergy::Update()
 {
 	RecoverEnergy::PowerUpEfect();
-	Object::Update;
+	Object::Update();
 }
 
 bool RecoverEnergy::PlayerColicion()

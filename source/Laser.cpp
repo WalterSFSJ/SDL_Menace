@@ -3,7 +3,7 @@
 void Laser::Update()
 {
 	Laser::PowerUpEfect();
-	Object::Update;
+	Object::Update();
 }
 
 bool Laser::PlayerColicion()

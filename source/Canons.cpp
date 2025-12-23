@@ -3,7 +3,7 @@
 void Canons::Update()
 {
 	Canons::PowerUpEfect();
-	Object::Update;
+	Object::Update();
 }
 
 bool Canons::PlayerColicion()

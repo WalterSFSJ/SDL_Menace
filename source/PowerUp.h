@@ -21,10 +21,5 @@ public:
 	{
 		return _transform->position;
 	}
-
-	bool PlayerColicion()
-	{
-		return true;
-	}
 };
 

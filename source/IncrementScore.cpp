@@ -3,7 +3,7 @@
 void IncrementScore::Update()
 {
 	IncrementScore::PowerUpEfect();
-	Object::Update;
+	Object::Update();
 }
 
 bool IncrementScore::PlayerColicion()

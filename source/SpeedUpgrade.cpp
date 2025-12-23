@@ -4,7 +4,7 @@
 void SpeedUpgrade::Update()
 {
 	SpeedUpgrade::PowerUpEfect();
-	Object::Update;
+	Object::Update();
 }
 
 bool SpeedUpgrade::PlayerColicion()
