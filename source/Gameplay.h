@@ -5,11 +5,8 @@
 #include "TextObject.h"
 #include "Spawner.h"
 #include "BackGround.h"
-#include "HorizontalMedusa.h"
-#include "VerticalMedusa.h"
-#include "Beholder.h"
-#include "Bubble.h"
-#include "KillerWhale.h"
+
+
 #include "AudioManager.h"
 #include "TestAnimation.h"
 #include "Circle.h"
@@ -31,14 +28,10 @@ public:
 		SPAWNER.SpawnObject(new BackGround(Vector2(RM->WINDOW_WIDTH + RM->WINDOW_WIDTH/2, RM->WINDOW_HEIGHT / 2)));
 		
 		SPAWNER.SpawnObject(new Ship());
-		//_ui.push_back(new Bubble(Vector2(RM->WINDOW_WIDTH, 20)));
+		
 		SPAWNER.ReadWave();
 
-		/*
-		_ui.push_back(new Bubble(Vector2(RM->WINDOW_WIDTH / 2, 500)));
-		_ui.push_back(new Bubble(Vector2(RM->WINDOW_WIDTH / 2 + 200, 500)));
-		_ui.push_back(new Bubble(Vector2(RM->WINDOW_WIDTH / 2 + 400, 500)));
-		*/
+		
 		scoreText = new TextObject("000");
 		scoreText->GetTransform()->position.x = 300;
 		scoreText->GetTransform()->position.y = 300;
