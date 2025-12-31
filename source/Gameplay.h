@@ -9,7 +9,6 @@
 
 #include "AudioManager.h"
 #include "TestAnimation.h"
-#include "Circle.h"
 
 class Gameplay : public Scene
 {

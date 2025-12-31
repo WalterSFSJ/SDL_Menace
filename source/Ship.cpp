@@ -21,7 +21,7 @@ void Ship::Update()
 
 void Ship::Shoot() {
 	if (IM->GetEvent(SDLK_SPACE, UP))
-		SPAWNER.SpawnObject(new Projectile(_transform->position));
+		SPAWNER.SpawnObject(new Projectile(_transform->position, this, 18, 1));
 }
 
 void Ship::GetHurt() {

@@ -2,6 +2,12 @@
 
 void Chomper::Rotate() {
 
+	if (time < maxTime)
+	{
+		time += TIME.GetDeltaTime();
+		return;
+	}
+
 	_transform->rotation += 1.0f * speed;
 
 	float rad = _transform->rotation * (3.14f / 180.0f);

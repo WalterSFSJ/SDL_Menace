@@ -91,9 +91,12 @@ public:
 					}
 					else if ( dynamic_cast<Enemy*>(_objects[i])  && dynamic_cast<Projectile*>(_objects[j]))
 					{
-						score += dynamic_cast<Enemy*>(_objects[i])->GiveScore();
-						_objects[i]->Destroy();
-						_objects[j]->Destroy();
+						if (dynamic_cast<Projectile*>(_objects[j])->IsKillable(_objects[i]))
+						{
+							score += dynamic_cast<Enemy*>(_objects[i])->GiveScore();
+							_objects[i]->Destroy();
+							_objects[j]->Destroy();
+						}
 					}
 					
 				}
