@@ -3,6 +3,7 @@
 #include "TestObject.h"
 #include "Gameplay.h"
 #include "MainMenu.h"
+#include "ScoreBoard.h"
 #include "SceneManager.h"
 #include "AudioManager.h"
 
@@ -39,6 +40,8 @@ void Game::Init()
 	RM->LoadTexture("resources/images/chomper.png");
 	RM->LoadTexture("resources/images/amoeba.png");
 	RM->LoadTexture("resources/images/circle.png");
+	RM->LoadTexture("resources/images/button.png");
+	RM->LoadTexture("resources/images/button_1.png");
 
 
 	AM->LoadSoundData("resources/audio/music/froggerSong.wav");
@@ -47,6 +50,7 @@ void Game::Init()
 	//Carga de escenas
 	assert(SM.AddScene("MainMenu", new MainMenu()));
 	assert(SM.AddScene("Gameplay", new Gameplay()));
+	assert(SM.AddScene("ScoreBoard", new ScoreBoard()));
 
 	assert(SM.InitFirstScene("MainMenu"));
 

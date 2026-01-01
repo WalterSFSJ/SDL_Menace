@@ -72,5 +72,6 @@
     <ClInclude Include="source\BioTitan.h" />
     <ClInclude Include="source\Circler.h" />
     <ClInclude Include="source\CirclerProjectile.h" />
+    <ClInclude Include="source\ScoreBoard.h" />
   </ItemGroup>
 </Project>

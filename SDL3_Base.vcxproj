@@ -78,6 +78,7 @@
     <ClInclude Include="source\Rounds.h" />
     <ClInclude Include="source\Scene.h" />
     <ClInclude Include="source\SceneManager.h" />
+    <ClInclude Include="source\ScoreBoard.h" />
     <ClInclude Include="source\Ship.h" />
     <ClInclude Include="source\Spawner.h" />
     <ClInclude Include="source\SpeedUpgrade.h" />

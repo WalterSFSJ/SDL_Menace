@@ -108,14 +108,7 @@ public:
 			for (int j = i + 1; j < _ui.size(); j++) {
 				if (_ui[i]->GetRigidBody()->CheckCollision(_ui[j]->GetRigidBody())) {
 					
-					if (dynamic_cast<Ship*>(_objects[i]) && dynamic_cast<Enemy*>(_objects[j]))
-					{
-						std::cout << "ship collides" << std::endl;
-					}
-					else if (dynamic_cast<Projectile*>(_objects[i]) && dynamic_cast<Enemy*>(_objects[j]))
-					{
-						std::cout << "projectile collides" << std::endl;
-					}
+					
 
 				}
 			}

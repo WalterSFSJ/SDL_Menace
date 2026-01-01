@@ -31,7 +31,6 @@ public:
 		SPAWNER.ReadWave();
 
 		
-		scoreText = new TextObject("000");
 		scoreText->GetTransform()->position.x = 300;
 		scoreText->GetTransform()->position.y = 300;
 		_ui.push_back(scoreText);

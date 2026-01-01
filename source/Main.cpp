@@ -21,7 +21,7 @@ int main(int argc, char* argv[])
 	while (game.IsRunning())
 	{
 		TIME.Update();
-		std::cout << TIME.GetDeltaTime() << std::endl;
+		
 		if (TIME.ShouldUpdateGame())
 		{
 			//playing = ! Input.Listen();
