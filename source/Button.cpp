@@ -1,6 +1,6 @@
 #include "Button.h"
-#define LIGHT "resources/images/fist_0.png"
-#define DARK "resources/images/fist_1.png"
+#define LIGHT "resources/images/button.png"
+#define DARK "resources/images/button_1.png"
 void Button::Update()
 {
 	if (!_isHovered && physics->CheckOverlappingPoint({ (float)IM->GetMouseX() , (float)IM->GetMouseY() }))

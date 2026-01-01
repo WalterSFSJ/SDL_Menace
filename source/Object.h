@@ -44,6 +44,11 @@ public:
 	{
 		_renderer->Render();
 	}
+
+	void SetPos(Vector2 pos)
+	{
+		_transform->position = pos;
+	}
 	
 	Transform * GetTransform() { return _transform; }
 	// De moment no fan res

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <level>
   <wave>
-    <spawned_enemy_id>6</spawned_enemy_id>
+    <spawned_enemy_id>7</spawned_enemy_id>
     <amount>5</amount>
   </wave>
   <wave>

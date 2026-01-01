@@ -8,6 +8,9 @@
 #include "Beholder.h"
 #include "Amoeba.h"
 #include "KillerWhale.h"
+#include "Chomper.h"
+#include "Circler.h"
+#include "CirclerProjectile.h"
 #include "../dependencies/xml/rapidxml_iterators.hpp"
 #include "../dependencies/xml/rapidxml_utils.hpp"
 #include "../dependencies/xml/rapidxml.hpp"
@@ -101,7 +104,29 @@ public:
 			SpawnObject(new Beholder(100 + i * 100));
 		}
 	}
+	
+	void SpawnChompers() {
 
+		for (int i = 0; i < 7; i++)
+		{
+			SpawnObject(new Chomper(40 + i * 100));
+		}
+	}
+	
+	void SpawnCircler() {
+		
+		Circler* circler = new Circler();
+
+		for (int i = 0; i < 10; i++)
+		{
+			CirclerProjectile* cp = new CirclerProjectile(circler->GivePosition(), circler, circler->GiveSpeed(), 1);
+			circler->BindProjectile(cp);
+			SpawnObject(cp);
+		}
+
+		SpawnObject(circler);
+
+	}
 
 	void ReadWave() {
 	
@@ -151,6 +176,14 @@ public:
 		else if (std::stoi(inside_node->value()) == 6)
 		{
 			SpawnWhales(std::stoi(inside_node->next_sibling()->value()));
+		}
+		else if (std::stoi(inside_node->value()) == 7)
+		{
+			SpawnChompers();
+		}
+		else if (std::stoi(inside_node->value()) == 8)
+		{
+			SpawnCircler();
 		}
 
 		timesRead++;
