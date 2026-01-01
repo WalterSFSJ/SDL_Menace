@@ -2,7 +2,7 @@
 #include "ImageObject.h"
 #include "RenderManager.h"
 #include "InputManager.h"
-#include "Spawner.h"
+
 class BackGround : public ImageObject
 {
 public:

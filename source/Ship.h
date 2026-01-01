@@ -9,6 +9,9 @@ class Ship : public ImageObject
 private:
 	float speed;
 	int health;
+
+	void ListenInput();
+
 public:
 	Ship()
 		: ImageObject("resources/images/ship.png", Vector2(0.f, 0.f), Vector2(433.f, 409.f))
@@ -27,5 +30,5 @@ public:
 	 }
 	void GetHurt();
 	void Update();
-	void Shoot();
+	void Shoot();		
 };

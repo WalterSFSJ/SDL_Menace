@@ -2,7 +2,29 @@
 
 void Ship::Update()
 {
-	if (IM->GetEvent(SDLK_S, DOWN)){
+	
+	ListenInput();
+	Object::Update();
+}
+
+void Ship::Shoot() {
+	if (IM->GetEvent(SDLK_SPACE, UP))
+		SPAWNER.SpawnObject(new Projectile(_transform->position, this, 18, 1));
+}
+
+void Ship::GetHurt() {
+	
+	if (health > 0) {
+		health--;
+		return;
+	}
+
+	Destroy();
+}
+
+void Ship::ListenInput() {
+
+	if (IM->GetEvent(SDLK_S, DOWN)) {
 		if (_transform->position.y < RM->WINDOW_HEIGHT - 30)
 			_transform->position.y += speed;
 	}
@@ -23,18 +45,4 @@ void Ship::Update()
 	}
 
 	Shoot();
-	Object::Update();
 }
-
-void Ship::Shoot() {
-	if (IM->GetEvent(SDLK_SPACE, UP))
-		SPAWNER.SpawnObject(new Projectile(_transform->position, this, 18, 1));
-}
-
-void Ship::GetHurt() {
-	if (health > 0)
-		health--;
-	else
-		Destroy();
-}
-
