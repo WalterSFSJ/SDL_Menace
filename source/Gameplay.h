@@ -30,9 +30,7 @@ public:
 		
 		SPAWNER.ReadWave();
 
-		
-		scoreText->GetTransform()->position.x = 300;
-		scoreText->GetTransform()->position.y = 300;
+		scoreText = new TextObject("0", Vector2(100, 100));
 		_ui.push_back(scoreText);
 		//SPAWNER.SpawnObject(new TestAnimation());
 		AM->PlaySound("resources/audio/music/froggerSong.wav");
