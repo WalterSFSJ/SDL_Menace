@@ -20,13 +20,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="source\AABB.cpp" />
-
     <ClCompile Include="source\Canons.cpp" />
     <ClCompile Include="source\IncrementScore.cpp" />
     <ClCompile Include="source\Laser.cpp" />
-
     <ClCompile Include="source\Chomper.cpp" />
-
     <ClCompile Include="source\Projectile.cpp" />
     <ClCompile Include="source\Button.cpp" />
     <ClCompile Include="source\Game.cpp" />
@@ -40,6 +37,7 @@
     <ClCompile Include="source\Ship.cpp" />
     <ClCompile Include="source\SpeedUpgrade.cpp" />
     <ClCompile Include="source\TestObject.cpp" />
+    <ClCompile Include="source\Turrets.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\AABB.h" />
@@ -52,11 +50,8 @@
     <ClInclude Include="source\Beholder.h" />
     <ClInclude Include="source\Bubble.h" />
     <ClInclude Include="source\Button.h" />
-
     <ClInclude Include="source\Canons.h" />
-
     <ClInclude Include="source\Chomper.h" />
-
     <ClInclude Include="source\Circle.h" />
     <ClInclude Include="source\Daniel.h" />
     <ClInclude Include="source\Enemy.h" />
@@ -91,6 +86,8 @@
     <ClInclude Include="source\TextRenderer.h" />
     <ClInclude Include="source\TimeManager.h" />
     <ClInclude Include="source\Transform.h" />
+    <ClInclude Include="source\Turrets.h" />
+    <ClInclude Include="source\ShotTorrets.h" />
     <ClInclude Include="source\Vector2.h" />
     <ClInclude Include="source\VerticalMedusa.h" />
   </ItemGroup>
