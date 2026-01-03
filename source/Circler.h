@@ -109,7 +109,8 @@ public:
 
 		for (CirclerProjectile* o : _projectiles)
 		{
-			o->Destroy();
+			if (o->AlreadyCollided() == false)
+				o->Destroy();
 		}
 
 		_projectiles.clear();

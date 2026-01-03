@@ -6,12 +6,14 @@ class CirclerProjectile : public Projectile
 private:
 
 	bool start;
+	bool alreadyCollided;
 
 public:
 	CirclerProjectile(Vector2 startingPos, Object* whoNotToKill, int speed, int direction)
 		: Projectile(startingPos, whoNotToKill, speed, direction)
 	{
 		start = false;
+		alreadyCollided = false;
 	}
 	
 
@@ -46,6 +48,15 @@ public:
 	void SelfDestruct() {
 	
 		Destroy();
+	}
+
+	bool AlreadyCollided() {
+		return alreadyCollided;
+	}
+	virtual void Destroy() {
+	
+		alreadyCollided = true;
+		Object::Destroy();
 	}
 
 };
