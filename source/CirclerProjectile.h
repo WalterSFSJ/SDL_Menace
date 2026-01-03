@@ -38,7 +38,6 @@ public:
 
 		MoveRotating();
 
-		std::cout << "rotating";
 
 		Object::Update();
 

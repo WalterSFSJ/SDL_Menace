@@ -77,5 +77,6 @@
     <ClInclude Include="source\Turrets.h" />
     <ClInclude Include="source\ShotTorrets.h" />
     <ClInclude Include="source\HUD.h" />
+    <ClInclude Include="source\WaveManager.h" />
   </ItemGroup>
 </Project>

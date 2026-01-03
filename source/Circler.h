@@ -42,21 +42,13 @@ public:
 
 		time += TIME.GetDeltaTime();
 		
-		if (time > 6.0f)
+		if (time > 5.0f)
 		{
 			_projectiles[9]->Start();
 		}
-		else if (time > 5.5f)
-		{
-			_projectiles[8]->Start();
-		}
-		else if (time > 5.0f)
-		{
-			_projectiles[8]->Start();
-		}
 		else if (time > 4.5f)
 		{
-			_projectiles[7]->Start();
+			_projectiles[8]->Start();
 		}
 		else if (time > 4.0f)
 		{

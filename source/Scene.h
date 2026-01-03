@@ -1,10 +1,10 @@
 #pragma once
 #include "Object.h"
-#include "Spawner.h"
 #include "Enemy.h"
 #include "Ship.h"
 #include "Projectile.h"
 #include <vector>
+#include "WaveManager.h"
 class Scene
 {
 
@@ -34,17 +34,6 @@ public:
 		_ui.clear();
 	}
 
-	void CheckForEnemies() {
-	
-		int size = _objects.size();
-		for (int i = 0; i < size; i++) {
-
-			if (dynamic_cast<Enemy*>(_objects[i])) 
-				return;
-		}
-
-		SPAWNER.Instance().ReadWave();
-	}
 
 	virtual void Update() {
 
@@ -88,6 +77,7 @@ public:
 					{
 						dynamic_cast<Ship*>(_objects[i])->GetHurt();						
 						_objects[j]->Destroy();
+						WM->EnemyDied();
 					}
 					else if ( dynamic_cast<Enemy*>(_objects[i])  && dynamic_cast<Projectile*>(_objects[j]))
 					{
@@ -95,10 +85,18 @@ public:
 						{
 							score += dynamic_cast<Enemy*>(_objects[i])->GiveScore();
 							_objects[i]->Destroy();
-							_objects[j]->Destroy();
+							_objects[j]->Destroy();							
+							WM->EnemyDied();
 						}
 					}
-					
+					else if (dynamic_cast<Ship*>(_objects[i]) && dynamic_cast<Projectile*>(_objects[j]))
+					{
+						if (dynamic_cast<Projectile*>(_objects[j])->IsKillable(_objects[i]))
+						{
+							dynamic_cast<Ship*>(_objects[i])->GetHurt();
+							_objects[j]->Destroy();
+						}						
+					}
 				}
 			}
 		}

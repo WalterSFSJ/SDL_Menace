@@ -3,6 +3,7 @@
 #include "RenderManager.h"
 #include "InputManager.h"
 
+
 #define OUTOFBOUNDS 350
 
 class Enemy : public ImageObject
@@ -49,7 +50,7 @@ public:
 			Destroy();
 		}
 
-
+		
 		Object::Update();
 	}
 };
