@@ -45,6 +45,8 @@ public:
 		_renderer->Render();
 	}
 
+	Renderer* GetRenderer() { return _renderer; }
+
 	void SetPos(Vector2 pos)
 	{
 		_transform->position = pos;

@@ -20,6 +20,7 @@
     <ClCompile Include="source\SpeedUpgrade.cpp" />
     <ClCompile Include="source\TestObject.cpp" />
     <ClCompile Include="source\Circler.cpp" />
+    <ClCompile Include="source\Turrets.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\AABB.h" />
@@ -73,5 +74,8 @@
     <ClInclude Include="source\Circler.h" />
     <ClInclude Include="source\CirclerProjectile.h" />
     <ClInclude Include="source\ScoreBoard.h" />
+    <ClInclude Include="source\Turrets.h" />
+    <ClInclude Include="source\ShotTorrets.h" />
+    <ClInclude Include="source\HUD.h" />
   </ItemGroup>
 </Project>
