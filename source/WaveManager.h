@@ -8,6 +8,17 @@
 #include "../dependencies/xml/rapidxml_print.hpp"
 #include <sstream>
 
+enum EnemyType {
+	BUBBLE = 1,
+	HORIZONTALMED = 2,
+	VERTICALMED = 3,
+	BEHOLDER = 4,
+	AMOEBA = 5,
+	WHALE = 6,
+	CHOMPER = 7,
+	CIRCLER = 8
+};
+
 class WaveManager
 {
 public:
@@ -43,35 +54,35 @@ public:
 
 		inside_node = wave_node->first_node();
 
-		if (std::stoi(inside_node->value()) == 1)
+		if (std::stoi(inside_node->value()) == BUBBLE)
 		{
 			SPAWNER.SpawnBubbles(std::stoi(inside_node->next_sibling()->value()));						
 		}
-		else if (std::stoi(inside_node->value()) == 2)
+		else if (std::stoi(inside_node->value()) == HORIZONTALMED)
 		{
 			SPAWNER.SpawnHorizontalMedusas(std::stoi(inside_node->next_sibling()->value()));
 		}
-		else if (std::stoi(inside_node->value()) == 3)
+		else if (std::stoi(inside_node->value()) == VERTICALMED)
 		{
 			SPAWNER.SpawnVerticalMedusas(std::stoi(inside_node->next_sibling()->value()));
 		}
-		else if (std::stoi(inside_node->value()) == 4)
+		else if (std::stoi(inside_node->value()) == BEHOLDER)
 		{
 			SPAWNER.SpawnBeholders(std::stoi(inside_node->next_sibling()->value()));
 		}
-		else if (std::stoi(inside_node->value()) == 5)
+		else if (std::stoi(inside_node->value()) == AMOEBA)
 		{
 			SPAWNER.SpawnAmoeba();
 		}
-		else if (std::stoi(inside_node->value()) == 6)
+		else if (std::stoi(inside_node->value()) == WHALE)
 		{
 			SPAWNER.SpawnWhales(std::stoi(inside_node->next_sibling()->value()));
 		}
-		else if (std::stoi(inside_node->value()) == 7)
+		else if (std::stoi(inside_node->value()) == CHOMPER)
 		{
 			SPAWNER.SpawnChompers();
 		}
-		else if (std::stoi(inside_node->value()) == 8)
+		else if (std::stoi(inside_node->value()) == CIRCLER)
 		{
 			SPAWNER.SpawnCircler();
 		}

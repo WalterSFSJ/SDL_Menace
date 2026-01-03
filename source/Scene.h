@@ -89,7 +89,14 @@ public:
 							WM->EnemyDied();
 						}
 					}
-					
+					else if (dynamic_cast<Ship*>(_objects[i]) && dynamic_cast<Projectile*>(_objects[j]))
+					{
+						if (dynamic_cast<Projectile*>(_objects[j])->IsKillable(_objects[i]))
+						{
+							dynamic_cast<Ship*>(_objects[i])->GetHurt();
+							_objects[j]->Destroy();
+						}						
+					}
 				}
 			}
 		}
