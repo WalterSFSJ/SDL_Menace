@@ -1,12 +1,14 @@
 #pragma once
 #include "ImageObject.h"
+#include "IDamageable.h"
 #include "RenderManager.h"
 #include "InputManager.h"
 
 
-#define OUTOFBOUNDS 350
+#define OUTOFBOUNDSX 450
+#define OUTOFBOUNDSY 50
 
-class Enemy : public ImageObject
+class Enemy : public ImageObject, public IDamageable
 {
 public:
 	float speed = 20.0f;
@@ -31,26 +33,32 @@ public:
 		return score;
 	}
 
-	void MoveHorizontallyTo(Vector2 targetPos) {
+	virtual void GetHurt() override{
 		
-		//while _transform->position != target pos {  /%*   }
-	}
+		IDamageable::GetHurt();
 
-	void Update() {
-	
-		/*_transform->rotation += 0.04f;
-
-		float rad = _transform->rotation * (3.14f / 180.0f);
-
-		_transform->position.x += cos(rad) / 10;
-		_transform->position.y += sin(rad) / 10;*/
-
-		if (_transform->position.x < -OUTOFBOUNDS)
+		if (Dead())
 		{
 			Destroy();
 		}
+	}
 
+
+	void Update() {
+
+		if (_transform->position.x < -OUTOFBOUNDSX)
+		{
+			GetHurt();
+		}
+		else if (_transform->position.y < -OUTOFBOUNDSY) {
+			GetHurt();
+		}
+		else if (_transform->position.y > RM->WINDOW_HEIGHT + OUTOFBOUNDSY) {
+			GetHurt();
+		}
 		
+		
+
 		Object::Update();
 	}
 };

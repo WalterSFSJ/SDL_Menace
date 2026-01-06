@@ -16,7 +16,8 @@ enum EnemyType {
 	AMOEBA = 5,
 	WHALE = 6,
 	CHOMPER = 7,
-	CIRCLER = 8
+	CIRCLER = 8,
+	BIOTITAN = 9
 };
 
 class WaveManager
@@ -58,7 +59,7 @@ public:
 		{
 			SPAWNER.SpawnBubbles(std::stoi(inside_node->next_sibling()->value()));						
 		}
-		else if (std::stoi(inside_node->value()) == HORIZONTALMED)
+  		else if (std::stoi(inside_node->value()) == HORIZONTALMED)
 		{
 			SPAWNER.SpawnHorizontalMedusas(std::stoi(inside_node->next_sibling()->value()));
 		}
@@ -85,6 +86,10 @@ public:
 		else if (std::stoi(inside_node->value()) == CIRCLER)
 		{
 			SPAWNER.SpawnCircler();
+		}
+		else if (std::stoi(inside_node->value()) == BIOTITAN)
+		{
+			SPAWNER.SpawnBiotitan();
 		}
 
 		

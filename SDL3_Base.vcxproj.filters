@@ -78,5 +78,7 @@
     <ClInclude Include="source\ShotTorrets.h" />
     <ClInclude Include="source\HUD.h" />
     <ClInclude Include="source\WaveManager.h" />
+    <ClInclude Include="source\Boss.h" />
+    <ClInclude Include="source\IDamageable.h" />
   </ItemGroup>
 </Project>

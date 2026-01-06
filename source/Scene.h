@@ -84,9 +84,11 @@ public:
 						if (dynamic_cast<Projectile*>(_objects[j])->IsKillable(_objects[i]))
 						{
 							score += dynamic_cast<Enemy*>(_objects[i])->GiveScore();
-							_objects[i]->Destroy();
-							_objects[j]->Destroy();							
-							WM->EnemyDied();
+							dynamic_cast<Enemy*>(_objects[i])->GetHurt();
+							_objects[j]->Destroy();			
+
+							if(dynamic_cast<Enemy*>(_objects[i])->Dead())
+								WM->EnemyDied();
 						}
 					}
 					else if (dynamic_cast<Ship*>(_objects[i]) && dynamic_cast<Projectile*>(_objects[j]))
@@ -94,7 +96,9 @@ public:
 						if (dynamic_cast<Projectile*>(_objects[j])->IsKillable(_objects[i]))
 						{
 							dynamic_cast<Ship*>(_objects[i])->GetHurt();
-							_objects[j]->Destroy();
+							
+							dynamic_cast<Enemy*>(_objects[j])->GetHurt();
+
 						}						
 					}
 				}
