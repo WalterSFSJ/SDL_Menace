@@ -21,6 +21,7 @@
     <ClCompile Include="source\TestObject.cpp" />
     <ClCompile Include="source\Circler.cpp" />
     <ClCompile Include="source\Turrets.cpp" />
+    <ClCompile Include="source\BioTitan.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\AABB.h" />

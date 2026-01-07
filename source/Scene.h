@@ -97,7 +97,7 @@ public:
 						{
 							dynamic_cast<Ship*>(_objects[i])->GetHurt();
 							
-							dynamic_cast<Enemy*>(_objects[j])->GetHurt();
+							_objects[j]->Destroy();
 
 						}						
 					}

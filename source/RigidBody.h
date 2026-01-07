@@ -41,5 +41,11 @@ public:
 	bool CheckOverlappingPoint(Vector2 point);
 	
 	void Update(float dt);
-
+	AABB* GiveCollider(int i) {
+		if (_colliders.size() > i)
+		{
+			return _colliders[i];
+		}
+		return nullptr;
+	}
 };

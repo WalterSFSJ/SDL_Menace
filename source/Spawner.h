@@ -126,15 +126,10 @@ public:
 
 	void SpawnBiotitan() {
 
-		Biotitan* bio = new Biotitan();
+		
 
-		SpawnObject(bio);
-		for (int i = 0; i < 7; i++)
-		{
-			Projectile* cp = new Projectile();
-			circler->BindProjectile(cp);
-			SpawnObject(cp);
-		}
+		SpawnObject(new Biotitan());
+		
 	}
 
 
