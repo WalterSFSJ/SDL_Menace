@@ -27,7 +27,7 @@ public:
 
 		speed = 10.0f;
 		health = 3;
-	 }
+	}
 	void GetHurt();
 	void Update();
 	void Shoot();		
