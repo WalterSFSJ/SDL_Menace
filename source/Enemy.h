@@ -3,6 +3,7 @@
 #include "IDamageable.h"
 #include "RenderManager.h"
 #include "InputManager.h"
+#include "EnemyStateManager.h"
 
 
 #define OUTOFBOUNDSX 450
