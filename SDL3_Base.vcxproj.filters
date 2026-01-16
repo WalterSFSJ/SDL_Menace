@@ -81,5 +81,10 @@
     <ClInclude Include="source\WaveManager.h" />
     <ClInclude Include="source\Boss.h" />
     <ClInclude Include="source\IDamageable.h" />
+    <ClInclude Include="source\EnemyState.h" />
+    <ClInclude Include="source\EnemyStateManager.h" />
+    <ClInclude Include="source\LinearMovementState.h" />
+    <ClInclude Include="source\Idle.h" />
+    <ClInclude Include="source\WaveMovementState.h" />
   </ItemGroup>
 </Project>

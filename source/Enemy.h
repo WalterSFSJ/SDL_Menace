@@ -6,11 +6,14 @@
 #include "EnemyStateManager.h"
 
 
-#define OUTOFBOUNDSX 450
+#define OUTOFBOUNDSX 150
 #define OUTOFBOUNDSY 50
 
 class Enemy : public ImageObject, public IDamageable
 {
+protected:
+	EnemyStateManager esm;
+
 public:
 	float speed = 20.0f;
 	Vector2 targetPosition;
@@ -27,6 +30,8 @@ public:
 		physics->SetAngularDrag(2.f);
 
 		score = 100;
+
+		esm = EnemyStateManager(_transform);
 	 }
 
 	int GiveScore() {
@@ -57,7 +62,9 @@ public:
 		else if (_transform->position.y > RM->WINDOW_HEIGHT + OUTOFBOUNDSY) {
 			GetHurt();
 		}
-		
+		else if (_transform->position.x > RM->WINDOW_WIDTH + OUTOFBOUNDSX) {
+			GetHurt();
+		}
 		
 
 		Object::Update();

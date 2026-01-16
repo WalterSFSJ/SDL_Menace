@@ -3,31 +3,30 @@
 #include "TimeManager.h"
 
 
-class WaveMovementState : EnemyState
+class WaveMovementState : public EnemyState
 {
 private:
 	float time;
 	bool isFinished;
 
 	float speedY = 8.0f;
-	int upDown = 1;
+	int upDown;
 	
 public:
 	
 	
 	
-	WaveMovementState()
+	WaveMovementState(Transform* t, int i)
+		: EnemyState(t)
 	{
+		upDown = i;
 		time = 0.0f;
 		isFinished = false;
 	}
 
-	void Finish() {
 	
 
-	}
-
-	void Update() {
+	virtual void Update() override {
 	
 		if (tr->rotation > 75)
 		{
@@ -44,6 +43,8 @@ public:
 
 		tr->position.x += cos(rad) / 4 * 10;
 		tr->position.y += sin(rad) * speedY;
+
+		
 	}
 	
 };

@@ -3,34 +3,36 @@
 #include "TimeManager.h"
 
 
-class Idle : EnemyState
+class Idle : public EnemyState
 {
 private:
-	float time;
-	bool isFinished;
+	float time = 0.0f;
+	float pauseTime;
+	
 
 public:
 	
 	
 	
-	Idle()
+	Idle(Transform* _tr, float _pauseTime)
+		: EnemyState(_tr)
 	{
 		time = 0.0f;
-		isFinished = false;
+		pauseTime = _pauseTime;
 	}
 
-	void Finish() {
+	
 	
 
-	}
+	
 
 	void Update() {
 	
 		time += TIME.GetDeltaTime();
 
-		if (time > 2.0f)
+		if (time > pauseTime)
 		{
-			isFinished = true;
+			Finish();
 		}
 	}
 	

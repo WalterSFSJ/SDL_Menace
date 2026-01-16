@@ -55,10 +55,15 @@ public:
 	}
 	void SpawnWhales(int maxEnemies) {
 
-		for (int i = 0; i < maxEnemies; i += 2)
+		float pauseTime = 1.5f;
+
+		for (int i = 0; i < maxEnemies; i ++)
 		{
-			SpawnObject(new KillerWhale(Vector2(RM->WINDOW_WIDTH + 600 * i, 30), 1));
-			SpawnObject(new KillerWhale(Vector2(RM->WINDOW_WIDTH + 600 * (i+1), RM->WINDOW_HEIGHT - 30), -1));
+			SpawnObject(new KillerWhale(Vector2(RM->WINDOW_WIDTH + 100, 30), 1, i * pauseTime));
+			
+			i++;
+			
+			SpawnObject(new KillerWhale(Vector2(RM->WINDOW_WIDTH + 100, RM->WINDOW_HEIGHT - 30), -1, i * pauseTime));
 		}
 
 		
