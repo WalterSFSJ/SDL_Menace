@@ -103,6 +103,10 @@ public:
 			if (dynamic_cast<Enemy*>(_objects[i]))
 				if (dynamic_cast<Enemy*>(_objects[i])->Dead())
 					WM->EnemyDied();
+
+			if (dynamic_cast<Ship*>(_objects[i]))
+				if (dynamic_cast<Ship*>(_objects[i])->IsPendingDestroy())
+					SPAWNER.SpawnObject(new Ship());
 		}
 
 		size = _ui.size();

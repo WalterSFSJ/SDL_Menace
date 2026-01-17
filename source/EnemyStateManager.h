@@ -64,4 +64,8 @@ public:
 		stateNumber++;
 	}
 
+	bool HasStates() {
+	
+		return allStates.size() > 0;
+	}
 };

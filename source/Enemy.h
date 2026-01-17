@@ -73,7 +73,8 @@ public:
 			GetHurt();
 		}
 		
-		esm->Update();
+		if (esm->HasStates())
+			esm->Update();
 
 
 		Object::Update();
