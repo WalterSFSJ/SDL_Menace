@@ -2,35 +2,88 @@
 #include "ImageObject.h"
 #include "RenderManager.h"
 #include "InputManager.h"
+#include "Ship.h"
 
 #define OUTOFBOUNDS 350
 
 class PowerUp : public ImageObject
 {
 public:
-	float speed = 20.0f;
-	Vector2 targetPosition;
-	int is_powerUp;
+	float speed = 10;
+	int lvl = 0;
+	const int maxLevel = 5;
+	int currentHits = 0;
+	const int maxHits = 6;
 
-	PowerUp(Vector2 spawnPos, std::string pngPath, Vector2 imageSize)
-		: ImageObject(pngPath, Vector2(0.f, 0.f), imageSize)
+	std::vector<Renderer*> renderers;
+
+	PowerUp()
+		: ImageObject("resources/xd.png", Vector2(128, 0), Vector2(128, 64))
 	{
-		_transform->position = spawnPos;
-		_transform->scale = Vector2(1.5f, 1.5f);
-
-
-		physics->SetLinearDrag(0.1f);
-		physics->SetAngularDrag(2.f);
+		for (int i = 0; i < maxLevel; i++)
+		{
+			//WE CONSIDER SPRITES ARE ARRANGED IN A LINE AND ARE 128x64
+			renderers.push_back(new ImageRenderer(this->_transform, "resources/xd.png", Vector2(128 * i, 0), Vector2(128 * maxLevel, 64));
+		}
+		delete _renderer;
+		_renderer = renderers[lvl];
 	}
 
-	void MoveHorizontallyTo(Vector2 targetPos) {
+	void AddHit() {
+		if (lvl == maxLevel)
+			return;
+		currentHits++;
+		if (currentHits == maxHits) {
+			//UPDATE SPRITE ACCORING TO LEVEL
+			_renderer = renderers[++lvl];
+			currentHits = 0;
+		}
+	}
+
+	~PowerUp() {
+		for (Renderer* r : renderers)
+			delete r;
+	}
+
+public:
+	void OnCollisionEnter(Object* other) {
+		if (Ship* player = dynamic_cast<Ship*>(other)) {
+			switch (lvl) {
+			case 0:
+				//Add score
+				
+				break;
+			case 1:
+				player->AddLaser();
+				break;
+			case 2:
+				player->AddCannon();
+				break;
+			case 3:
+				player->Heal();
+				break;
+			case 4:
+				player->AddTurrets();
+				break;
+			case 5:
+				player->AddSpeed();
+				break;
+			}
+		}
+		else if (Projectile* bullet = dynamic_cast<Projectile*>(other)) {
+			bullet->Destroy();
+			AddHit();
+		}
+	}
+
+	void MoveHorizontallyTo() {
 
 		_transform->position.x -= speed / 4;
 	}
 
 	void Update()
 	{
-		MoveHorizontallyTo(targetPosition);
+		MoveHorizontallyTo();
 		if (_transform->position.x < -OUTOFBOUNDS)
 		{
 			Destroy();
@@ -38,32 +91,4 @@ public:
 
 		Object::Update();
 	}
-
-	void Change(Vector2 position)
-	{
-		switch (is_powerUp)
-		{
-		case 1:
-			
-			break;
-		case 2:
-			
-			break;
-		case 3:
-			
-			break;
-		case 4:
-			
-			break;
-
-		default:
-		}
-	}
-	virtual void PowerUpEfect() = 0;
-
-	Vector2 GetPosition()
-	{
-		return _transform->position;
-	}
 };
-

@@ -9,7 +9,20 @@ void Ship::Update()
 
 void Ship::Shoot() {
 	if (IM->GetEvent(SDLK_SPACE, UP))
+	{
 		SPAWNER.SpawnObject(new Projectile(_transform->position, this, 18, 1));
+		if (addCannon == true)
+		{
+			SPAWNER.SpawnObject(new Projectile(_transform->position, this, 18, 3));
+			SPAWNER.SpawnObject(new Projectile(_transform->position, this, 18, 4));
+		}
+
+		if (addLaser == true)
+		{
+			SPAWNER.SpawnObject(new Projectile(_transform->position, this, 18, -2));
+		}
+		
+	}
 }
 
 void Ship::GetHurt() {

@@ -4,15 +4,21 @@
 #include "InputManager.h"
 #include "Spawner.h"
 #include "Projectile.h"
+#include "PowerUp.h"
 class Ship : public ImageObject
 {
 private:
 	float speed;
 	int health;
 
+	bool addLaser;
+	bool addCannon;
+
 	void ListenInput();
 
 public:
+	
+
 	Ship()
 		: ImageObject("resources/images/ship.png", Vector2(0.f, 0.f), Vector2(433.f, 409.f))
 	{
@@ -27,8 +33,15 @@ public:
 
 		speed = 10.0f;
 		health = 3;
+		addLaser = false;
+		addCannon = false;
 	}
 	void GetHurt();
 	void Update();
-	void Shoot();		
+	void Shoot();	
+	void AddLaser() { addLaser = true; }
+	void AddCannon() { addCannon = true; }
+	void Heal() { health = 3; }
+	void AddTurrets();
+	void AddSpeed() { speed++; }
 };
