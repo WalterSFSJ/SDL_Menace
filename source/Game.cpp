@@ -42,7 +42,7 @@ void Game::Init()
 	RM->LoadTexture("resources/images/circle.png");
 	RM->LoadTexture("resources/images/button.png");
 	RM->LoadTexture("resources/images/button_1.png");
-	RM->LoadTexture("resources/images/Score.png");
+	RM->LoadTexture("resources/images/score.png");
 
 
 	AM->LoadSoundData("resources/audio/music/froggerSong.wav");

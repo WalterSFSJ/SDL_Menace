@@ -18,13 +18,13 @@ public:
 	std::vector<Renderer*> renderers;
 
 	PowerUp()
-		: ImageObject("resources/images/xd.png", Vector2(128, 0), Vector2(128, 26))
+		: ImageObject("resources/images/score.png", Vector2(0, 0), Vector2(512.0f, 512.0f))
 	{
 		_transform->position = Vector2(300, 300);
 		for (int i = 0; i < maxLevel; i++)
 		{
 			//WE CONSIDER SPRITES ARE ARRANGED IN A LINE AND ARE 128x64
-			renderers.push_back(new ImageRenderer(this->_transform, "resources/images/xd.png", Vector2(128 * i, 0), Vector2(128 * maxLevel, 64)));
+			renderers.push_back(new ImageRenderer(this->_transform, "resources/images/score.png", Vector2(0, 0), Vector2(512.0f, 512.0f)));
 		}
 		delete _renderer;
 		_renderer = renderers[lvl];
