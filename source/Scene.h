@@ -5,6 +5,7 @@
 #include "Projectile.h"
 #include <vector>
 #include "WaveManager.h"
+#include "PowerUp.h"
 class Scene
 {
 
@@ -87,6 +88,7 @@ public:
 							_objects[i]->Destroy();
 							_objects[j]->Destroy();							
 							WM->EnemyDied();
+							SPAWNER.SpawnObject(new PowerUp());
 						}
 					}
 					else if (dynamic_cast<Ship*>(_objects[i]) && dynamic_cast<Projectile*>(_objects[j]))
@@ -96,6 +98,24 @@ public:
 							dynamic_cast<Ship*>(_objects[i])->GetHurt();
 							_objects[j]->Destroy();
 						}						
+					}
+					else if (dynamic_cast<Ship*>(_objects[i]) && dynamic_cast<PowerUp*>(_objects[j]))
+					{
+						dynamic_cast<PowerUp*>(_objects[j])->OnCollisionEnter(_objects[i]);
+						_objects[j]->Destroy();
+					}
+					else if (dynamic_cast<PowerUp*>(_objects[i]) && dynamic_cast<Ship*>(_objects[j]))
+					{
+						dynamic_cast<PowerUp*>(_objects[i])->OnCollisionEnter(_objects[j]);
+						_objects[j]->Destroy();
+					}
+					else if (dynamic_cast<Projectile*>(_objects[i]) && dynamic_cast<PowerUp*>(_objects[j]))
+					{
+						dynamic_cast<PowerUp*>(_objects[j])->OnCollisionEnter(_objects[i]);
+					}
+					else if (dynamic_cast<PowerUp*>(_objects[i]) && dynamic_cast<Projectile*>(_objects[j]))
+					{
+						dynamic_cast<PowerUp*>(_objects[i])->OnCollisionEnter(_objects[j]);
 					}
 				}
 			}

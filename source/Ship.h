@@ -41,6 +41,6 @@ public:
 	void AddLaser() { addLaser = true; }
 	void AddCannon() { addCannon = true; }
 	void Heal() { health = 3; }
-	void AddTurrets();
+	void AddTurrets() {};
 	void AddSpeed() { speed++; }
 };
