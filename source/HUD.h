@@ -24,7 +24,13 @@ public:
 
     ~HUD() {
         delete _score;
+        _score = nullptr;
+
         delete _scoreValue;
+        _scoreValue = nullptr;
+
+        delete(_lifeTexture);
+        _lifeTexture = nullptr;
     }
 
     void UpdateScore(int newScore) {

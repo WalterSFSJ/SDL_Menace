@@ -8,7 +8,7 @@
 class Biotitan : public Boss
 {
 private:
-	std::vector<Projectile*> allProjectiles;
+	
 	float shootingTime = 3.0f; 
 	float currentTime = 0.0f;
 

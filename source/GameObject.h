@@ -12,6 +12,7 @@ protected:
 	SDL_FRect _destinationRect;
 
 public:
+	~GameObject();
 	GameObject(std::string texturePath, SDL_Renderer* renderer);
 	void SetPosition(Vector2 position);
 	Vector2 GetPosition() const {

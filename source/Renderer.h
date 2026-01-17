@@ -22,7 +22,8 @@ public:
 		_resourcePath = texturePath;
 	}
 
-	~Renderer() {}
+	~Renderer() {
+	}
 
 	virtual void Update(float dt) = 0;
 	virtual void Render() = 0;

@@ -12,9 +12,7 @@ private:
 
 public:
 	
-	~Idle() {
-	
-	}
+	~Idle() {}
 	
 	Idle(Transform* _tr, float _pauseTime)
 		: EnemyState(_tr)

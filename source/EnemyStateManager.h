@@ -21,7 +21,6 @@ public:
 		for (EnemyState* es : allStates)
 		{
 			delete(es);
-			es = nullptr;
 		}
 
 		delete(currentState);
@@ -64,4 +63,8 @@ public:
 		stateNumber++;
 	}
 
+	bool HasStates() {
+	
+		return allStates.size() > 0;
+	}
 };

@@ -11,9 +11,7 @@ private:
 
 public:
 	
-	~GoRightState() {
-	
-	}
+	~GoRightState() {}
 	
 	GoRightState(float _pps, Transform* t)
 		: EnemyState(t)

@@ -14,6 +14,20 @@ Game::Game() {
 	_gameObjects.clear();
 }
 
+Game::~Game() {
+	
+	delete(_window);
+	_window = nullptr;
+
+	delete(_renderer);
+	_renderer = nullptr;
+
+	for (Object* o : _gameObjects)
+	{
+		delete(o);
+	}
+}
+
 void Game::Init()
 {
 

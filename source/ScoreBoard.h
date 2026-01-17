@@ -10,6 +10,13 @@ public:
 	ScoreBoard() = default;
 	Button* exitButton;
 
+
+	~ScoreBoard() {
+	
+		delete(exitButton);
+		exitButton = nullptr;
+	}
+
 	void OnEnter() {
 	
 		exitButton = new Button([]() { SM.SetNextScene("MainMenu"); }, Vector2(100, 100));

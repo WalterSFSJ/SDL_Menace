@@ -11,6 +11,8 @@ public:
 	{
 
 	}
+	
+	~PowerUp() {}
 
 	virtual void Update() = 0;
 	virtual bool PlayerColicion() = 0;
