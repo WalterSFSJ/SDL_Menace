@@ -5,6 +5,7 @@
 #include "Projectile.h"
 #include <vector>
 #include "WaveManager.h"
+#include "PowerUp.h"
 class Scene
 {
 
@@ -59,7 +60,6 @@ public:
 				_objects.erase(_objects.begin() + i);
 			}
 		}
-	
 
 		for (int i = _ui.size() - 1; i >= 0; i--) {
 			if (_ui[i]->IsPendingDestroy()) {
@@ -82,9 +82,57 @@ public:
 
 
 
-		// 3) Comprovar col·lisions i si es mort
+		// 3) Comprovar colï¿½lisions i si es mort
 		int size = _objects.size();
-		
+		for (int i = 0; i < size; i++) {
+			for (int j = i + 1; j < _objects.size(); j++) {
+				if (_objects[i]->GetRigidBody()->CheckCollision(_objects[j]->GetRigidBody())) {					
+					if ( dynamic_cast<Ship*>(_objects[i])  && dynamic_cast<Enemy*>(_objects[j]))
+					{
+						dynamic_cast<Ship*>(_objects[i])->GetHurt();						
+						_objects[j]->Destroy();
+						WM->EnemyDied();
+					}
+					else if ( dynamic_cast<Enemy*>(_objects[i])  && dynamic_cast<Projectile*>(_objects[j]))
+					{
+						if (dynamic_cast<Projectile*>(_objects[j])->IsKillable(_objects[i]))
+						{
+							score += dynamic_cast<Enemy*>(_objects[i])->GiveScore();
+							_objects[i]->Destroy();
+							_objects[j]->Destroy();							
+							WM->EnemyDied();
+							SPAWNER.SpawnObject(new PowerUp());
+						}
+					}
+					else if (dynamic_cast<Ship*>(_objects[i]) && dynamic_cast<Projectile*>(_objects[j]))
+					{
+						if (dynamic_cast<Projectile*>(_objects[j])->IsKillable(_objects[i]))
+						{
+							dynamic_cast<Ship*>(_objects[i])->GetHurt();
+							_objects[j]->Destroy();
+						}						
+					}
+					else if (dynamic_cast<Ship*>(_objects[i]) && dynamic_cast<PowerUp*>(_objects[j]))
+					{
+						dynamic_cast<PowerUp*>(_objects[j])->OnCollisionEnter(_objects[i]);
+						_objects[j]->Destroy();
+					}
+					else if (dynamic_cast<PowerUp*>(_objects[i]) && dynamic_cast<Ship*>(_objects[j]))
+					{
+						dynamic_cast<PowerUp*>(_objects[i])->OnCollisionEnter(_objects[j]);
+						_objects[j]->Destroy();
+					}
+					else if (dynamic_cast<Projectile*>(_objects[i]) && dynamic_cast<PowerUp*>(_objects[j]))
+					{
+						dynamic_cast<PowerUp*>(_objects[j])->OnCollisionEnter(_objects[i]);
+					}
+					else if (dynamic_cast<PowerUp*>(_objects[i]) && dynamic_cast<Projectile*>(_objects[j]))
+					{
+						dynamic_cast<PowerUp*>(_objects[i])->OnCollisionEnter(_objects[j]);
+					}
+				}
+			}
+		}
 
 		size = _ui.size();
 		for (int i = 0; i < size; i++) {
