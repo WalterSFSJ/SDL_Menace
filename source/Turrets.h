@@ -1,13 +1,8 @@
 #pragma once
 #include "PowerUp.h"
 
-class Turrets : public PowerUp
+class Turrets
 {
 public:
-    Turrets() {}
-
-    void Update() override;
-    bool PlayerColicion() override; 
-    void Change() override;
-    void PowerUpEfect() override;
+    void PowerUpEfect();
 };

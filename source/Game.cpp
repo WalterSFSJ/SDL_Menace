@@ -42,6 +42,12 @@ void Game::Init()
 	RM->LoadTexture("resources/images/circle.png");
 	RM->LoadTexture("resources/images/button.png");
 	RM->LoadTexture("resources/images/button_1.png");
+	RM->LoadTexture("resources/images/score.png");
+	RM->LoadTexture("resources/images/healt.png");
+	RM->LoadTexture("resources/images/canon.png");
+	RM->LoadTexture("resources/images/speed.png");
+	RM->LoadTexture("resources/images/laser.png");
+	RM->LoadTexture("resources/images/torrets.png");
 
 
 	AM->LoadSoundData("resources/audio/music/froggerSong.wav");
