@@ -6,7 +6,7 @@ void Biotitan::Shoot() {
 
 	if (currentTime < shootingTime)
 		return;
-	int projectiles = rand() % 4 + 5;
+	int projectiles = rand() % 5 + 3;
 
 	for (int i = 0; i < projectiles; i++)
 	{
