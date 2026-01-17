@@ -27,6 +27,8 @@ public:
 	
 		delete(scoreText);
 		scoreText = nullptr;		
+
+		
 	}
 
 	void OnEnter() override {
@@ -100,18 +102,25 @@ public:
 					lives--;
 				}
 				else if (lives <= 0)
-					SM.SetNextScene("MainMenu");
+					End();
 			}
 
 			if (dynamic_cast<Biotitan*>(_objects[i])) {
 				if (dynamic_cast<Biotitan*>(_objects[i])->IsPendingDestroy()) {
-					AM->HaltAudio();
-					SM.SetNextScene("MainMenu");
+					End();
 				}
 			}
 		}
 
 		scoreText->SetText(std::to_string(score)); 
+	}
+
+	void End() {
+	
+		score = 0;
+		AM->HaltAudio();
+		SM.SetNextScene("MainMenu");
+		WM->Reset();
 	}
 
 	void Render() override { Scene::Render(); }

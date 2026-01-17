@@ -30,6 +30,11 @@ public:
 		
 	}
 
+	void Reset() {
+
+		waveNumber = 0;
+	}
+
 	void ReadNextWave() {
 
 		rapidxml::xml_document<> doc;
