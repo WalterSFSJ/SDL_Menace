@@ -46,7 +46,6 @@ public:
 				_objects.erase(_objects.begin() + i);
 			}
 		}
-	
 
 		for (int i = _ui.size() - 1; i >= 0; i--) {
 			if (_ui[i]->IsPendingDestroy()) {

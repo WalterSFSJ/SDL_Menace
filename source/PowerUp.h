@@ -3,17 +3,20 @@
 #include "RenderManager.h"
 #include "InputManager.h"
 #include "Ship.h"
+#include "Scene.h"
 
 #define OUTOFBOUNDS 350
 
 class PowerUp : public ImageObject
 {
 public:
+	int score = 100;
 	float speed = 10;
 	int lvl = 0;
 	const int maxLevel = 5;
 	int currentHits = 0;
 	const int maxHits = 6;
+	Scene* scene;
 
 	std::vector<Renderer*> renderers;
 
@@ -62,7 +65,6 @@ public:
 			switch (lvl) {
 			case 0:
 				//Add score
-				
 				break;
 			case 1:
 				player->AddLaser();
