@@ -4,7 +4,6 @@
 #include "InputManager.h"
 #include "Spawner.h"
 #include "Projectile.h"
-#include "PowerUp.h"
 class Ship : public ImageObject
 {
 private:

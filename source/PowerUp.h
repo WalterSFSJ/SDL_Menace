@@ -23,7 +23,7 @@ public:
 		for (int i = 0; i < maxLevel; i++)
 		{
 			//WE CONSIDER SPRITES ARE ARRANGED IN A LINE AND ARE 128x64
-			renderers.push_back(new ImageRenderer(this->_transform, "resources/xd.png", Vector2(128 * i, 0), Vector2(128 * maxLevel, 64));
+			renderers.push_back(new ImageRenderer(this->_transform, "resources/xd.png", Vector2(128 * i, 0), Vector2(128 * maxLevel, 64)));
 		}
 		delete _renderer;
 		_renderer = renderers[lvl];
