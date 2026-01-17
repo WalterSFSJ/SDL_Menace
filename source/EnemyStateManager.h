@@ -12,11 +12,22 @@ private:
 	int stateNumber = 0;
 public:
 	
-	EnemyStateManager()
-	{
-		
-	}
+
+	~EnemyStateManager() {
 	
+		delete(tr);
+		tr = nullptr;
+
+		for (EnemyState* es : allStates)
+		{
+			delete(es);
+			es = nullptr;
+		}
+
+		delete(currentState);
+		currentState = nullptr;
+	}
+
 	EnemyStateManager(Transform* _tr)		
 	{
 		tr = _tr;

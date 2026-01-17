@@ -21,6 +21,11 @@ public:
 
 	virtual void Update() {}
 	
+	~EnemyState() {
+		delete(tr);
+		tr = nullptr;
+	}
+
 	void NextState() {
 
 	}

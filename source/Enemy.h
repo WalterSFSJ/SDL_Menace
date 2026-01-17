@@ -12,12 +12,19 @@
 class Enemy : public ImageObject, public IDamageable
 {
 protected:
-	EnemyStateManager esm;
+	EnemyStateManager* esm;
 
 public:
 	float speed = 20.0f;
 	Vector2 targetPosition;
 	int score;
+
+
+	~Enemy() {
+
+		delete(esm);
+		esm = nullptr;
+	}
 
 	Enemy(Vector2 spawnPos, std::string pngPath, Vector2 imageSize)
 		: ImageObject(pngPath, Vector2(0.f, 0.f), imageSize)
@@ -31,7 +38,7 @@ public:
 
 		score = 100;
 
-		esm = EnemyStateManager(_transform);
+		esm = new EnemyStateManager(_transform);
 	 }
 
 	int GiveScore() {
@@ -66,6 +73,8 @@ public:
 			GetHurt();
 		}
 		
+		esm->Update();
+
 
 		Object::Update();
 	}

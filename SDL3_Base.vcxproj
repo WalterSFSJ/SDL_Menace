@@ -65,6 +65,7 @@
     <ClInclude Include="source\Game.h" />
     <ClInclude Include="source\GameObject.h" />
     <ClInclude Include="source\Gameplay.h" />
+    <ClInclude Include="source\GoRightState.h" />
     <ClInclude Include="source\HorizontalMedusa.h" />
     <ClInclude Include="source\HUD.h" />
     <ClInclude Include="source\IDamageable.h" />
@@ -84,6 +85,7 @@
     <ClInclude Include="source\Renderer.h" />
     <ClInclude Include="source\RenderManager.h" />
     <ClInclude Include="source\RigidBody.h" />
+    <ClInclude Include="source\Rotate.h" />
     <ClInclude Include="source\Rounds.h" />
     <ClInclude Include="source\Scene.h" />
     <ClInclude Include="source\SceneManager.h" />
