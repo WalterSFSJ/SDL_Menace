@@ -10,6 +10,12 @@ protected:
 	int _direction;
 	int _speed;
 public:
+	
+	~Projectile() {
+		delete(parent);
+		parent = nullptr;
+	}
+	
 	Projectile(Vector2 playerPos, Object* whoNotToKill, int speed, int direction)
 		: ImageObject("resources/images/projectile.png", Vector2(0.f, 0.f), Vector2(900.f, 900.f))
 	{

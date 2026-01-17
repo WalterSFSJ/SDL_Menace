@@ -19,6 +19,15 @@ public:
 	float _forwardSpeed = 150.0f;
 
 	
+	~Circler() {
+	
+		for (CirclerProjectile* o : _projectiles)
+		{
+			delete(o);
+			o = nullptr;
+		}
+	}
+
 	Circler()
 		: Enemy(Vector2(600, 110), "resources/images/circle.png", Vector2(1000.f, 1054.f))
 	{

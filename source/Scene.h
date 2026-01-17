@@ -16,6 +16,20 @@ public:
 	Scene() = default;
 	virtual void OnEnter() = 0;
 
+
+	~Scene() {
+	
+		for (Object* o : _objects) {
+		
+			delete(o);
+		}
+				
+		for (Object* o : _ui) {
+
+			delete(o);
+		}
+	}
+
 	int score = 0;
 
 	virtual void OnExit() {

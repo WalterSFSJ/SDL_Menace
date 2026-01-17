@@ -26,6 +26,15 @@ public:
 		return spawner;		
 	}
 
+	~Spawner() {
+		
+		while (!_spawnedObjects.empty())
+		{
+			delete(_spawnedObjects.front());
+			_spawnedObjects.pop();
+		}
+	}
+
 	void SpawnObject(Object* obj) { _spawnedObjects.push(obj); }
 	bool AreObjectsPendingSpawn() { return !_spawnedObjects.empty(); }
 

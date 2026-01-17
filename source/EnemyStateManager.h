@@ -21,7 +21,6 @@ public:
 		for (EnemyState* es : allStates)
 		{
 			delete(es);
-			es = nullptr;
 		}
 
 		delete(currentState);

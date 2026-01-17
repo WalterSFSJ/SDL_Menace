@@ -11,6 +11,17 @@ public:
 	Button* scoreButton;
 	Button* exitButton;
 
+	~MainMenu() {
+		delete(playButton);
+		playButton = nullptr;
+
+		delete(playButton);
+		scoreButton = nullptr;
+
+		delete(exitButton);
+		exitButton = nullptr;
+	}
+
 	void OnEnter() {
 	
 		playButton = new Button([]() { SM.SetNextScene("Gameplay"); }, Vector2(RM->WINDOW_WIDTH / 2, 100));

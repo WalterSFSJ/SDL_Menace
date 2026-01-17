@@ -14,6 +14,12 @@ GameObject::GameObject(std::string texturePath, SDL_Renderer* renderer)
 	_sourceRect = { _position.x, _position.y, (float)_texture->w, (float)_texture->h };
 }
 
+GameObject::~GameObject()
+{
+	delete(_texture);
+	_texture = nullptr;
+}
+
 void GameObject::SetPosition(Vector2 position)
 {
 	//Assignar posició

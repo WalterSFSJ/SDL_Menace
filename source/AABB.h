@@ -16,4 +16,4 @@ public:
 	
 	bool CheckOverlappingPoint(Vector2 point);
 	bool CheckOverlappingAABB(const AABB * other);
-};
+};

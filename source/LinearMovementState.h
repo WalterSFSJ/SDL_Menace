@@ -15,9 +15,7 @@ private:
 
 public:
 	
-	~LinearMovementState() {
-	
-	}
+	~LinearMovementState() {}
 	
 	
 	LinearMovementState(float _pps, Vector2 _start, Vector2 _finish, Transform* t)
