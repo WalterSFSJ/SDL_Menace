@@ -59,6 +59,8 @@ public:
 			if (threadsDone.at(i)._a)
 				i++;
 		}
+
+		shouldHaltAudio = false;
 	}
 
 	// Lee y guarda datos de un .wav a partir de su ruta
