@@ -5,7 +5,7 @@
 #include "TextObject.h"
 #include "BackGround.h"
 #include "SceneManager.h"
-
+#include "PowerUp.h"
 
 #include "AudioManager.h"
 #include "TestAnimation.h"
@@ -89,12 +89,33 @@ public:
 
 						}
 					}
+					else if (dynamic_cast<Ship*>(_objects[i]) && dynamic_cast<PowerUp*>(_objects[j]))
+					{
+						dynamic_cast<PowerUp*>(_objects[j])->OnCollisionEnter(_objects[i]);
+						_objects[j]->Destroy();
+					}
+					else if (dynamic_cast<PowerUp*>(_objects[i]) && dynamic_cast<Ship*>(_objects[j]))
+					{
+						dynamic_cast<PowerUp*>(_objects[i])->OnCollisionEnter(_objects[j]);
+						_objects[j]->Destroy();
+					}
+					else if (dynamic_cast<Projectile*>(_objects[i]) && dynamic_cast<PowerUp*>(_objects[j]))
+					{
+						dynamic_cast<PowerUp*>(_objects[j])->OnCollisionEnter(_objects[i]);
+					}
+					else if (dynamic_cast<PowerUp*>(_objects[i]) && dynamic_cast<Projectile*>(_objects[j]))
+					{
+						dynamic_cast<PowerUp*>(_objects[i])->OnCollisionEnter(_objects[j]);
+					}
 				}
 			}
 
-			if (dynamic_cast<Enemy*>(_objects[i]))
-				if (dynamic_cast<Enemy*>(_objects[i])->Dead())
+			if (dynamic_cast<Enemy*>(_objects[i])) {
+				if (dynamic_cast<Enemy*>(_objects[i])->Dead()) {
 					WM->EnemyDied();
+					SPAWNER.SpawnObject(new PowerUp());
+				}
+			}
 
 			if (dynamic_cast<Ship*>(_objects[i])){
 				if (dynamic_cast<Ship*>(_objects[i])->IsPendingDestroy() && lives <= 0) {

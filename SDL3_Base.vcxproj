@@ -21,7 +21,6 @@
   <ItemGroup>
     <ClCompile Include="source\AABB.cpp" />
     <ClCompile Include="source\BioTitan.cpp" />
-    <ClCompile Include="source\Canons.cpp" />
     <ClCompile Include="source\Circler.cpp" />
     <ClCompile Include="source\Chomper.cpp" />
     <ClCompile Include="source\Projectile.cpp" />

@@ -78,5 +78,6 @@
     <ClInclude Include="source\WaveMovementState.h" />
     <ClInclude Include="source\Rotate.h" />
     <ClInclude Include="source\GoRightState.h" />
+    <ClInclude Include="source\Laser.h" />
   </ItemGroup>
 </Project>

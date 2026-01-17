@@ -3,7 +3,7 @@
 #include "RenderManager.h"
 #include "InputManager.h"
 #include "Ship.h"
-#include "Scene.h"
+
 
 #define OUTOFBOUNDS 350
 
@@ -16,7 +16,7 @@ public:
 	const int maxLevel = 5;
 	int currentHits = 0;
 	const int maxHits = 6;
-	Scene* scene;
+	
 
 	std::vector<Renderer*> renderers;
 
@@ -43,7 +43,7 @@ public:
 		_renderer = renderers[lvl];
 	}
 	
-	~PowerUp() {}
+	
 
 	void AddHit() {
 		if (lvl == maxLevel)
@@ -58,7 +58,7 @@ public:
 
 	~PowerUp() {
 		for (Renderer* r : renderers)
-			delete r;
+			delete(r);
 	}
 
 public:
