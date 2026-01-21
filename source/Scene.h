@@ -5,7 +5,6 @@
 #include "Projectile.h"
 #include <vector>
 #include "WaveManager.h"
-#include "PowerUp.h"
 class Scene
 {
 
@@ -105,7 +104,10 @@ public:
 			u->Render();
 	}
 
-
+	void PowerUpScore(int powerUpScore)
+	{
+		score += powerUpScore;
+	}
 };
 
 
