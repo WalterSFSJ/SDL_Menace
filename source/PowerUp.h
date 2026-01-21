@@ -3,6 +3,7 @@
 #include "RenderManager.h"
 #include "InputManager.h"
 #include "Ship.h"
+#include "Scene.h"
 
 
 #define OUTOFBOUNDS 350
@@ -15,16 +16,17 @@ public:
 	int lvl = 0;
 	const int maxLevel = 5;
 	int currentHits = 0;
-	const int maxHits = 6;
-	
+	const int maxHits = 1;
+	Scene* scene;
 
 	std::vector<Renderer*> renderers;
 
-	PowerUp()
+	PowerUp(Scene* s)
 		: ImageObject("resources/images/score.png", Vector2(0, 0), Vector2(512.0f, 512.0f))
 	{
 		_transform->position = Vector2(300, 300);
 
+		this->scene = s;
 		std::vector<std::string> texturas = {
 		"resources/images/score.png", 
 		"resources/images/laser.png",
@@ -51,7 +53,7 @@ public:
 		currentHits++;
 		if (currentHits == maxHits) {
 			//UPDATE SPRITE ACCORING TO LEVEL
-			_renderer = renderers[++lvl];
+			_renderer = renderers[lvl++];
 			currentHits = 0;
 		}
 	}
@@ -67,6 +69,7 @@ public:
 			switch (lvl) {
 			case 0:
 				//Add score
+				if (scene) scene->PowerUpScore(score);
 				break;
 			case 1:
 				player->AddLaser();

@@ -113,7 +113,7 @@ public:
 			if (dynamic_cast<Enemy*>(_objects[i])) {
 				if (dynamic_cast<Enemy*>(_objects[i])->Dead()) {
 					WM->EnemyDied();
-					SPAWNER.SpawnObject(new PowerUp());
+					SPAWNER.SpawnObject(new PowerUp(this));
 				}
 			}
 
