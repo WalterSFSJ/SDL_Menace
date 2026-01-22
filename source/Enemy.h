@@ -7,7 +7,7 @@
 
 
 #define OUTOFBOUNDSX 150
-#define OUTOFBOUNDSY 50
+#define OUTOFBOUNDSY 110
 
 class Enemy : public ImageObject, public IDamageable
 {

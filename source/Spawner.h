@@ -109,7 +109,7 @@ public:
 
 		for (int i = 0; i < maxEnemies; i++)
 		{
-			Beholder* b = new Beholder(100 + i * 100);
+			Beholder* b = new Beholder(RM->WINDOW_WIDTH/3 + i * 100);
 			
 			SpawnObject(b);
 		}
