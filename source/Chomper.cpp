@@ -16,10 +16,3 @@ void Chomper::Rotate() {
 	_transform->position.y += sin(rad) * speed;
 }
 
-void Chomper::Update() {
-
-	Rotate();
-
-	Enemy::Update();
-
-}

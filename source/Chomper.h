@@ -1,6 +1,7 @@
 #pragma once
 #include "Enemy.h"
-#include "TimeManager.h"
+#include "Idle.h"
+#include "GoCirclingState.h"
 
 #define MAX 101
 #define HALF 50
@@ -22,9 +23,13 @@ public:
 		speed = 5.0f;
 		time = 0.0f;
 		maxTime = 2.0f;
+
+
+		esm->AddState(new Idle(_transform, 1.6f));
+		esm->AddState(new GoCirclingState(_transform, speed));
 	}
 
 	void Rotate();
 
-	void Update();
+	
 };

@@ -59,6 +59,7 @@
     <ClInclude Include="source\Game.h" />
     <ClInclude Include="source\GameObject.h" />
     <ClInclude Include="source\Gameplay.h" />
+    <ClInclude Include="source\GoCirclingState.h" />
     <ClInclude Include="source\GoRightState.h" />
     <ClInclude Include="source\HorizontalMedusa.h" />
     <ClInclude Include="source\HUD.h" />
