@@ -1,7 +1,8 @@
 #pragma once
 #include "Enemy.h"
 #include "TimeManager.h"
-
+#include "LinearMovementState.h"
+#include "Idle.h"
 class VerticalMedusa : public Enemy
 {
 public:
@@ -15,29 +16,19 @@ public:
 	VerticalMedusa()
 		: Enemy(Vector2(rand()% 1000 + 100, RM->WINDOW_HEIGHT), "resources/images/up.png", Vector2(1000.f, 1054.f))
 	{
-		score = 50;
-		//GetRigidBody()->SetVelocity(	Vector2(		((float)(rand() % 41) + 10), (float)0		)	);
-	}
-
-	void MoveVertical() {
-
-        
-		moveTimer += TIME.GetDeltaTime();
-
-
-        if (moveTimer < 4.0f) {
-			_transform->position.y -= moveY;
-        }
-        else if (moveTimer > 6.0f) {
-			moveTimer = 0.0f;
-		}
-	}
-
-	void Update() {
-
-		MoveVertical();
-
-		Enemy::Update();
-
+		score = 50;		
+		esm->AddState(new LinearMovementState(moveY, _transform->position, Vector2(_transform->position.x, _transform->position.y -150.0f), _transform));
+		esm->AddState(new Idle(_transform, 1.0f));
+		esm->AddState(new LinearMovementState(moveY, _transform->position, Vector2(_transform->position.x, _transform->position.y - 300.0f), _transform));
+		esm->AddState(new Idle(_transform, 1.0f));
+		esm->AddState(new LinearMovementState(moveY, _transform->position, Vector2(_transform->position.x, _transform->position.y - 450.0f), _transform));
+		esm->AddState(new Idle(_transform, 1.0f));
+		esm->AddState(new LinearMovementState(moveY, _transform->position, Vector2(_transform->position.x, _transform->position.y - 600.0f), _transform));
+		esm->AddState(new Idle(_transform, 1.0f));
+		esm->AddState(new LinearMovementState(moveY, _transform->position, Vector2(_transform->position.x, _transform->position.y - 750.0f), _transform));
+		esm->AddState(new Idle(_transform, 1.0f));
+		esm->AddState(new LinearMovementState(moveY, _transform->position, Vector2(_transform->position.x, _transform->position.y - 900.0f), _transform));
+		esm->AddState(new Idle(_transform, 1.0f));
+		esm->AddState(new LinearMovementState(moveY, _transform->position, Vector2(_transform->position.x, _transform->position.y - 1500.0f), _transform));
 	}
 };

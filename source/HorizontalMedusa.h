@@ -1,6 +1,6 @@
 #pragma once
 #include "Enemy.h"
-
+#include "LinearMovementState.h"
 class HorizontalMedusa : public Enemy
 {
 public:
@@ -12,22 +12,8 @@ public:
 	{
 
 		absoluteX = (float)(rand() % 41) + 10;
-		score = 50;		
-	}
+		score = 50;	
 
-	//absolute value between 10 and 50 and can be positive or negative 	
-	//puede aparecer en izquierda o derecha?
-	//es demasiado rápido
-	void MoveHorizontally() {
-
-		_transform->position.x -= absoluteX / 4;
-	}
-
-	void Update() {
-	
-		MoveHorizontally();
-
-		Enemy::Update();
-
+		esm->AddState(new LinearMovementState(absoluteX/4, _transform->position, Vector2(-250.0f, _transform->position.y), _transform));
 	}
 };
