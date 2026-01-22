@@ -67,6 +67,7 @@
     <ClInclude Include="source\ImageObject.h" />
     <ClInclude Include="source\ImageRenderer.h" />
     <ClInclude Include="source\InputManager.h" />
+    <ClInclude Include="source\InstantRotationState.h" />
     <ClInclude Include="source\KillerWhale.h" />
     <ClInclude Include="source\Laser.h" />
     <ClInclude Include="source\LinearMovementState.h" />

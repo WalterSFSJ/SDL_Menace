@@ -80,5 +80,6 @@
     <ClInclude Include="source\GoRightState.h" />
     <ClInclude Include="source\Laser.h" />
     <ClInclude Include="source\RandomMovementState.h" />
+    <ClInclude Include="source\InstantRotationState.h" />
   </ItemGroup>
 </Project>

@@ -1,10 +1,13 @@
 #pragma once
 #include "Enemy.h"
 #include "TimeManager.h"
+#include "LinearMovementState.h"
+#include "GoRightState.h"
+#include "InstantRotationState.h"
 
 #define MAX 101
 #define HALF 50
-#define CUSHIONSPEED 5
+
 
 class Amoeba : public Enemy
 {
@@ -25,21 +28,29 @@ public:
 		: Enemy(Vector2(300, 300), "resources/images/amoeba.png", Vector2(96.0f, 96.0f))
 	{
 		_transform->scale = Vector2(1.0f, 1.0f);
-		//GetRigidBody()->SetVelocity(	Vector2(		((float)(rand() % 41) + 10), (float)0		)	);
-		speed = 5.0f;
+		
+		speed = 4.5f;
 
 		_transform->rotation = i * 45.0f;
 		maxRotation = 360 * 2 + _transform->rotation;
 
 		time = 0.0f;
 		maxTime = 1.3f;
+
+		esm->AddState(new LinearMovementState(speed, _transform->position, Vector2(RM->WINDOW_WIDTH / 2, _transform->position.y), _transform));
+		esm->AddState(new GoRightState(speed, _transform, 1.5f));
+		esm->AddState(new InstantRotationState(_transform, 90.0f));
+		esm->AddState(new Rotate(_transform, maxRotation, 0.3f * speed,  speed));
+		esm->AddState(new InstantRotationState(_transform, 90.0f));
+		esm->AddState(new GoRightState(speed, _transform, 1.5f));
+		esm->AddState(new LinearMovementState(speed, _transform->position, Vector2(-500.0f, _transform->position.y), _transform));
 	}
 
 	void GoRight() {
 	
 		if (_transform->position.x < RM->WINDOW_WIDTH / 2) {
 			 
-			_transform->position.x += CUSHIONSPEED;
+			_transform->position.x += speed;
 			return;		
 		}
 		
@@ -48,12 +59,12 @@ public:
 
 	void Loop() {
 
-		_transform->rotation += 0.3f * CUSHIONSPEED;
+		_transform->rotation += 0.3f * speed;
 
 		float rad = _transform->rotation * (3.14f / 180.0f);
 
-		_transform->position.x += cos(rad) * CUSHIONSPEED;
-		_transform->position.y += sin(rad) * CUSHIONSPEED;
+		_transform->position.x += cos(rad) * speed;
+		_transform->position.y += sin(rad) * speed;
 
 		if (_transform->rotation > maxRotation)
 		{
@@ -100,7 +111,7 @@ public:
 		_transform->position.x -= CUSHIONSPEED;
 	}
 
-	void Update() {
+	/*void Update() {
 
 		if (returning)
 			Return();
@@ -115,7 +126,7 @@ public:
 
 
 		Enemy::Update();
-	}
+	}*/
 
 
 
