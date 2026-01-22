@@ -72,6 +72,7 @@
     <ClInclude Include="source\LinearMovementState.h" />
     <ClInclude Include="source\MainMenu.h" />
     <ClInclude Include="source\Object.h" />
+    <ClInclude Include="source\OrbitState.h" />
     <ClInclude Include="source\PowerUp.h" />
     <ClInclude Include="source\Projectile.h" />
     <ClInclude Include="source\RandomMovementState.h" />
@@ -92,6 +93,7 @@
     <ClInclude Include="source\TextRenderer.h" />
     <ClInclude Include="source\TimeManager.h" />
     <ClInclude Include="source\Transform.h" />
+    <ClInclude Include="source\TurboChainsaw.h" />
     <ClInclude Include="source\Turrets.h" />
     <ClInclude Include="source\ShotTorrets.h" />
     <ClInclude Include="source\Vector2.h" />

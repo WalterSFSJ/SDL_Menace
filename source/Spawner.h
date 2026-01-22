@@ -12,6 +12,7 @@
 #include "Circler.h"
 #include "CirclerProjectile.h"
 #include "Biotitan.h"
+#include "TurboChainsaw.h"
 
 #define SPAWNER Spawner::Instance()
 
@@ -144,6 +145,11 @@ public:
 
 		SpawnObject(new Biotitan());
 		
+	}
+
+	void SpawnTurboChainsaw()
+	{
+		SpawnObject(new TurboChainsaw(Vector2(RM->WINDOW_WIDTH + 100, RM->WINDOW_HEIGHT - 30), 100.0, 100.0, 100.0));
 	}
 
 
