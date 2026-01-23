@@ -67,6 +67,7 @@
     <ClInclude Include="source\ImageObject.h" />
     <ClInclude Include="source\ImageRenderer.h" />
     <ClInclude Include="source\InputManager.h" />
+    <ClInclude Include="source\JumpToShipState.h" />
     <ClInclude Include="source\KillerWhale.h" />
     <ClInclude Include="source\Laser.h" />
     <ClInclude Include="source\LinearMovementState.h" />
@@ -79,6 +80,7 @@
     <ClInclude Include="source\Renderer.h" />
     <ClInclude Include="source\RenderManager.h" />
     <ClInclude Include="source\RigidBody.h" />
+    <ClInclude Include="source\RoboKrabs.h" />
     <ClInclude Include="source\Rotate.h" />
     <ClInclude Include="source\Rounds.h" />
     <ClInclude Include="source\Scene.h" />
