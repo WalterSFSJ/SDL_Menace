@@ -29,7 +29,7 @@ public:
 		esm->AddState(new GoCirclingState(_transform, speed));
 	}
 
-	void Rotate();
+
 
 	
 };
