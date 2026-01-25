@@ -21,8 +21,6 @@
   <ItemGroup>
     <ClCompile Include="source\AABB.cpp" />
     <ClCompile Include="source\BioTitan.cpp" />
-    <ClCompile Include="source\Circler.cpp" />
-    <ClCompile Include="source\Chomper.cpp" />
     <ClCompile Include="source\Projectile.cpp" />
     <ClCompile Include="source\Button.cpp" />
     <ClCompile Include="source\Game.cpp" />
@@ -61,6 +59,7 @@
     <ClInclude Include="source\Game.h" />
     <ClInclude Include="source\GameObject.h" />
     <ClInclude Include="source\Gameplay.h" />
+    <ClInclude Include="source\GoCirclingState.h" />
     <ClInclude Include="source\GoRightState.h" />
     <ClInclude Include="source\HorizontalMedusa.h" />
     <ClInclude Include="source\HUD.h" />
@@ -69,7 +68,11 @@
     <ClInclude Include="source\ImageObject.h" />
     <ClInclude Include="source\ImageRenderer.h" />
     <ClInclude Include="source\InputManager.h" />
+<<<<<<< HEAD
     <ClInclude Include="source\JumpToShipState.h" />
+=======
+    <ClInclude Include="source\InstantRotationState.h" />
+>>>>>>> origin/develop
     <ClInclude Include="source\KillerWhale.h" />
     <ClInclude Include="source\Laser.h" />
     <ClInclude Include="source\LinearMovementState.h" />
@@ -92,6 +95,7 @@
     <ClInclude Include="source\ScoreBoard.h" />
     <ClInclude Include="source\Ship.h" />
     <ClInclude Include="source\Spawner.h" />
+    <ClInclude Include="source\SplashScreen.h" />
     <ClInclude Include="source\Stream.h" />
     <ClInclude Include="source\TestAnimation.h" />
     <ClInclude Include="source\TestObject.h" />

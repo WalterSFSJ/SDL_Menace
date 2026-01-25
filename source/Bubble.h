@@ -18,7 +18,7 @@ public:
 		esm->AddState(new Idle(_transform, 0.5f));
 		esm->AddState(new LinearMovementState(speed, _transform->position, Vector2(RM->WINDOW_WIDTH / 3, _transform->position.y), _transform));
 		esm->AddState(new Rotate(_transform));
-		esm->AddState(new GoRightState(speed, _transform));
+		esm->AddState(new GoRightState(speed, _transform, 10.0f));
 	}
 	
 };

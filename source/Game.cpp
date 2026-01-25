@@ -6,6 +6,7 @@
 #include "ScoreBoard.h"
 #include "SceneManager.h"
 #include "AudioManager.h"
+#include "SplashScreen.h"
 
 Game::Game() {
 	for (Object* go : _gameObjects)
@@ -42,9 +43,10 @@ void Game::Init()
 	RM->LoadTexture("resources/images/projectile.png");
 	RM->LoadTexture("resources/images/daniel.png");
 	RM->LoadTexture("resources/images/sample_spritesheet.png");
+	RM->LoadTexture("resources/images/space.png");
 	RM->LoadFont("resources/fonts/hyperspace.ttf");
 
-
+	
 
 	RM->LoadTexture("resources/images/up.png");
 	RM->LoadTexture("resources/images/horizontal.png");
@@ -70,11 +72,12 @@ void Game::Init()
 	AM->LoadSoundData("resources/audio/sfx/defeat.wav");
 
 	//Carga de escenas
+	assert(SM.AddScene("SplashScreen", new SplashScreen()));
 	assert(SM.AddScene("MainMenu", new MainMenu()));
 	assert(SM.AddScene("Gameplay", new Gameplay()));
 	assert(SM.AddScene("ScoreBoard", new ScoreBoard()));
 
-	assert(SM.InitFirstScene("MainMenu"));
+	assert(SM.InitFirstScene("SplashScreen"));
 
 	_isRunning = true;
 	

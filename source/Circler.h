@@ -2,7 +2,7 @@
 #include "Enemy.h"
 #include "TimeManager.h"
 #include "CirclerProjectile.h"
-
+#include "Rotate.h"
 #define SPD 10
 
 
@@ -13,10 +13,7 @@ private:
 	float time;
 public:
 
-	float _angle = 0.0f;
-	float _radius = 100.0f;
-	float _orbitSpeed = 5.0f;
-	float _forwardSpeed = 150.0f;
+
 
 	
 	~Circler() {
@@ -33,18 +30,10 @@ public:
 	{
 
 		time = 0.0f;
+		
+		esm->AddState(new Rotate(_transform, INFINITY, 2.0f, SPD));
 	}
 
-	void LeaveTrail();
-	
-	void Circling() {
-		_transform->rotation += 2.0f;
-
-		float rad = _transform->rotation * (3.14f / 180.0f);
-
-		_transform->position.x += cos(rad) * SPD;
-		_transform->position.y += sin(rad) * SPD;
-	}
 
 
 	void Update() {
@@ -91,9 +80,9 @@ public:
 		{
 			_projectiles[0]->Start();
 		}
-		
 
-		Circling();
+
+
 
 		Enemy::Update();
 
