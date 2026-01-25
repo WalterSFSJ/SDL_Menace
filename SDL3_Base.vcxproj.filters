@@ -80,5 +80,15 @@
     <ClInclude Include="source\GoRightState.h" />
     <ClInclude Include="source\Laser.h" />
     <ClInclude Include="source\RandomMovementState.h" />
+    <ClInclude Include="source\OrbitState.h" />
+    <ClInclude Include="source\TurboChainsaw.h" />
+    <ClInclude Include="source\RoboKrabs.h" />
+    <ClInclude Include="source\JumpToShipState.h" />
+    <ClInclude Include="source\Torpedo.h" />
+    <ClInclude Include="source\Nuke.h" />
+    <ClInclude Include="source\Missile.h" />
+    <ClInclude Include="source\Ufo.h" />
+    <ClInclude Include="source\Annoyer.h" />
+    <ClInclude Include="source\Angygons.h" />
   </ItemGroup>
 </Project>
