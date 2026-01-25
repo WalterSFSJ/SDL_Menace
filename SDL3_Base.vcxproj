@@ -21,8 +21,6 @@
   <ItemGroup>
     <ClCompile Include="source\AABB.cpp" />
     <ClCompile Include="source\BioTitan.cpp" />
-    <ClCompile Include="source\Circler.cpp" />
-    <ClCompile Include="source\Chomper.cpp" />
     <ClCompile Include="source\Projectile.cpp" />
     <ClCompile Include="source\Button.cpp" />
     <ClCompile Include="source\Game.cpp" />
@@ -87,6 +85,7 @@
     <ClInclude Include="source\ScoreBoard.h" />
     <ClInclude Include="source\Ship.h" />
     <ClInclude Include="source\Spawner.h" />
+    <ClInclude Include="source\SplashScreen.h" />
     <ClInclude Include="source\Stream.h" />
     <ClInclude Include="source\TestAnimation.h" />
     <ClInclude Include="source\TestObject.h" />

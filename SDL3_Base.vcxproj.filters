@@ -2,7 +2,6 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="source\AABB.cpp" />
-    <ClCompile Include="source\Chomper.cpp" />
     <ClCompile Include="source\Projectile.cpp" />
     <ClCompile Include="source\Button.cpp" />
     <ClCompile Include="source\Game.cpp" />
@@ -14,7 +13,6 @@
     <ClCompile Include="source\RigidBody.cpp" />
     <ClCompile Include="source\Ship.cpp" />
     <ClCompile Include="source\TestObject.cpp" />
-    <ClCompile Include="source\Circler.cpp" />
     <ClCompile Include="source\Turrets.cpp" />
     <ClCompile Include="source\BioTitan.cpp" />
   </ItemGroup>
@@ -81,5 +79,7 @@
     <ClInclude Include="source\Laser.h" />
     <ClInclude Include="source\RandomMovementState.h" />
     <ClInclude Include="source\InstantRotationState.h" />
+    <ClInclude Include="source\GoCirclingState.h" />
+    <ClInclude Include="source\SplashScreen.h" />
   </ItemGroup>
 </Project>
