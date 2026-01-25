@@ -1,6 +1,7 @@
 #pragma once
 #include "Enemy.h"
 #include "LinearMovementState.h"
+#include "Idle.h"
 
 class Ufo : public Enemy
 {
@@ -14,7 +15,7 @@ public:
         Vector2 screenCenter = Vector2(RM->WINDOW_WIDTH / 2.0f, RM->WINDOW_HEIGHT / 2.0f);
 
         esm->AddState(new LinearMovementState(fastSpeed, spawnPos, screenCenter, _transform));
-        //idle
+        esm->AddState(new Idle(_transform, 1.0f));
         esm->AddState(new LinearMovementState(fastSpeed, screenCenter, spawnPos, _transform));
     }
 

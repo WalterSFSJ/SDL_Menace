@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="source\AABB.cpp" />
+    <ClCompile Include="source\BioTitan.cpp" />
     <ClCompile Include="source\Projectile.cpp" />
     <ClCompile Include="source\Button.cpp" />
     <ClCompile Include="source\Game.cpp" />
@@ -14,85 +15,82 @@
     <ClCompile Include="source\Ship.cpp" />
     <ClCompile Include="source\TestObject.cpp" />
     <ClCompile Include="source\Turrets.cpp" />
-    <ClCompile Include="source\BioTitan.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\AABB.h" />
     <ClInclude Include="source\Amoeba.h" />
+    <ClInclude Include="source\Angygons.h" />
     <ClInclude Include="source\AnimatedImageObject.h" />
     <ClInclude Include="source\AnimatedImageRenderer.h" />
+    <ClInclude Include="source\Annoyer.h" />
     <ClInclude Include="source\AtomicWrapper.h" />
     <ClInclude Include="source\AudioManager.h" />
     <ClInclude Include="source\BackGround.h" />
     <ClInclude Include="source\Beholder.h" />
+    <ClInclude Include="source\BioTitan.h" />
+    <ClInclude Include="source\Boss.h" />
     <ClInclude Include="source\Bubble.h" />
     <ClInclude Include="source\Button.h" />
     <ClInclude Include="source\Chomper.h" />
+    <ClInclude Include="source\Circler.h" />
+    <ClInclude Include="source\CirclerProjectile.h" />
     <ClInclude Include="source\Daniel.h" />
     <ClInclude Include="source\Enemy.h" />
+    <ClInclude Include="source\EnemyState.h" />
+    <ClInclude Include="source\EnemyStateManager.h" />
     <ClInclude Include="source\Game.h" />
     <ClInclude Include="source\GameObject.h" />
     <ClInclude Include="source\Gameplay.h" />
+    <ClInclude Include="source\GoCirclingState.h" />
+    <ClInclude Include="source\GoRightState.h" />
     <ClInclude Include="source\HorizontalMedusa.h" />
+    <ClInclude Include="source\HUD.h" />
+    <ClInclude Include="source\IDamageable.h" />
+    <ClInclude Include="source\Idle.h" />
     <ClInclude Include="source\ImageObject.h" />
     <ClInclude Include="source\ImageRenderer.h" />
     <ClInclude Include="source\InputManager.h" />
+    <ClInclude Include="source\JumpToShipState.h" />
+    <ClInclude Include="source\InstantRotationState.h" />
     <ClInclude Include="source\KillerWhale.h" />
+    <ClInclude Include="source\Laser.h" />
+    <ClInclude Include="source\LinearMovementState.h" />
     <ClInclude Include="source\MainMenu.h" />
+    <ClInclude Include="source\Missile.h" />
+    <ClInclude Include="source\Nuke.h" />
     <ClInclude Include="source\Object.h" />
+    <ClInclude Include="source\OrbitState.h" />
     <ClInclude Include="source\PowerUp.h" />
     <ClInclude Include="source\Projectile.h" />
+    <ClInclude Include="source\RandomMovementState.h" />
     <ClInclude Include="source\Renderer.h" />
     <ClInclude Include="source\RenderManager.h" />
     <ClInclude Include="source\RigidBody.h" />
+    <ClInclude Include="source\RoboKrabs.h" />
+    <ClInclude Include="source\Rotate.h" />
     <ClInclude Include="source\Rounds.h" />
     <ClInclude Include="source\Scene.h" />
     <ClInclude Include="source\SceneManager.h" />
+    <ClInclude Include="source\ScoreBoard.h" />
     <ClInclude Include="source\Ship.h" />
     <ClInclude Include="source\Spawner.h" />
+    <ClInclude Include="source\SplashScreen.h" />
     <ClInclude Include="source\Stream.h" />
     <ClInclude Include="source\TestAnimation.h" />
     <ClInclude Include="source\TestObject.h" />
     <ClInclude Include="source\TextObject.h" />
     <ClInclude Include="source\TextRenderer.h" />
     <ClInclude Include="source\TimeManager.h" />
+    <ClInclude Include="source\Torpedo.h" />
     <ClInclude Include="source\Transform.h" />
-    <ClInclude Include="source\Vector2.h" />
-    <ClInclude Include="source\VerticalMedusa.h" />
-    <ClInclude Include="source\BioTitan.h" />
-    <ClInclude Include="source\Circler.h" />
-    <ClInclude Include="source\CirclerProjectile.h" />
-    <ClInclude Include="source\ScoreBoard.h" />
+    <ClInclude Include="source\TurboChainsaw.h" />
     <ClInclude Include="source\Turrets.h" />
     <ClInclude Include="source\ShotTorrets.h" />
-    <ClInclude Include="source\HUD.h" />
-    <ClInclude Include="source\WaveManager.h" />
-    <ClInclude Include="source\Boss.h" />
-    <ClInclude Include="source\IDamageable.h" />
-    <ClInclude Include="source\EnemyState.h" />
-    <ClInclude Include="source\EnemyStateManager.h" />
-    <ClInclude Include="source\LinearMovementState.h" />
-    <ClInclude Include="source\Idle.h" />
-    <ClInclude Include="source\WaveMovementState.h" />
-    <ClInclude Include="source\Rotate.h" />
-    <ClInclude Include="source\GoRightState.h" />
-    <ClInclude Include="source\Laser.h" />
-    <ClInclude Include="source\RandomMovementState.h" />
-<<<<<<< HEAD
-    <ClInclude Include="source\OrbitState.h" />
-    <ClInclude Include="source\TurboChainsaw.h" />
-    <ClInclude Include="source\RoboKrabs.h" />
-    <ClInclude Include="source\JumpToShipState.h" />
-    <ClInclude Include="source\Torpedo.h" />
-    <ClInclude Include="source\Nuke.h" />
-    <ClInclude Include="source\Missile.h" />
     <ClInclude Include="source\Ufo.h" />
-    <ClInclude Include="source\Annoyer.h" />
-    <ClInclude Include="source\Angygons.h" />
-=======
-    <ClInclude Include="source\InstantRotationState.h" />
-    <ClInclude Include="source\GoCirclingState.h" />
-    <ClInclude Include="source\SplashScreen.h" />
->>>>>>> origin/develop
+    <ClInclude Include="source\Vector2.h" />
+    <ClInclude Include="source\VerticalMedusa.h" />
+    <ClInclude Include="source\WaveManager.h" />
+    <ClInclude Include="source\WaveMovementState.h" />
+    <ClInclude Include="source\SpaceBoss.h" />
   </ItemGroup>
 </Project>

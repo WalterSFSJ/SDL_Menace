@@ -91,6 +91,7 @@
     <ClInclude Include="source\SceneManager.h" />
     <ClInclude Include="source\ScoreBoard.h" />
     <ClInclude Include="source\Ship.h" />
+    <ClInclude Include="source\SpaceBoss.h" />
     <ClInclude Include="source\Spawner.h" />
     <ClInclude Include="source\SplashScreen.h" />
     <ClInclude Include="source\Stream.h" />

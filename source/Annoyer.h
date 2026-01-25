@@ -2,6 +2,7 @@
 #include "Enemy.h"
 #include "LinearMovementState.h"
 #include "JumpToShipState.h"
+#include "Idle.h"
 
 class Annoyer : public Enemy
 {
@@ -12,7 +13,7 @@ public:
         Vector2 insideScreen = Vector2(pos.x - 200.0f, pos.y); 
 
         esm->AddState(new LinearMovementState(150.0f, pos, insideScreen, _transform));
-        //Idle
+        esm->AddState(new Idle(_transform, 1.0f));
         esm->AddState(new JumpToShipState(_transform, player));
     }
 
