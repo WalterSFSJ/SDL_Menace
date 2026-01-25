@@ -68,11 +68,8 @@
     <ClInclude Include="source\ImageObject.h" />
     <ClInclude Include="source\ImageRenderer.h" />
     <ClInclude Include="source\InputManager.h" />
-<<<<<<< HEAD
     <ClInclude Include="source\JumpToShipState.h" />
-=======
     <ClInclude Include="source\InstantRotationState.h" />
->>>>>>> origin/develop
     <ClInclude Include="source\KillerWhale.h" />
     <ClInclude Include="source\Laser.h" />
     <ClInclude Include="source\LinearMovementState.h" />
