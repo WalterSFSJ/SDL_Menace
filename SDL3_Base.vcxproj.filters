@@ -92,5 +92,6 @@
     <ClInclude Include="source\WaveManager.h" />
     <ClInclude Include="source\WaveMovementState.h" />
     <ClInclude Include="source\SpaceBoss.h" />
+    <ClInclude Include="source\ExplotionAnimation.h" />
   </ItemGroup>
 </Project>

@@ -56,6 +56,7 @@
     <ClInclude Include="source\Enemy.h" />
     <ClInclude Include="source\EnemyState.h" />
     <ClInclude Include="source\EnemyStateManager.h" />
+    <ClInclude Include="source\ExplotionAnimation.h" />
     <ClInclude Include="source\Game.h" />
     <ClInclude Include="source\GameObject.h" />
     <ClInclude Include="source\Gameplay.h" />

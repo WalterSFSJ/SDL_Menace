@@ -43,6 +43,7 @@ void Game::Init()
 	RM->LoadTexture("resources/images/projectile.png");
 	RM->LoadTexture("resources/images/daniel.png");
 	RM->LoadTexture("resources/images/sample_spritesheet.png");
+	RM->LoadTexture("resources/images/explosion.png");
 	RM->LoadTexture("resources/images/space.png");
 	RM->LoadFont("resources/fonts/hyperspace.ttf");
 

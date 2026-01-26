@@ -9,6 +9,7 @@
 
 #include "AudioManager.h"
 #include "TestAnimation.h"
+#include "ExplotionAnimation.h"
 
 
 enum GameState { GOING, PAUSED, DEAD, GAMEOVER };
@@ -60,7 +61,7 @@ public:
 		Scene::Update(); 
 		
 
-		// 3) Comprovar col·lisions i si es mort
+		// 3) Comprovar colï¿½lisions i si es mort
 		int size = _objects.size();
 		for (int i = 0; i < size; i++) {
 			for (int j = i + 1; j < _objects.size(); j++) {
@@ -113,6 +114,7 @@ public:
 			if (dynamic_cast<Enemy*>(_objects[i])) {
 				if (dynamic_cast<Enemy*>(_objects[i])->Dead()) {
 					WM->EnemyDied();
+					SPAWNER.SpawnObject(new ExplotionAnimation(_objects[i]->GetTransform()->position));
 					SPAWNER.SpawnObject(new PowerUp(this));
 				}
 			}
