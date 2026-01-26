@@ -69,6 +69,7 @@ void Game::Init()
 
 
 	AM->LoadSoundData("resources/audio/music/froggerSong.wav");
+	AM->LoadSoundData("resources/audio/music/nebula.wav");
 	AM->LoadSoundData("resources/audio/sfx/defeat.wav");
 
 	//Carga de escenas
