@@ -48,7 +48,7 @@ public:
 		scoreText = new TextObject("0", Vector2(100, 100));
 		_ui.push_back(scoreText);
 		//SPAWNER.SpawnObject(new TestAnimation());
-		AM->PlaySoundLooping("resources/audio/music/froggerSong.wav");
+		AM->PlaySoundLooping("resources/audio/music/nebula.wav");
 		//AM->PlaySoundLooping("resources/audio/sfx/defeat.wav");
 	}
 
