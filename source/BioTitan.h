@@ -3,8 +3,6 @@
 #include "TimeManager.h"
 #include "Projectile.h"
 
-
-
 class Biotitan : public Boss
 {
 private:

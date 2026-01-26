@@ -71,7 +71,6 @@
     <ClInclude Include="source\JumpToShipState.h" />
     <ClInclude Include="source\InstantRotationState.h" />
     <ClInclude Include="source\KillerWhale.h" />
-    <ClInclude Include="source\Laser.h" />
     <ClInclude Include="source\LinearMovementState.h" />
     <ClInclude Include="source\MainMenu.h" />
     <ClInclude Include="source\Missile.h" />
@@ -86,7 +85,6 @@
     <ClInclude Include="source\RigidBody.h" />
     <ClInclude Include="source\RoboKrabs.h" />
     <ClInclude Include="source\Rotate.h" />
-    <ClInclude Include="source\Rounds.h" />
     <ClInclude Include="source\Scene.h" />
     <ClInclude Include="source\SceneManager.h" />
     <ClInclude Include="source\ScoreBoard.h" />

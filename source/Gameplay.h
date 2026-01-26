@@ -36,8 +36,6 @@ public:
 
 		currentState = GOING;
 
-		//BackGround* B_one = new BackGround(Vector2(RM->WINDOW_WIDTH / 2, RM->WINDOW_HEIGHT / 2));
-
 		SPAWNER.SpawnObject(new BackGround(Vector2(RM->WINDOW_WIDTH / 2, RM->WINDOW_HEIGHT / 2)));
 		SPAWNER.SpawnObject(new BackGround(Vector2(RM->WINDOW_WIDTH + RM->WINDOW_WIDTH/2, RM->WINDOW_HEIGHT / 2)));
 		
@@ -47,9 +45,7 @@ public:
 
 		scoreText = new TextObject("0", Vector2(100, 100));
 		_ui.push_back(scoreText);
-		//SPAWNER.SpawnObject(new TestAnimation());
 		AM->PlaySoundLooping("resources/audio/music/froggerSong.wav");
-		//AM->PlaySoundLooping("resources/audio/sfx/defeat.wav");
 	}
 
 	void OnExit() override { Scene::OnExit(); }
@@ -59,8 +55,6 @@ public:
 
 		Scene::Update(); 
 		
-
-		// 3) Comprovar col·lisions i si es mort
 		int size = _objects.size();
 		for (int i = 0; i < size; i++) {
 			for (int j = i + 1; j < _objects.size(); j++) {

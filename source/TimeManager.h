@@ -10,13 +10,9 @@ class TimeManager
 private:
 	TimeManager()
 	{
-		//_deltaTime = 0.0f;
-		//_elapsedTime = (double)SDL_GetTicks() / 1000.0f;
-		//_previousElapsedTime = 0.0f;
 		_previousElapsedTime = (double)SDL_GetTicks() / 1000.0f;
 
 		_frameTime = 1.0f / (float)_FPS;
-		//_animationFrameTime = 1.0f / (float)_ANIMATION_FRAME_TIME;*/
 	}
 	~TimeManager() = default;
 
@@ -51,7 +47,6 @@ public:
 
 	void ResetDeltaTime()
 	{
-		//_deltaTime -= (float)floor(_deltaTime / _frameTime) * _frameTime;
 		_deltaTime = _deltaTime - (float)(floor(_deltaTime / _frameTime) * _frameTime);
 	}
 
