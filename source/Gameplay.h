@@ -118,11 +118,7 @@ public:
 			}
 
 			if (dynamic_cast<Ship*>(_objects[i])){
-				if (dynamic_cast<Ship*>(_objects[i])->IsPendingDestroy() && lives <= 0) {
-					SPAWNER.SpawnObject(new Ship());
-					lives--;
-				}
-				else if (lives <= 0)
+				if (dynamic_cast<Ship*>(_objects[i])->IsPendingDestroy())				
 					End();
 			}
 

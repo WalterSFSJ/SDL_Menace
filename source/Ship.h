@@ -9,9 +9,13 @@ class Ship : public ImageObject
 private:
 	float speed;
 	int health;
-
+	int maxHealth;
 	bool addLaser;
 	bool addCannon;
+
+	int lifes;
+
+	Vector2 startingPos;
 
 	void ListenInput();
 
@@ -24,16 +28,23 @@ public:
 
 		Vector2 randomPosition = Vector2(100.f, 200.f);
 		
-		_transform->position = randomPosition;
+		startingPos = randomPosition;
+
+		_transform->position = startingPos;
 		_transform->scale = Vector2(1.f, 1.f);
 
 		physics->SetLinearDrag(0.1f);
 		physics->SetAngularDrag(2.f);
 
 		speed = 10.0f;
-		health = 3;
+
+		maxHealth = 3;
+		health = maxHealth;
+
 		addLaser = false;
 		addCannon = false;
+
+		lifes = 3;
 	}
 	void GetHurt();
 	void Update();

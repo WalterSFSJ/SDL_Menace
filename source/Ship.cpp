@@ -32,7 +32,13 @@ void Ship::GetHurt() {
 		return;
 	}
 
-	Destroy();
+	lifes--;
+	health = maxHealth;
+
+	_transform->position = startingPos;
+
+	if (lifes < 0)
+		Destroy();
 }
 
 void Ship::ListenInput() {
