@@ -24,7 +24,6 @@ int main(int argc, char* argv[])
 		
 		if (TIME.ShouldUpdateGame())
 		{
-			//playing = ! Input.Listen();
 			game.Update();
 			game.Render();
 			TIME.ResetDeltaTime();

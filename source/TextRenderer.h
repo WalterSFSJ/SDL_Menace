@@ -2,8 +2,8 @@
 #include "Renderer.h"
 #include "RenderManager.h"
 
-#include <SDL3/SDL.h> // SDL_Texture *
-#include <SDL3_ttf/SDL_ttf.h> // TTF_RenderText_Solid
+#include <SDL3/SDL.h> 
+#include <SDL3_ttf/SDL_ttf.h> 
 #include <cassert>
 
 #define FONT_PATH "resources/fonts/hyperspace.ttf"
