@@ -21,7 +21,6 @@ public:
 	{
 		// Posició random en tota la finestra
 		Vector2 randomPosition = playerPos;
-		//Vector2 randomPosition = Vector2(rand() % RM->WINDOW_WIDTH, rand() % RM->WINDOW_HEIGHT);
 		_transform->position = randomPosition;
 		_transform->scale = Vector2(0.5f, 0.5f);
 

@@ -1,8 +1,4 @@
 #pragma once
-
-
-
-
 #include <SDL3/SDL_audio.h>
 #include <atomic>
 #include <vector>
