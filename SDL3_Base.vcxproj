@@ -72,6 +72,7 @@
     <ClInclude Include="source\JumpToShipState.h" />
     <ClInclude Include="source\InstantRotationState.h" />
     <ClInclude Include="source\KillerWhale.h" />
+    <ClInclude Include="source\LevelSelector.h" />
     <ClInclude Include="source\LinearMovementState.h" />
     <ClInclude Include="source\MainMenu.h" />
     <ClInclude Include="source\Missile.h" />
