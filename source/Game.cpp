@@ -7,6 +7,7 @@
 #include "SceneManager.h"
 #include "AudioManager.h"
 #include "SplashScreen.h"
+#include "LevelSelector.h"
 
 Game::Game() {
 	for (Object* go : _gameObjects)
@@ -78,6 +79,7 @@ void Game::Init()
 	assert(SM.AddScene("MainMenu", new MainMenu()));
 	assert(SM.AddScene("Gameplay", new Gameplay()));
 	assert(SM.AddScene("ScoreBoard", new ScoreBoard()));
+	SM.AddScene("LevelSelector", new LevelSelector());
 
 	assert(SM.InitFirstScene("SplashScreen"));
 

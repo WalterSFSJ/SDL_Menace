@@ -24,7 +24,7 @@ public:
 
 	void OnEnter() {
 	
-		playButton = new Button([]() { SM.SetNextScene("Gameplay"); }, Vector2(RM->WINDOW_WIDTH / 2, 100));
+		playButton = new Button([]() { SM.SetNextScene("LevelSelector"); }, Vector2(RM->WINDOW_WIDTH / 2, 100));
 		scoreButton = new Button([]() { SM.SetNextScene("ScoreBoard"); }, Vector2(RM->WINDOW_WIDTH / 2, 400));
 		TextObject* playText = new TextObject("Play", Vector2(playButton->GetPos().x + SPACE, playButton->GetPos().y + SPACE));
 		TextObject* scoreText = new TextObject("Score", Vector2(scoreButton->GetPos().x + SPACE, scoreButton->GetPos().y + SPACE));
