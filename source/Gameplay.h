@@ -18,7 +18,7 @@ class Gameplay : public Scene
 {
 private:
 	GameState currentState;
-	int lives = 2;
+
 public:
 	Gameplay() = default;
 
@@ -41,7 +41,7 @@ public:
 		SPAWNER.SpawnObject(new BackGround(Vector2(RM->WINDOW_WIDTH + RM->WINDOW_WIDTH/2, RM->WINDOW_HEIGHT / 2)));
 		
 		SPAWNER.SpawnObject(new Ship());
-		
+				
 		WM->ReadNextWave();
 
 		scoreText = new TextObject("0", Vector2(100, 100));

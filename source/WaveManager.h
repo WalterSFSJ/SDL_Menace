@@ -62,7 +62,7 @@ public:
 
 		if (std::stoi(inside_node->value()) == BUBBLE)
 		{
-			SPAWNER.SpawnBubbles(std::stoi(inside_node->next_sibling()->value()));						
+			SPAWNER.SpawnBubbles(std::stoi(inside_node->next_sibling()->value()));			
 		}
   		else if (std::stoi(inside_node->value()) == HORIZONTALMED)
 		{
