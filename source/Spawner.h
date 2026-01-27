@@ -12,6 +12,7 @@
 #include "Circler.h"
 #include "CirclerProjectile.h"
 #include "Biotitan.h"
+#include "Daniel.h"
 #include "TurboChainsaw.h"
 
 #define SPAWNER Spawner::Instance()
@@ -145,6 +146,20 @@ public:
 
 		SpawnObject(new Biotitan());
 		
+	}
+
+	void SpawnDaniels(int maxEnemies) {
+
+		float waitTime = 0.8f;
+
+		for (int i = 0; i < maxEnemies; i += 2)
+		{
+			Daniel* _dan = new Daniel(Vector2(-100.0f, RM->WINDOW_HEIGHT - 150.0f), i * waitTime);
+			Daniel* _dan2 = new Daniel(Vector2(-100.0f, 150.0f), i * waitTime);
+
+			SpawnObject(_dan);
+			SpawnObject(_dan2);
+		}
 	}
 
 	void SpawnTurboChainsaw()
