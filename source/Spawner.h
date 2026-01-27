@@ -18,6 +18,10 @@
 #include "Nuke.h"
 #include "TurboChainsaw.h"
 
+
+
+#include "Ufo.h"
+
 #define SPAWNER Spawner::Instance()
 
 class Spawner
@@ -194,6 +198,15 @@ public:
 
 	std::queue<Object*> GetSpawnedObjects() {
 		return _spawnedObjects;
+	}
+
+	void SpawnUfo(int maxEnemies)
+	{
+		
+		for (int i = 0; i < maxEnemies; i++)
+		{
+			SpawnObject(new Ufo(Vector2(RM->WINDOW_WIDTH + 100.0f, rand() % RM->WINDOW_HEIGHT)));
+		}
 	}
 
 private:
