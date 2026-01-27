@@ -13,6 +13,9 @@
 #include "CirclerProjectile.h"
 #include "Biotitan.h"
 #include "Daniel.h"
+#include "Torpedo.h"
+
+#include "Nuke.h"
 #include "TurboChainsaw.h"
 
 #define SPAWNER Spawner::Instance()
@@ -161,6 +164,27 @@ public:
 			SpawnObject(_dan2);
 		}
 	}
+
+
+	void SpawnTorpedos(int maxEnemies) {
+	
+		for (int i = 0; i < maxEnemies; i++)
+		{
+			SpawnObject(new Torpedo());
+
+		}
+	}
+	
+	void SpawnNukes(int maxEnemies) {
+	
+		for (int i = 0; i < maxEnemies; i++)
+		{
+			SpawnObject(new Nuke());
+
+		}
+	}
+	
+
 
 	void SpawnTurboChainsaw()
 	{

@@ -18,7 +18,5 @@ public:
 		esm->AddState(new LinearMovementState(absoluteX / 4, _transform->position, Vector2(-250.0f, _transform->position.y), _transform));
 	}
 
-	void Update() {
-		Enemy::Update();
-	}
+
 };
