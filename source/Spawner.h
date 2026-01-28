@@ -17,6 +17,7 @@
 
 #include "Nuke.h"
 #include "TurboChainsaw.h"
+#include "Angygons.h"
 
 
 
@@ -190,24 +191,42 @@ public:
 	
 
 
-	void SpawnTurboChainsaw()
+	void SpawnTurboChainsaw() //revisar
 	{
 		SpawnObject(new TurboChainsaw(Vector2(RM->WINDOW_WIDTH + 100, RM->WINDOW_HEIGHT - 30), 100.0, 100.0, 100.0));
 	}
 
 
-	std::queue<Object*> GetSpawnedObjects() {
-		return _spawnedObjects;
-	}
+
 
 	void SpawnUfo(int maxEnemies)
 	{
-		
+
 		for (int i = 0; i < maxEnemies; i++)
 		{
 			SpawnObject(new Ufo(Vector2(RM->WINDOW_WIDTH + 100.0f, rand() % RM->WINDOW_HEIGHT)));
 		}
 	}
+
+	void SpawnKrabs() { //quitar player de RoboKrabs 
+	
+		//SpawnObject(new RoboKrabs(Vector2(RM->WINDOW_WIDTH + 100.0f, rand() % RM->WINDOW_HEIGHT)));
+	}
+	
+
+	void SpawnAnnoyer() { //quitar player de SpawnAnnoyer 
+
+		
+	}
+
+	void SpawnAngygons() {
+		
+		SpawnObject(new Angrygons(Vector2(0, 600)));
+	}
+
+	std::queue<Object*> GetSpawnedObjects() {
+		return _spawnedObjects;
+	}	
 
 private:
 	Spawner() = default;
