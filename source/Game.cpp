@@ -98,6 +98,7 @@ void Game::CreateWindoeAndRenderer()
 {
 	if (!SDL_CreateWindowAndRenderer("Test main", 512, 512, SDL_WINDOW_RESIZABLE, &_window, &_renderer))
 		throw SDL_GetError();
+	IM->Init(_window);
 }
 
 void Game::HandleEvents()

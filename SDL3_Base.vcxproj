@@ -76,6 +76,7 @@
     <ClInclude Include="source\LinearMovementState.h" />
     <ClInclude Include="source\MainMenu.h" />
     <ClInclude Include="source\Missile.h" />
+    <ClInclude Include="source\NameInputScene.h" />
     <ClInclude Include="source\Nuke.h" />
     <ClInclude Include="source\Object.h" />
     <ClInclude Include="source\OrbitState.h" />
@@ -90,6 +91,7 @@
     <ClInclude Include="source\Scene.h" />
     <ClInclude Include="source\SceneManager.h" />
     <ClInclude Include="source\ScoreBoard.h" />
+    <ClInclude Include="source\ScoreManager.h" />
     <ClInclude Include="source\Ship.h" />
     <ClInclude Include="source\SpaceBoss.h" />
     <ClInclude Include="source\Spawner.h" />
