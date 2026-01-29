@@ -92,5 +92,7 @@
     <ClInclude Include="source\SpaceBoss.h" />
     <ClInclude Include="source\ExplotionAnimation.h" />
     <ClInclude Include="source\LevelSelector.h" />
+    <ClInclude Include="source\ScoreManager.h" />
+    <ClInclude Include="source\NameInputScene.h" />
   </ItemGroup>
 </Project>

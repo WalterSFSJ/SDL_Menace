@@ -6,6 +6,8 @@
 #include "BackGround.h"
 #include "SceneManager.h"
 #include "PowerUp.h"
+#include "ScoreManager.h"
+#include "NameInputScene.h"
 
 #include "AudioManager.h"
 #include "TestAnimation.h"
@@ -129,10 +131,19 @@ public:
 	}
 
 	void End() {
-	
-		score = 0;
+		int finalScore = score;
 		AM->HaltAudio();
-		SM.SetNextScene("MainMenu");
+
+		if (ScoreManager::Instance().IsHighScore(finalScore)) {
+
+			SM.AddScene("NameInput", new NameInputScene(finalScore));
+			SM.SetNextScene("NameInput");
+		}
+		else {
+			SM.SetNextScene("ScoreBoard");
+		}
+
+		score = 0;
 		WM->Reset();
 	}
 
