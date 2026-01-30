@@ -14,6 +14,7 @@
 #include "Biotitan.h"
 #include "Daniel.h"
 #include "Torpedo.h"
+#include "Missile.h"
 
 #include "Nuke.h"
 #include "TurboChainsaw.h"
@@ -162,8 +163,8 @@ public:
 
 		for (int i = 0; i < maxEnemies; i += 2)
 		{
-			Daniel* _dan = new Daniel(Vector2(-100.0f, RM->WINDOW_HEIGHT - 150.0f), i * waitTime);
-			Daniel* _dan2 = new Daniel(Vector2(-100.0f, 150.0f), i * waitTime);
+			Daniel* _dan = new Daniel(Vector2(-100.0f, RM->WINDOW_HEIGHT - 60.0f), i * waitTime);
+			Daniel* _dan2 = new Daniel(Vector2(-100.0f, 60.0f), i * waitTime);
 
 			SpawnObject(_dan);
 			SpawnObject(_dan2);
@@ -191,12 +192,23 @@ public:
 	
 
 
-	void SpawnTurboChainsaw() //revisar
+	void SpawnTurboChainsaw(int maxEnemies) // //revisar
 	{
-		SpawnObject(new TurboChainsaw(Vector2(RM->WINDOW_WIDTH + 100, RM->WINDOW_HEIGHT - 30), 100.0, 100.0, 100.0));
+		for (int i = 0; i < maxEnemies; i++)
+		{
+			SpawnObject(new TurboChainsaw(Vector2(RM->WINDOW_WIDTH + 100, RM->WINDOW_HEIGHT / 2), 
+				3.0f,
+				i * 0.9f));
+		}
 	}
 
-
+	void SpawnMissiles(int maxEnemies)
+	{
+		for (int i = 0; i < maxEnemies; i++)
+		{
+			SpawnObject(new Missile());
+		}
+	}
 
 
 	void SpawnUfo(int maxEnemies)

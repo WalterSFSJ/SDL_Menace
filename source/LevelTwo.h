@@ -3,7 +3,7 @@
 #include "TestObject.h"
 #include "Ship.h"
 #include "TextObject.h"
-#include "BackGround.h"
+#include "BackGroundTwo.h"
 #include "SceneManager.h"
 #include "PowerUp.h"
 #include "ScoreManager.h"
@@ -36,8 +36,8 @@ public:
 		srand(time(NULL));
 
 
-		SPAWNER.SpawnObject(new BackGround(Vector2(RM->WINDOW_WIDTH / 2, RM->WINDOW_HEIGHT / 2)));
-		SPAWNER.SpawnObject(new BackGround(Vector2(RM->WINDOW_WIDTH + RM->WINDOW_WIDTH/2, RM->WINDOW_HEIGHT / 2)));
+		SPAWNER.SpawnObject(new BackGroundTwo(Vector2(RM->WINDOW_WIDTH / 2, RM->WINDOW_HEIGHT / 2)));
+		SPAWNER.SpawnObject(new BackGroundTwo(Vector2(RM->WINDOW_WIDTH + RM->WINDOW_WIDTH/2, RM->WINDOW_HEIGHT / 2)));
 		sp = new Ship();
 		SPAWNER.SpawnObject(sp);
 				
@@ -135,14 +135,14 @@ public:
 		int finalScore = score;
 		AM->HaltAudio();
 
-		if (sp->IsAlive()) {
-		
+		//if (sp->IsAlive()) {
+		if (ScoreManager::Instance().IsHighScore(finalScore)) {
 
-			
+			SM.AddScene("NameInput", new NameInputScene(finalScore));
 			SM.SetNextScene("NameInput");
 		}
 		else {
-			SM.SetNextScene("MainMenu");
+			SM.SetNextScene("ScoreBoard");
 		}
 
 	}

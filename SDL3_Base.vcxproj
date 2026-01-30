@@ -44,6 +44,7 @@
     <ClInclude Include="source\AtomicWrapper.h" />
     <ClInclude Include="source\AudioManager.h" />
     <ClInclude Include="source\BackGround.h" />
+    <ClInclude Include="source\BackGroundTwo.h" />
     <ClInclude Include="source\Beholder.h" />
     <ClInclude Include="source\BioTitan.h" />
     <ClInclude Include="source\Boss.h" />
@@ -73,6 +74,7 @@
     <ClInclude Include="source\InstantRotationState.h" />
     <ClInclude Include="source\KillerWhale.h" />
     <ClInclude Include="source\LevelSelector.h" />
+    <ClInclude Include="source\LevelTwo.h" />
     <ClInclude Include="source\LinearMovementState.h" />
     <ClInclude Include="source\MainMenu.h" />
     <ClInclude Include="source\Missile.h" />
@@ -112,6 +114,9 @@
     <ClInclude Include="source\VerticalMedusa.h" />
     <ClInclude Include="source\WaveManager.h" />
     <ClInclude Include="source\WaveMovementState.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="resources\files\wavesFileTwo.xml" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

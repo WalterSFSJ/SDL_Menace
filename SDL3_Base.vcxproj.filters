@@ -94,5 +94,10 @@
     <ClInclude Include="source\LevelSelector.h" />
     <ClInclude Include="source\ScoreManager.h" />
     <ClInclude Include="source\NameInputScene.h" />
+    <ClInclude Include="source\LevelTwo.h" />
+    <ClInclude Include="source\BackGroundTwo.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="resources\files\wavesFileTwo.xml" />
   </ItemGroup>
 </Project>

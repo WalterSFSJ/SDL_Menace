@@ -127,23 +127,23 @@ public:
 		}
 		else if (std::stoi(inside_node->value()) == CHAINSAW)
 		{
-			SPAWNER.SpawnTurboChainsaw();
+			SPAWNER.SpawnTurboChainsaw(std::stoi(inside_node->next_sibling()->value()));
 		}
 		else if (std::stoi(inside_node->value()) == KRABS)
 		{
-			SPAWNER.SpawnBiotitan();
+			SPAWNER.SpawnKrabs();
 		}
 		else if (std::stoi(inside_node->value()) == NUKE)
 		{
-			SPAWNER.SpawnBiotitan();
+			SPAWNER.SpawnNukes(std::stoi(inside_node->next_sibling()->value()));
 		}
 		else if (std::stoi(inside_node->value()) == MISSILE)
 		{
-			SPAWNER.SpawnBiotitan();
+			SPAWNER.SpawnMissiles(std::stoi(inside_node->next_sibling()->value()));
 		}
 		else if (std::stoi(inside_node->value()) == DANIEL)
 		{
-			SPAWNER.SpawnBiotitan();
+			SPAWNER.SpawnDaniels(std::stoi(inside_node->next_sibling()->value()));
 		}
 		else if (std::stoi(inside_node->value()) == UFO)
 		{

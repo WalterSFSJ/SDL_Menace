@@ -72,6 +72,10 @@ void Game::Init()
 	RM->LoadTexture("resources/images/turboChainsaw.png");
 	RM->LoadTexture("resources/images/ufo.png");
 	RM->LoadTexture("resources/images/torpedo.png");
+	RM->LoadTexture("resources/images/chainsaw.png");
+	RM->LoadTexture("resources/images/nuke.png");
+	RM->LoadTexture("resources/images/misile.png");
+	RM->LoadTexture("resources/images/cave.png");
 
 
 	AM->LoadSoundData("resources/audio/music/froggerSong.wav");

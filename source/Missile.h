@@ -9,9 +9,9 @@ public:
 	float absoluteX;
 
 	Missile()
-		:Enemy(Vector2(RM->WINDOW_WIDTH + 100, (rand() % (RM->WINDOW_HEIGHT - 200)) + 100), "resources/images/horizontal.png", Vector2(1000.f, 1054.f))
+		:Enemy(Vector2(RM->WINDOW_WIDTH + 100, (rand() % (RM->WINDOW_HEIGHT - 200)) + 100), "resources/images/misile.png", Vector2(234.0f, 350.0f))
 	{
-
+		_transform->rotation = -90.0f;
 		absoluteX = 50;
 		score = 50;
 
