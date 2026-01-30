@@ -76,10 +76,13 @@ void Game::Init()
 	RM->LoadTexture("resources/images/nuke.png");
 	RM->LoadTexture("resources/images/misile.png");
 	RM->LoadTexture("resources/images/cave.png");
+	RM->LoadTexture("resources/images/angry.png");
 
 
 	AM->LoadSoundData("resources/audio/music/froggerSong.wav");
 	AM->LoadSoundData("resources/audio/music/nebula.wav");
+	AM->LoadSoundData("resources/audio/music/nebula.wav");
+	AM->LoadSoundData("resources/audio/music/F16.wav");
 	AM->LoadSoundData("resources/audio/sfx/defeat.wav");
 
 	//Carga de escenas

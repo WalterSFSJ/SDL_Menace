@@ -46,7 +46,7 @@ public:
 
 		scoreText = new TextObject("0", Vector2(100, 100));
 		_ui.push_back(scoreText);
-		AM->PlaySoundLooping("resources/audio/music/nebula.wav");
+		AM->PlaySoundLooping("resources/audio/music/F16.wav");
 	}
 
 	void OnExit() override { Scene::OnExit(); }

@@ -6,11 +6,11 @@ class Angrygons : public Enemy
 {
 public:
 
-    float speed = 2.0f;
+    float speed = 3.0f;
     float distance = 150.0f;
 
-    Angrygons(Vector2 pos)
-        : Enemy(pos, "resources/images/fist_0.png", Vector2(1000.f, 1054.f))
+    Angrygons(Vector2 pos, float time)
+        : Enemy(pos, "resources/images/angry.png", Vector2(800.f, 800.f))
     {
 
         Vector2 p1 = Vector2(pos.x + distance, pos.y);            // Right
@@ -34,6 +34,7 @@ public:
         Vector2 p19 = Vector2(p18.x + 500.0f, p18.y);             // Right
         
 
+        esm->AddState(new Idle(_transform, time));
         esm->AddState(new LinearMovementState(speed, pos, p1, _transform));
         esm->AddState(new LinearMovementState(speed, p1, p2, _transform));
         esm->AddState(new LinearMovementState(speed, p2, p3, _transform));

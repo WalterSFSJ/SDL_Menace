@@ -26,7 +26,8 @@ enum EnemyType {
 	DANIEL = 15,
 	UFO = 16,
 	ANNOYER = 17,
-	ANGRYGONS = 18
+	ANGRYGONS = 18,
+	SPACEBOSS = 19
 };
 
 class WaveManager
@@ -147,13 +148,17 @@ public:
 		}
 		else if (std::stoi(inside_node->value()) == UFO)
 		{
-			SPAWNER.SpawnBiotitan();
+			SPAWNER.SpawnUfo(std::stoi(inside_node->next_sibling()->value()));
 		}
 		else if (std::stoi(inside_node->value()) == ANNOYER)
 		{
 			SPAWNER.SpawnBiotitan();
 		}
 		else if (std::stoi(inside_node->value()) == ANGRYGONS)
+		{
+			SPAWNER.SpawnAngygons(std::stoi(inside_node->next_sibling()->value()));
+		}
+		else if (std::stoi(inside_node->value()) == SPACEBOSS)
 		{
 			SPAWNER.SpawnBiotitan();
 		}

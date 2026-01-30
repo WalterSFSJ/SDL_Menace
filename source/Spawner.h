@@ -231,9 +231,11 @@ public:
 		
 	}
 
-	void SpawnAngygons() {
-		
-		SpawnObject(new Angrygons(Vector2(0, 600)));
+	void SpawnAngygons(int maxEnemies) {
+		for (int i = 0; i < maxEnemies; i++)
+		{
+			SpawnObject(new Angrygons(Vector2(0, 600), 1.3f * i));
+		}
 	}
 
 	std::queue<Object*> GetSpawnedObjects() {
