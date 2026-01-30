@@ -1,12 +1,12 @@
 #pragma once
 #include "EnemyState.h"
 #include "TimeManager.h"
-#include "Ship.h"
+
 #include <cmath>
 
 class JumpToShipState : public EnemyState {
 private:
-    Ship* player;
+    Transform* player;
     float timer = 0.0f;
     float jumpDuration = 1.0f; 
     float nextJump;
@@ -17,7 +17,7 @@ private:
     Vector2 targetPos;
 
 public:
-    JumpToShipState(Transform* t, Ship* p) : EnemyState(t), player(p) {
+    JumpToShipState(Transform* t, Transform* p) : EnemyState(t), player(p) {
         SetRandomInterval();
     }
 
@@ -41,7 +41,7 @@ public:
         jumping = true;
         jumpTimer = 0.0f;
         startPos = tr->position;
-        targetPos = player->GetTransform()->position;
+        targetPos = player->position;
     }
 
     void ExecuteJump() {

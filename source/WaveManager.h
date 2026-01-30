@@ -132,7 +132,7 @@ public:
 		}
 		else if (std::stoi(inside_node->value()) == KRABS)
 		{
-			SPAWNER.SpawnKrabs();
+			SPAWNER.SpawnKrabs(std::stoi(inside_node->next_sibling()->value()));
 		}
 		else if (std::stoi(inside_node->value()) == NUKE)
 		{

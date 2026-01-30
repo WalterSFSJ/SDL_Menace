@@ -11,10 +11,11 @@
 #include "Chomper.h"
 #include "Circler.h"
 #include "CirclerProjectile.h"
+
 #include "Daniel.h"
 #include "Torpedo.h"
 #include "Missile.h"
-
+#include "RoboKrabs.h"
 #include "Nuke.h"
 #include "TurboChainsaw.h"
 #include "Angygons.h"
@@ -219,9 +220,32 @@ public:
 		}
 	}
 
-	void SpawnKrabs() { //quitar player de RoboKrabs 
+	void SpawnKrabs(int maxEnemies) {
 	
-		//SpawnObject(new RoboKrabs(Vector2(RM->WINDOW_WIDTH + 100.0f, rand() % RM->WINDOW_HEIGHT)));
+		std::queue<Object*> candidates = _spawnedObjects;
+		Transform* t = nullptr;
+
+		while (!candidates.empty())
+		{
+			if (candidates.front()->_isPlayer)
+			{
+				t = candidates.front()->GetTransform();
+			}
+
+			candidates.pop();
+		}
+
+		for (int i = 0; i < maxEnemies; i++)
+		{
+			int r = rand() % 3;
+
+			if (t != nullptr) {
+				if (r % 2 == 0)
+					SpawnObject(new RoboKrabs(Vector2(RM->WINDOW_WIDTH + 100.0f, RM->WINDOW_HEIGHT-60), t, i*0.8f));
+				else
+					SpawnObject(new RoboKrabs(Vector2(RM->WINDOW_WIDTH + 100.0f,  60.0f), t, i * 0.8f));
+			}
+		}
 	}
 	
 
@@ -241,6 +265,7 @@ public:
 		SpawnObject(new SpaceBoss());
 	}
 
+	
 	std::queue<Object*> GetSpawnedObjects() {
 		return _spawnedObjects;
 	}	

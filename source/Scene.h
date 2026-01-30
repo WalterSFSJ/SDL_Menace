@@ -1,7 +1,7 @@
 #pragma once
 #include "Object.h"
 #include "Enemy.h"
-#include "Ship.h"
+
 #include "Projectile.h"
 #include <vector>
 #include "WaveManager.h"

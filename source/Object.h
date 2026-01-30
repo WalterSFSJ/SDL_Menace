@@ -12,6 +12,8 @@ protected:
 	Transform * _transform;
 	RigidBody* physics;
 public:
+	bool _isPlayer = false;
+
 	Object()
 	{
 		_transform = new Transform();

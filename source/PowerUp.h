@@ -38,7 +38,6 @@ public:
 
 		for (int i = 0; i < maxLevel; i++)
 		{
-			//WE CONSIDER SPRITES ARE ARRANGED IN A LINE AND ARE 128x64
 			renderers.push_back(new ImageRenderer(this->_transform, texturas[i], Vector2(0, 0), Vector2(512.0f, 512.0f)));
 		}
 		delete _renderer;
@@ -52,7 +51,7 @@ public:
 			return;
 		currentHits++;
 		if (currentHits == maxHits) {
-			//UPDATE SPRITE ACCORING TO LEVEL
+			
 			_renderer = renderers[lvl++];
 			currentHits = 0;
 		}

@@ -25,7 +25,7 @@ public:
 	Ship()
 		: ImageObject("resources/images/ship.png", Vector2(0.f, 0.f), Vector2(433.f, 409.f))
 	{
-
+		_isPlayer = true;
 		Vector2 randomPosition = Vector2(100.f, 200.f);
 		
 		startingPos = randomPosition;
