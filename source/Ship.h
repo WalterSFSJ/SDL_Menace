@@ -54,5 +54,5 @@ public:
 	void Heal() { health = 3; }
 	void AddTurrets() {};
 	void AddSpeed() { speed++; }
-	
+	bool IsAlive() { return health > 0; }
 };

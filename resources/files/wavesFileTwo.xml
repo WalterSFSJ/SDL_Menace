@@ -6,7 +6,7 @@
   </wave>
   <wave>
     <spawned_enemy_id>11</spawned_enemy_id>
-    <amount>5</amount>
+    <amount>6</amount>
   </wave>
   <wave>
     <spawned_enemy_id>12</spawned_enemy_id>
@@ -14,7 +14,7 @@
   </wave>
   <wave>
     <spawned_enemy_id>13</spawned_enemy_id>
-    <amount>5</amount>
+    <amount>6</amount>
   </wave>
   <wave>
     <spawned_enemy_id>14</spawned_enemy_id>
@@ -30,10 +30,14 @@
   </wave>
   <wave>
     <spawned_enemy_id>17</spawned_enemy_id>
-    <amount>1</amount>
+    <amount>8</amount>
   </wave>
   <wave>
     <spawned_enemy_id>18</spawned_enemy_id>
+    <amount>8</amount>
+  </wave>
+  <wave>
+    <spawned_enemy_id>19</spawned_enemy_id>
     <amount>1</amount>
   </wave>
 </level>

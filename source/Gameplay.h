@@ -133,14 +133,12 @@ public:
 
 	void End() {
 		
-		score = 0;
 		WM->Reset();
 		int finalScore = score;
+		score = 0;
 		AM->HaltAudio();
 
-		//if (sp->IsAlive()) {
-		if (ScoreManager::Instance().IsHighScore(finalScore)) {
-
+		if (sp->IsAlive()) {
 			SM.AddScene("NameInput", new NameInputScene(finalScore));
 			SM.SetNextScene("NameInput");
 		}
