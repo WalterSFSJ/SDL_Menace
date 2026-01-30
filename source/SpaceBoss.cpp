@@ -1,6 +1,6 @@
-#include "Biotitan.h"
+#include "SpaceBoss.h"
 #include "Spawner.h"
-void Biotitan::Shoot() {
+void SpaceBoss::Shoot() {
 
 	currentTime += TIME.GetDeltaTime();
 
@@ -10,7 +10,8 @@ void Biotitan::Shoot() {
 
 	for (int i = 0; i < projectiles; i++)
 	{
-		SPAWNER.SpawnObject(new Projectile(Vector2(RM->WINDOW_WIDTH - 100, rand() % (RM->WINDOW_HEIGHT / 2) + 200.0f), this, 7, -1));
+		SPAWNER.SpawnObject(new Projectile(Vector2(RM->WINDOW_WIDTH - 100, rand() % (RM->WINDOW_HEIGHT / 2) + 200.0f),
+			this, 7, -1));
 	}
 
 	currentTime = 0.0f;

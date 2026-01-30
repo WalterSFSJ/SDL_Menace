@@ -152,7 +152,7 @@ public:
 		}
 		else if (std::stoi(inside_node->value()) == ANNOYER)
 		{
-			SPAWNER.SpawnBiotitan();
+			
 		}
 		else if (std::stoi(inside_node->value()) == ANGRYGONS)
 		{
@@ -160,7 +160,7 @@ public:
 		}
 		else if (std::stoi(inside_node->value()) == SPACEBOSS)
 		{
-			SPAWNER.SpawnBiotitan();
+			SPAWNER.SpawnSpaceBoss();
 		}
 
 		 

@@ -17,7 +17,7 @@ public:
 
 
 	SpaceBoss()
-		: Boss("resources/images/biotitan.png", Vector2(450.0f, 450.0f))
+		: Boss("resources/images/spaceBoss.png", Vector2(631.0f, 481.0f))
 
 	{
 		_transform->scale = Vector2(2.7f, 2.7f);

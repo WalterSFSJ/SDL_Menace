@@ -11,7 +11,6 @@
 #include "Chomper.h"
 #include "Circler.h"
 #include "CirclerProjectile.h"
-#include "Biotitan.h"
 #include "Daniel.h"
 #include "Torpedo.h"
 #include "Missile.h"
@@ -19,10 +18,10 @@
 #include "Nuke.h"
 #include "TurboChainsaw.h"
 #include "Angygons.h"
-
-
-
 #include "Ufo.h"
+
+#include "Biotitan.h"
+#include "SpaceBoss.h"
 
 #define SPAWNER Spawner::Instance()
 
@@ -236,6 +235,10 @@ public:
 		{
 			SpawnObject(new Angrygons(Vector2(0, 600), 1.3f * i));
 		}
+	}
+
+	void SpawnSpaceBoss() {
+		SpawnObject(new SpaceBoss());
 	}
 
 	std::queue<Object*> GetSpawnedObjects() {
