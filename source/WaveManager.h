@@ -17,7 +17,16 @@ enum EnemyType {
 	WHALE = 6,
 	CHOMPER = 7,
 	CIRCLER = 8,
-	BIOTITAN = 9
+	BIOTITAN = 9,
+	TORPEDO = 10,
+	CHAINSAW = 11,
+	KRABS = 12,
+	NUKE = 13,
+	MISSILE = 14,
+	DANIEL = 15,
+	UFO = 16,
+	ANNOYER = 17,
+	ANGRYGONS = 18
 };
 
 class WaveManager
@@ -35,10 +44,26 @@ public:
 		waveNumber = 0;
 	}
 
+	void SetLevel(int i) {
+		level = i;
+	}
+
 	void ReadNextWave() {
+		std::string fileRoute;
+		switch (level)
+		{
+		case 1:
+			fileRoute = "resources/files/wavesFile.xml";
+			break;
+		case 2:
+			fileRoute = "resources/files/wavesFileTwo.xml";
+			break;
+		default:
+			break;
+		}
 
 		rapidxml::xml_document<> doc;
-		std::ifstream file("resources/files/wavesFile.xml");
+		std::ifstream file(fileRoute);
 
 		std::stringstream buffer;
 
@@ -96,8 +121,44 @@ public:
 		{
 			SPAWNER.SpawnBiotitan();
 		}
+		else if (std::stoi(inside_node->value()) == TORPEDO)
+		{
+			SPAWNER.SpawnTorpedos(std::stoi(inside_node->next_sibling()->value()));
+		}
+		else if (std::stoi(inside_node->value()) == CHAINSAW)
+		{
+			SPAWNER.SpawnTurboChainsaw();
+		}
+		else if (std::stoi(inside_node->value()) == KRABS)
+		{
+			SPAWNER.SpawnBiotitan();
+		}
+		else if (std::stoi(inside_node->value()) == NUKE)
+		{
+			SPAWNER.SpawnBiotitan();
+		}
+		else if (std::stoi(inside_node->value()) == MISSILE)
+		{
+			SPAWNER.SpawnBiotitan();
+		}
+		else if (std::stoi(inside_node->value()) == DANIEL)
+		{
+			SPAWNER.SpawnBiotitan();
+		}
+		else if (std::stoi(inside_node->value()) == UFO)
+		{
+			SPAWNER.SpawnBiotitan();
+		}
+		else if (std::stoi(inside_node->value()) == ANNOYER)
+		{
+			SPAWNER.SpawnBiotitan();
+		}
+		else if (std::stoi(inside_node->value()) == ANGRYGONS)
+		{
+			SPAWNER.SpawnBiotitan();
+		}
 
-		
+		 
 		waveMembers = std::stoi(inside_node->next_sibling()->value());
 		waveNumber++;
 	}
@@ -127,6 +188,8 @@ private:
 
 		ReadNextWave();
 	}
+
+	int level;
 };
 
 

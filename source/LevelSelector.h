@@ -25,8 +25,7 @@ public:
 
 		buttonLvl1 = new Button([]() { SM.SetNextScene("Gameplay"); }, Vector2(RM->WINDOW_WIDTH / 2, 250));
 
-		//por ahora no hace nada
-		buttonLvl2 = new Button([]() {}, Vector2(RM->WINDOW_WIDTH / 2, 400));
+		buttonLvl2 = new Button([]() {SM.SetNextScene("LevelTwo"); }, Vector2(RM->WINDOW_WIDTH / 2, 400));
 
 		buttonReturnToMenu = new Button([]() { SM.SetNextScene("MainMenu"); }, Vector2(RM->WINDOW_WIDTH / 2, 600));
 

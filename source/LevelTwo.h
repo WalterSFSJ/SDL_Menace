@@ -14,19 +14,17 @@
 #include "ExplotionAnimation.h"
 
 
-enum GameState { GOING, PAUSED, DEAD, GAMEOVER };
-
-class Gameplay : public Scene
+class LevelTwo : public Scene
 {
 private:
 	GameState currentState;
 	Ship* sp;
 public:
-	Gameplay() = default;
+	LevelTwo() = default;
 
 	TextObject* scoreText;
 
-	~Gameplay() {
+	~LevelTwo() {
 	
 		delete(scoreText);
 		scoreText = nullptr;		
@@ -37,14 +35,13 @@ public:
 	void OnEnter() override {
 		srand(time(NULL));
 
-		currentState = GOING;
 
 		SPAWNER.SpawnObject(new BackGround(Vector2(RM->WINDOW_WIDTH / 2, RM->WINDOW_HEIGHT / 2)));
 		SPAWNER.SpawnObject(new BackGround(Vector2(RM->WINDOW_WIDTH + RM->WINDOW_WIDTH/2, RM->WINDOW_HEIGHT / 2)));
 		sp = new Ship();
 		SPAWNER.SpawnObject(sp);
 				
-		WM->SetLevel(1);
+		WM->SetLevel(2);
 		WM->ReadNextWave();
 
 		scoreText = new TextObject("0", Vector2(100, 100));
@@ -138,14 +135,14 @@ public:
 		int finalScore = score;
 		AM->HaltAudio();
 
-		//if (sp->IsAlive()) {
-		if (ScoreManager::Instance().IsHighScore(finalScore)) {
+		if (sp->IsAlive()) {
+		
 
-			SM.AddScene("NameInput", new NameInputScene(finalScore));
+			
 			SM.SetNextScene("NameInput");
 		}
 		else {
-			SM.SetNextScene("ScoreBoard");
+			SM.SetNextScene("MainMenu");
 		}
 
 	}

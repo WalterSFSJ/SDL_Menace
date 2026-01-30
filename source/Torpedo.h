@@ -9,7 +9,7 @@ public:
 	float absoluteX;
 
 	Torpedo()
-		:Enemy(Vector2(RM->WINDOW_WIDTH + 100, (rand() % (RM->WINDOW_HEIGHT - 200)) + 100), "resources/images/horizontal.png", Vector2(1000.f, 1054.f))
+		:Enemy(Vector2(RM->WINDOW_WIDTH + 100, (rand() % (RM->WINDOW_HEIGHT - 200)) + 100), "resources/images/torpedo.png", Vector2(512.0f, 512.0f))
 	{
 
 		absoluteX = (float)(rand() % 41) + 10;

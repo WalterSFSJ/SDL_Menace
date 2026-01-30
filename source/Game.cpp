@@ -8,6 +8,8 @@
 #include "AudioManager.h"
 #include "SplashScreen.h"
 #include "LevelSelector.h"
+#include "NameInputScene.h"
+#include "LevelTwo.h"
 
 Game::Game() {
 	for (Object* go : _gameObjects)
@@ -69,6 +71,7 @@ void Game::Init()
 	RM->LoadTexture("resources/images/biotitan.png");
 	RM->LoadTexture("resources/images/turboChainsaw.png");
 	RM->LoadTexture("resources/images/ufo.png");
+	RM->LoadTexture("resources/images/torpedo.png");
 
 
 	AM->LoadSoundData("resources/audio/music/froggerSong.wav");
@@ -79,6 +82,7 @@ void Game::Init()
 	assert(SM.AddScene("SplashScreen", new SplashScreen()));
 	assert(SM.AddScene("MainMenu", new MainMenu()));
 	assert(SM.AddScene("Gameplay", new Gameplay()));
+	assert(SM.AddScene("LevelTwo", new LevelTwo()));
 	assert(SM.AddScene("ScoreBoard", new ScoreBoard()));
 	SM.AddScene("LevelSelector", new LevelSelector());
 
