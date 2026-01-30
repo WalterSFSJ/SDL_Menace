@@ -40,6 +40,8 @@ public:
 		SPAWNER.SpawnObject(new BackGroundTwo(Vector2(RM->WINDOW_WIDTH + RM->WINDOW_WIDTH/2, RM->WINDOW_HEIGHT / 2)));
 		sp = new Ship();
 		SPAWNER.SpawnObject(sp);
+		SPAWNER.SetT(sp->GetTransform());
+
 				
 		WM->SetLevel(2);
 		WM->ReadNextWave();
@@ -118,8 +120,8 @@ public:
 					End();
 			}
 
-			if (dynamic_cast<Biotitan*>(_objects[i])) {
-				if (dynamic_cast<Biotitan*>(_objects[i])->IsPendingDestroy()) {
+			if (dynamic_cast<SpaceBoss*>(_objects[i])) {
+				if (dynamic_cast<SpaceBoss*>(_objects[i])->IsPendingDestroy()) {
 					End();
 				}
 			}

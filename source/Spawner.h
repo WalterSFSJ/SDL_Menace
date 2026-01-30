@@ -17,6 +17,7 @@
 #include "Missile.h"
 #include "RoboKrabs.h"
 #include "Nuke.h"
+#include "Annoyer.h"
 #include "TurboChainsaw.h"
 #include "Angygons.h"
 #include "Ufo.h"
@@ -29,6 +30,8 @@
 class Spawner
 {
 public:
+
+	Transform* t = nullptr;
 
 	int timesRead = 0;
 
@@ -192,7 +195,7 @@ public:
 	
 
 
-	void SpawnTurboChainsaw(int maxEnemies) // //revisar
+	void SpawnTurboChainsaw(int maxEnemies)
 	{
 		for (int i = 0; i < maxEnemies; i++)
 		{
@@ -222,19 +225,7 @@ public:
 
 	void SpawnKrabs(int maxEnemies) {
 	
-		std::queue<Object*> candidates = _spawnedObjects;
-		Transform* t = nullptr;
-
-		while (!candidates.empty())
-		{
-			if (candidates.front()->_isPlayer)
-			{
-				t = candidates.front()->GetTransform();
-			}
-
-			candidates.pop();
-		}
-
+		
 		for (int i = 0; i < maxEnemies; i++)
 		{
 			int r = rand() % 3;
@@ -249,7 +240,25 @@ public:
 	}
 	
 
-	void SpawnAnnoyer() { //quitar player de SpawnAnnoyer 
+	void SpawnAnnoyer() {
+		
+		
+
+		if (t != nullptr)
+		{
+			SpawnObject(new Annoyer(Vector2(RM->WINDOW_WIDTH / 4, RM->WINDOW_HEIGHT + 70), t, -1));
+			SpawnObject(new Annoyer(Vector2(RM->WINDOW_WIDTH / 4 + 150.0f, RM->WINDOW_HEIGHT + 70), t, -1));
+		
+			SpawnObject(new Annoyer(Vector2(RM->WINDOW_WIDTH - 200.0f, RM->WINDOW_HEIGHT + 70), t, -1));
+			SpawnObject(new Annoyer(Vector2(RM->WINDOW_WIDTH  -350.0f, RM->WINDOW_HEIGHT + 70), t, -1));
+
+			SpawnObject(new Annoyer(Vector2(RM->WINDOW_WIDTH / 4, -70.0f), t, 1));
+			SpawnObject(new Annoyer(Vector2(RM->WINDOW_WIDTH / 4 + 150.0f, -70.0f), t, 1));
+		
+			SpawnObject(new Annoyer(Vector2(RM->WINDOW_WIDTH - 200.0f, -70.0f), t, 1));
+			SpawnObject(new Annoyer(Vector2(RM->WINDOW_WIDTH - 350.0f, -70.0f), t, 1));
+		}
+
 
 		
 	}
@@ -269,6 +278,10 @@ public:
 	std::queue<Object*> GetSpawnedObjects() {
 		return _spawnedObjects;
 	}	
+
+	void SetT(Transform* _t) {
+		t = _t;
+	}
 
 private:
 	Spawner() = default;

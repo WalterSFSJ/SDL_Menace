@@ -152,7 +152,7 @@ public:
 		}
 		else if (std::stoi(inside_node->value()) == ANNOYER)
 		{
-			
+			SPAWNER.SpawnAnnoyer();
 		}
 		else if (std::stoi(inside_node->value()) == ANGRYGONS)
 		{

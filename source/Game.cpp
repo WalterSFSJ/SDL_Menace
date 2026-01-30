@@ -78,6 +78,7 @@ void Game::Init()
 	RM->LoadTexture("resources/images/cave.png");
 	RM->LoadTexture("resources/images/angry.png");
 	RM->LoadTexture("resources/images/robokrabs.png");
+	RM->LoadTexture("resources/images/anoyer.png");
 	RM->LoadTexture("resources/images/spaceBoss.png");
 
 
